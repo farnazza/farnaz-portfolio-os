@@ -1,0 +1,44 @@
+/* Tokens from 00 Context/visual-direction.md */
+:root {
+  --bg: #ECECEC;
+  --text: #0E0E0E;
+  --font: "Manrope", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+}
+
+.placeholder {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+  text-align: center;
+}
+
+.placeholder__emoji {
+  font-size: 64px;
+  line-height: 1;
+}
+
+.placeholder__text {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 400;
+}
