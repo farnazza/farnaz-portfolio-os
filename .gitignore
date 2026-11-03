@@ -1,0 +1,5 @@
+# Mac system files, no project content
+.DS_Store
+
+# Personal bio and job-search notes, kept private for now
+CLAUDE.md
