@@ -4,11 +4,12 @@
 - Multi-page: home page (with all featured work), one separate page per case study, About, Playground. No separate Work page (removed 2026-11-03 to simplify).
 - About page: yes.
 - Playground page: yes, one page. Projects that are not UI/UX design: older work between visual design and micro-animation, graphics, illustration, animated graphics.
-- Navigation: top bar. Name (links to home), Work (scrolls to the featured work on the home page), About, Playground, Contact.
+- Navigation: top bar. Logo only, 48px (40px on phones), no name next to it (links to home), Work (scrolls to the featured work on the home page), About, Playground, Contact.
 - Contact: nav link scrolls to the footer. No separate Contact page, no contact form. Contact is an email link.
 
 ### Home page
 - Opens with a short intro about me. Text: "Home intro line" in `00 Context/bio.md`. Use it as written.
+- Hero layout: my round photo on the left, intro text on the right (reference: Jay Brown screenshot). Photo: `02 Site/assets/photo.jpg`, about 350px. Stacks on phones (photo above, 200px).
 - Featured work on the home page, in large visuals: all 6 case studies.
   - Herbody Her Mind
   - SumUp: First time user experience
