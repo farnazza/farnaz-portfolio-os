@@ -1,41 +1,49 @@
 # Site Brief
 
 ## Structure
-- Multi-page: home page, Work index, one separate page per case study, About, Playground.
+- Multi-page: home page (with all featured work), one separate page per case study, About, Playground. No separate Work page (removed 2026-11-03 to simplify).
 - About page: yes.
-- Playground page: yes. Creative projects: graphics, illustration, animated graphics, visual design work.
-- Navigation: top bar. Name (links to home), Work, About, Playground, Contact.
-- Contact: nav link scrolls to the footer. No separate Contact page.
+- Playground page: yes, one page. Projects that are not UI/UX design: older work between visual design and micro-animation, graphics, illustration, animated graphics.
+- Navigation: top bar. Name (links to home), Work (scrolls to the featured work on the home page), About, Playground, Contact.
+- Contact: nav link scrolls to the footer. No separate Contact page, no contact form. Contact is an email link.
 
 ### Home page
-- Opens with a short intro about me (product designer, etc.).
-  - ⚠️ [INTRO TEXT]: to be brainstormed and written by me. Do not generate placeholder copy.
-- Featured work: a highlight selection of favourite projects.
-  - ⚠️ [WHICH PROJECTS ARE FEATURED]: not yet decided.
-- Short, minimal version of my resume.
-  - ⚠️ Possible overlap with the About page. Decide what each one covers before writing content.
-- Footer with a contact form.
-  - ⚠️ A form needs a receiving service (GitHub Pages cannot process form submissions on its own). Decide on a form service or an email-link fallback before building.
+- Opens with a short intro about me. Text: "Home intro line" in `00 Context/bio.md`. Use it as written.
+- Featured work on the home page, in large visuals: all 6 case studies.
+  - Herbody Her Mind
+  - SumUp: First time user experience
+  - SumUp: Profile and settings
+  - SumUp: Data viz for SumUp products
+  - SumUp: Fee summary box
+  - Zizoo: Components library (full case study, OK to publish)
+  - ⚠️ [ORDER]: order of the six, and which two get the full-width cards, to be decided by me.
+  - SumUp case studies (2023 to early 2025, all launched): the site shows a short summary only, with a "Request the full case study" CTA (email link). The full case study is shared privately on request, never published on the site or in the repository.
+  - ⚠️ [NDA]: being launched or old does not by itself end an NDA. Check the agreement for what the summary may show.
+  - ⚠️ [SUMMARY SECTIONS]: decide what each SumUp summary page contains.
+  - Case study content: to be written by me, one folder per project in `01 Projects/`. Do not generate case study copy.
+- Footer: email link for contact (no contact form), and a CTA to download my resume.
+  - ⚠️ [RESUME FILE]: PDF to be supplied by me. It will be public on the live site.
+- About page: content from the "Bio" section of `00 Context/bio.md`.
 
 ## Case Study Display
-- Work index: two-column grid of cards. Each card is visual only (full image or animated device mockup). No title under the card.
-- Home featured cards: same media as the Work cards, but larger cards, to create a different hierarchy from the Work page.
+- Cards are visual only (full image or animated device mockup). No title under the card.
+- Home featured cards: mosaic of two squares side by side, then one full-width card, repeating (6 cards: square, square, wide, square, square, wide). Reference: tomasnozina.com home.
 - Card hover: the image blurs and the project title appears over it.
 - Mobile / touch fallback: project title always visible over the image (no hover needed).
 - Card shape, image ratio, corners and grid spacing: reference tomasnozina.com.
 - No shadows on cards (decided in /visual-direction, 2026-11-02).
-  - ⚠️ [EXACT VALUES]: not measured. To be set in `/visual-direction`. Do not invent values.
+- Exact card values: measured, see `00 Context/visual-direction.md`.
 - Inside case study: sections with anchor links.
 - Cover images: yes. Each case study opens with a large cover image.
 
 ## Motion and Interaction
 - Animation level: 3 (richer).
 - Scroll: case study cards slide in vertically as they enter the viewport (reference: lofi-folio).
-- Scroll: hero cards stack vertically and open out from each other on scroll (reference: tomasnozina.com).
+- Scroll: featured cards slide up and settle from a slight tilt (left card tilted left, right card tilted right) as they enter the screen. ⚠️ Interpretation of the tomasnozina.com behavior from a screenshot; confirm.
 - Hover on cards: image blurs, project title appears (reference: lofi-folio).
 - Card media: animated device mockups (reference: tomasnozina.com).
 - CTA micro-interaction: on hover the button extends and shows an email icon. Inspiration from tomasnozina.com, not a copy.
-- Contact form: animated, including the CTA micro-animation (reference: tomasnozina.com). Inspiration, not a copy.
+- Footer CTAs (email link, resume download): use the CTA micro-interaction above.
 - All motion must respect the "reduce motion" system setting (prefers-reduced-motion).
 
 ## References
@@ -48,5 +56,6 @@
 - Project titles under the cards.
 - A separate Contact page.
 - Exact copies of tomasnozina.com or lofi-folio interactions. Use them as inspiration only.
-- Placeholder intro copy, resume content or featured project choices. These are mine to write and decide.
+- A contact form.
+- Placeholder intro copy, resume content, case study copy or featured project choices. These are mine to write and decide.
 - Invented visual values (spacing, radius, shadow, colours, fonts). These come from `/visual-direction`.

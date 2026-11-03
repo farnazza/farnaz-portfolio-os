@@ -41,10 +41,11 @@ Fallback stack: `"Manrope", system-ui, sans-serif`
 
 ## Layout
 
-Max content width: ⚠️ about 1270px (estimated from the Tomas screenshot, assuming a 2x retina capture). Confirm or adjust.
+Max content width: 1272px (measured from tomasnozina.com screenshots, Retina, 2026-11-03). Side margin 120px at a 1512px window; minimum 16px.
 Base spacing unit: 8px (proposal, not measured).
-Card grid: two columns on desktop, one column on mobile. Gap about 24px (estimated from the Tomas screenshot, 2x capture).
-Card corner radius: ⚠️ about 28 to 32px (estimated by eye from the Tomas screenshot). Confirm.
+Home featured cards: mosaic of two 624px squares side by side, then one full-width card (1272 x 624), repeating. Gap 24px (measured). One column on mobile.
+Playground tiles: three columns of smaller squares (two on tablet, one on mobile), gap 24px.
+Card corner radius: 40px (measured from tomasnozina.com screenshots).
 Buttons: fully rounded pills, white on the gray background, minimum height 44px (WCAG 2.2 touch target).
 Section padding: ⚠️ not measured. Proposal: 96px vertical on desktop, 64px on mobile. Lots of whitespace overall.
 
