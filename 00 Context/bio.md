@@ -13,8 +13,4 @@ I’m open to freelance projects across industries, ambitious startups. Have an 
 
 
 # Home intro line
-Research, interface, visuals, motion: I love where they overlap.
-Hi, I’m Farnaz, a Berlin based product designer with an M.A. in integrated design and 7+ years in digital products. 
-
- I've designed for startup and corporate to early stage startups. From discovery phase to shipping the final product. Lately I’m experimenting with AI and launching my own venture, Herbody Her Mind. Open to freelance projects, so say hello.
-
+Hi, I’m Farnaz, a Berlin based product designer with an M.A. in integrated design and 7+ years of experience in digital products. I move between user research, UX, UI, visual design and motion and I love where they overlap.
