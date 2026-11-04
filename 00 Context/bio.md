@@ -13,4 +13,5 @@ I’m open to freelance projects across industries, ambitious startups. Have an 
 
 
 # Home intro line
-Hi, I’m Farnaz, a Berlin based product designer with an M.A. in integrated design and 7+ years of experience in digital products. I move between user research, UX, UI, visual design and motion and I love where they overlap.
+Hi, I’m Farnaz,
+a Berlin-based product designer with 7+ years in digital products. My mixed bag of crafts shapes how I think and design.
