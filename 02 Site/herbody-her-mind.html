@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Herbody Her Mind · Farnaz Zamanian</title>
+  <title>Her Body, Her Mind · Farnaz Zamanian</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap">
@@ -20,32 +20,187 @@
   </header>
   <main id="main">
     <article class="cs">
-      <div class="cs__cover container" aria-hidden="true"><span class="card__placeholder">Cover image to come</span></div>
-      <header class="cs__head container">
-        <p class="cs__meta">Herbody Her Mind · ⚠️ year to come</p>
-        <h1 class="page-title">Herbody Her Mind</h1>
-        
+      <header class="cs__title container">
+        <p class="cs__meta">Her Body, Her Mind · September 2025 to now</p>
+        <h1 class="page-title">Designing a first service for women caring for someone with cancer</h1>
       </header>
+      <div class="cs__cover container">
+        <video class="cs__video" muted loop playsinline preload="metadata" poster="assets/herbody-her-mind/cover-poster.jpg" aria-label="Four phone screens of the Her Body, Her Mind website: home page, upcoming workshops scrolling, a workshop page, and the filled-in sign-up form">
+          <source src="assets/herbody-her-mind/cover.webm" type="video/webm">
+          <source src="assets/herbody-her-mind/cover.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="cs__head container">
+        <p class="cs__lead">Her Body, Her Mind offers creative and reflective workshops in Berlin for women caring for someone with cancer. This case study follows it from my own caregiving to a prototype website, ready for its first usability test.</p>
+        <dl class="cs__snapshot">
+          <div><dt>Role</dt><dd>Founder and sole designer</dd></div>
+          <div><dt>Timeframe</dt><dd>Project started September 2025; one week in Design OS, from brief to test-ready prototype</dd></div>
+          <div><dt>Tools</dt><dd>Claude Code (Design OS) in VS Code, Google Meet, Apple Notes transcription, FigJam, Claude Design</dd></div>
+          <div><dt>Status</dt><dd>Working prototype website, ready for its first usability test</dd></div>
+        </dl>
+      </div>
       <div class="cs__body container">
-        <nav class="cs__toc" aria-label="Sections"><ul><li><a href="#section-1">Section 1</a></li><li><a href="#section-2">Section 2</a></li><li><a href="#section-3">Section 3</a></li><li><a href="#section-4">Section 4</a></li></ul></nav>
+        <nav class="cs__toc" aria-label="Sections"><ul><li><a href="#problem">The problem</a></li><li><a href="#where-it-started">Where it started</a></li><li><a href="#research">Research and insight</a></li><li><a href="#how-i-worked">How I worked</a></li><li><a href="#concept-to-prototype">From concept to prototype</a></li><li><a href="#decisions">Decisions as hypotheses</a></li><li><a href="#whats-next">What's next</a></li></ul></nav>
         <div class="cs__content">
-        <section class="cs__section" id="section-1">
-          <h2>Section 1</h2>
-          <p class="todo">⚠️ Section title and content to be written by Farnaz.</p>
+        <section class="cs__section" id="problem">
+          <h2>The problem</h2>
+          <p>Women in Berlin who care in person for a loved one with cancer find it hard to switch off, and the support they come across is usually built for the patient, not for them. Both women I interviewed described it that way. One found a group that was “much more geared to people with cancer”.</p>
         </section>
-        <section class="cs__section" id="section-2">
-          <h2>Section 2</h2>
-          <p class="todo">⚠️ Section title and content to be written by Farnaz.</p>
+        <section class="cs__section" id="where-it-started">
+          <h2>Before the design process: where this started</h2>
+          <blockquote class="cs__quote"><p>“The human side of the project came first: the real human contact, before all the technicality of the design process.”</p></blockquote>
+          <p><strong class="cs__hl">It began at home.</strong> This project didn’t begin with a brief or a design tool. Last year, I was the primary caregiver for my mom, who had end-stage cancer. I won’t share much about her here, but that experience is where this idea came from. Caring for someone you love through that time changes how you see things: what support looks like, what’s missing, and how alone you can feel even when you’re surrounded by people.</p>
+          <p><strong class="cs__hl">Listening first.</strong> From there, I kept thinking about how to support women going through something similar, so I started where it felt most natural: by listening. When I kicked off the project in September 2025, I interviewed 3 women who were going through chemotherapy. I don’t share these interviews, for consent reasons. I shared questionnaires through a cancer support group in Berlin. I did guerrilla research and went where people were, for example to Yes Cancer, a cancer convention, where I talked to caregivers and listened to their stories. At home, I kept researching and watched videos of cancer survivors talking about what helped them heal.</p>
+          <p><strong class="cs__hl">A space for conversation.</strong> I also started an Instagram page where I talk about the emotional side of cancer, for both patients and caregivers. It became a quiet space for conversation. People reached out, shared their stories, and told me what they were missing.</p>
+          <p><strong class="cs__hl">A sharing circle.</strong> In March 2026, I organized my first event: sound meditation, breathwork and a sharing circle, co-facilitated with a yoga teacher who wanted to contribute to the project. Eight women came, three of them caregivers. Sitting in that circle, hearing what they shared and how they responded to the different practices, gave me some of the most valuable insights of the whole project. In the closing circle, the caregivers said they’d love a space where they feel held and don’t have to prove anything to anyone, and language came up as a big barrier.</p>
+          <p><strong class="cs__hl">Narrowing the focus.</strong> In June 2026, at a Charité event, I met women from Charité’s international cancer support groups. Caregivers had asked them whether any community for caregivers existed. They knew of none, and they shared that one would be very helpful. That pushed me to look more closely at what caregivers actually need. Between that research and my own experience, I realized how little exists, especially for international caregivers, who told me there are few events or communities for them. So I decided to narrow my focus to women caregivers.</p>
+          <h3>From listening to building</h3>
+          <p>As a solo founder, I used AI-assisted design workflows to bring this vision to life and build something tangible, so I could test my hypothesis and validate my assumptions: do creative and reflective workshops help women navigate this time? Most of what I had heard came from people who had already chosen a space like mine, so this was something to test, not confirm.</p>
+          <p>The interviews, the synthesis of those insights, and the desk research all shaped the product. It offers different creative and reflective workshops and makes signing up as easy as possible, to test whether this is what she needs: a hands-on session nearby, without planning ahead, among people who understand, where she talks only if she wants to.</p>
         </section>
-        <section class="cs__section" id="section-3">
-          <h2>Section 3</h2>
-          <p class="todo">⚠️ Section title and content to be written by Farnaz.</p>
+        <section class="cs__section" id="research">
+          <h2>Research and insight</h2>
+          <p><strong>Desk research.</strong> I ran the desk research with a multi-agent skill I built in Claude Code: several agents worked on independent research tasks in parallel, and I checked every quote word for word against its source. I mapped what already exists in Berlin. Groups for relatives do exist, but every one I found is in German or doesn’t state a language, meets in person on weekday evenings, and asks for registration or a preliminary talk. Hospital support is framed around the patient, for “Angehörige des Patienten” (<a href="https://cccc.charite.de/fuer_patientinnen_interessierte/psychoonkologische_beratung_und_begleitung_1">Charité</a>). I found no drop-in space in Berlin that you can join without registering.</p>
+          <p><strong>Interviews.</strong> I interviewed two women over Google Meet. Each received a consent form beforehand, with a separate consent for recording. I transcribed with Apple Notes instead of a third-party transcription tool: the data is sensitive, some tools’ privacy terms weren’t clear enough, and each extra tool would have needed its own consent, so I kept the number of tools as low as possible. I anonymized the transcripts myself before any AI saw them, then turned them into 51 observations, which I reviewed one by one against the transcript.</p>
+          <p>One woman cares for her husband now in Berlin. The other cared in the past in the UK, which is outside my criteria, so her points count as hypotheses for Berlin.</p>
+          <p><strong>What it couldn’t tell me.</strong> Both women’s care is light, so how needs change with heavier care is still open.</p>
+          <h3>The insight</h3>
+          <p>What helps these women is getting out of their head: into their hands, a different place or company. One described it as “getting you out of your head and into your body”; the other said “you can’t relax, can you? So I had to kind of find things to do”.</p>
+          <p>But the support around them is built for the patient, in German, on weekday evenings, so what helps is getting harder to reach: “going out in the evening is just hard”.</p>
         </section>
-        <section class="cs__section" id="section-4">
-          <h2>Section 4</h2>
-          <p class="todo">⚠️ Section title and content to be written by Farnaz.</p>
+        <section class="cs__section" id="how-i-worked">
+          <h2>How I worked: an AI-assisted process, with me making the decisions</h2>
+          <p>I ran the project in Design OS, my workspace in Claude Code, set up in VS Code with a rules file every step had to follow:</p>
+          <ul>
+            <li>AI speeds up my thinking and challenges it, but every decision is mine.</li>
+            <li>Every claim about users is traced to a source and tagged Supported, Weak or Invented.</li>
+            <li>Transcripts are anonymized by me before any AI touches them.</li>
+          </ul>
+          <p>I used the skills from the Design OS course, and built my own where I needed them, for example desk research where several agents work on independent tasks in parallel.</p>
+          <ol class="steps">
+            <li class="step">
+              <div class="step__text">
+                <p class="step__phase">01 · Discover</p>
+                <p class="step__stat"><span class="step__num" data-count="2">2</span> interviews</p>
+                <p>Brief, space map, assumption list, consent form and distress protocol. 2 interviews. Desk research on Berlin support.</p>
+                <p class="step__why"><strong>Why this way:</strong> A sensitive health topic, so consent and a distress protocol came first, and as few tools as possible touched the interview data. Every desk quote was checked word for word against its source.</p>
+                <p class="step__tools">Google Meet, Apple Notes transcription, Claude Code skills (space map, gap questions, interview processing), parallel research agents, FigJam</p>
+              </div>
+              <div class="step__media" data-shot="process/discover"><span class="card__placeholder">Screenshot to come</span></div>
+            </li>
+            <li class="step">
+              <div class="step__text">
+                <p class="step__phase">02 · Synthesis</p>
+                <p class="step__stat"><span class="step__num" data-count="51">51</span> observations reviewed</p>
+                <p>51 observations, each reviewed against the transcript.</p>
+                <p class="step__why"><strong>Why this way:</strong> Nothing went forward until I had approved it.</p>
+                <p class="step__tools">Claude Code review page, S/W/I tags</p>
+              </div>
+              <div class="step__media" data-shot="process/synthesis"><span class="card__placeholder">Screenshot to come</span></div>
+            </li>
+            <li class="step">
+              <div class="step__text">
+                <p class="step__phase">03 · Define</p>
+                <p class="step__stat"><span class="step__num" data-count="9">9</span> How Might We questions</p>
+                <p>I clustered themes in FigJam; AI audited my clusters against the data. Insights, need statements, problem frame, 9 HMWs, 1 proto-persona, success statements.</p>
+                <p class="step__why"><strong>Why this way:</strong> The audit checked my clusters, so I didn’t just find what I expected.</p>
+                <p class="step__tools">FigJam, Claude Code skills</p>
+              </div>
+              <div class="step__media" data-shot="process/define"><span class="card__placeholder">Screenshot to come</span></div>
+            </li>
+            <li class="step">
+              <div class="step__text">
+                <p class="step__phase">04 · Develop</p>
+                <p class="step__stat"><span class="step__num" data-count="5">5</span> concepts, by 5 agents</p>
+                <p>5 concepts by 5 AI agents in parallel, one lens each, audited for diversity. MVP scope, user flow, flow audit, edge cases, screen map.</p>
+                <p class="step__why"><strong>Why this way:</strong> Parallel agents gave different directions; the audit flagged the 2 closest to my own idea.</p>
+                <p class="step__tools">Claude Code, FigJam</p>
+              </div>
+              <div class="step__media" data-shot="process/develop"><span class="card__placeholder">Screenshot to come</span></div>
+            </li>
+            <li class="step">
+              <div class="step__text">
+                <p class="step__phase">05 · Design system</p>
+                <p class="step__stat"><span class="step__num" data-count="3">3</span> versions until it held up</p>
+                <p>Brand guideline and design system, through three versions and four contrast checks before any screen was generated.</p>
+                <p class="step__why"><strong>Why this way:</strong> Claude Design builds screens from the system, so the system had to be right first.</p>
+                <p class="step__tools">Figma, Claude Design, Claude Code contrast checks</p>
+              </div>
+              <div class="step__media" data-shot="process/design-system"><span class="card__placeholder">Screenshot to come</span></div>
+            </li>
+            <li class="step">
+              <div class="step__text">
+                <p class="step__phase">06 · Prototype</p>
+                <p class="step__stat"><span class="step__num" data-count="4">4</span> contrast issues fixed</p>
+                <p>Website screens and design system built from the screen map; later changes sent as change-only prompts.</p>
+                <p class="step__why"><strong>Why this way:</strong> “Change only the listed elements” kept approved screens stable. 4 contrast issues fixed to WCAG AA.</p>
+                <p class="step__tools">Claude Design</p>
+              </div>
+              <div class="step__media" data-shot="process/prototype"><span class="card__placeholder">Screenshot to come</span></div>
+            </li>
+            <li class="step">
+              <div class="step__text">
+                <p class="step__phase">07 · Deliver</p>
+                <p class="step__stat"><span class="step__num" data-count="28">28</span> screenshots handed off</p>
+                <p>Design rationale, implementation document, 28 screenshots, gap list.</p>
+                <p class="step__why"><strong>Why this way:</strong> So a developer or tester can pick it up without me in the room.</p>
+                <p class="step__tools">Claude Code handoff skill</p>
+              </div>
+              <div class="step__media" data-shot="process/deliver"><span class="card__placeholder">Screenshot to come</span></div>
+            </li>
+          </ol>
         </section>
-
+        <section class="cs__section" id="concept-to-prototype">
+          <h2>From concept to prototype</h2>
+          <h3>Which concept, and why</h3>
+          <p>I generated five concepts through five lenses and audited them for diversity instead of ranking them. Two turned out to be the same behavior in different forms, and one rested on one participant and conflicted with the other’s needs. I chose “Come as you are, hands first”: a hands-on session nearby, without planning ahead, among people who understand, talking only if she wants to. It is also the concept closest to my starting hypothesis, so I designed it as a test of that hypothesis.</p>
+          <h3>Design system and brand guideline: the step the prototype stands on</h3>
+          <p>Before generating any screen, I built the brand guideline and the design system, and iterated on both until they held up:</p>
+          <ul>
+            <li><strong>First version (v1.1).</strong> A palette of plum, ivory, lilac, ochre and sage. The check showed lilac, ochre and sage on ivory fall below 2:1, so they could never carry text.</li>
+            <li><strong>New palette (v1.2).</strong> I replaced it with the Dusk palette (Twilight #5E4A7E, Dusty mauve #83727F, Apricot #E7A67A, Sand #F3ECE3), with Fraunces for headings and Inter for body text, and brought the brand guideline in line with the design system.</li>
+            <li><strong>Contrast, checked until it passed.</strong> Over three checks, 4 issues stayed open: error text on the error banner (4.37:1), success and info text, and an input border at 1.61:1. In the final version all 4 pass WCAG AA, for example the form field border at 5.11:1.</li>
+            <li><strong>Components follow the decisions.</strong> The design system’s sign-up form had an online option, a reminder field, free-text notes and “cancel anytime”, which all conflicted with decisions I had made. I changed the form to match: first name, email, privacy notice and an optional box for upcoming emails.</li>
+            <li><strong>Ready to upload.</strong> A final check found 74 primitives and 46 semantic tokens with 0 mismatches, and 34 of 35 contrast pairings passing.</li>
+            <li><strong>One source of truth.</strong> I made the Claude Design system the source of truth instead of the Figma file, so the screens and the system can’t drift apart.</li>
+          </ul>
+        </section>
+        <section class="cs__section" id="decisions">
+          <h2>Decisions as hypotheses</h2>
+          <div class="cs__rows">
+            <div class="cs__row"><h3 class="cs__row-title">Talking is optional; leaving early is fine</h3><dl>
+              <div><dt>Why</dt><dd>Talking helped one participant; the other valued not having to talk</dd></div>
+              <div><dt>What the test will tell me</dt><dd>“What was it like being there with the others?”</dd></div>
+            </dl></div>
+            <div class="cs__row"><h3 class="cs__row-title">No online payment, no price choice on the form; she pays on the day, in private</h3><dl>
+              <div><dt>Why</dt><dd>Choosing the reduced tier online means telling a website she can only afford less; it also keeps payment data and a third party off the site</dd></div>
+              <div><dt>What the test will tell me</dt><dd>How she would prefer to pay</dd></div>
+            </dl></div>
+            <div class="cs__row"><h3 class="cs__row-title">First name and email only, and “Reserve your place”</h3><dl>
+              <div><dt>Why</dt><dd>A workshop booking could count as health data, so I asked for the minimum; “Reserve” makes clear nothing is paid now</dd></div>
+              <div><dt>What the test will tell me</dt><dd>Whether signing up at all is a barrier</dd></div>
+            </dl></div>
+            <div class="cs__row"><h3 class="cs__row-title">“Caring for someone with cancer?”, not “caregiver”</h3><dl>
+              <div><dt>Why</dt><dd>Many women don’t call themselves carers, and most cancer services speak to the patient first</dd></div>
+              <div><dt>What the test will tell me</dt><dd>“Who do you think this is for?”</dd></div>
+            </dl></div>
+            <div class="cs__row"><h3 class="cs__row-title">In person only, close to where she is</h3><dl>
+              <div><dt>Why</dt><dd>Being with others is part of what I’m testing. One woman’s hardest moment was having nobody nearby: “there was nobody who I could phone saying, let’s go and meet for a drink”. Online added too much complexity for a first iteration</dd></div>
+              <div><dt>What the test will tell me</dt><dd>Whether being with others helps: “What was it like being there with the others?” Whether it is within her reach: I watch for signs of effort or tiredness during set-up and during the activity, and ask “What would make it hard for you to do this again next week?” and “How did it fit with how much energy you had today?”</dd></div>
+            </dl></div>
+          </div>
+        </section>
+        <section class="cs__section" id="whats-next">
+          <h2>What’s next</h2>
+          <p>The prototype is ready for its first think-aloud usability test, with new testers. I want to find out whether she:</p>
+          <ul>
+            <li>gets absorbed in the activity, out of her head</li>
+            <li>sees it fitting her own moment</li>
+            <li>feels it costs no more energy or travel than she has</li>
+            <li>feels comfortable being there with others</li>
+            <li>can tell from the website which session suits her</li>
+          </ul>
+        </section>
         </div>
       </div>
     </article>

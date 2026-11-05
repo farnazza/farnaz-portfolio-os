@@ -191,6 +191,14 @@ a { color: inherit; }
   transition: filter .5s var(--ease), transform .5s var(--ease);
 }
 
+/* Motion mockup card: video fills the card */
+.card__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .card__placeholder {
   font-size: 13px;
   color: var(--text-2);
@@ -217,6 +225,11 @@ a { color: inherit; }
   .card:focus-visible .card__media { filter: blur(16px); transform: scale(1.04); }
   .card:hover .card__title,
   .card:focus-visible .card__title { opacity: 1; }
+  /* Motion cards: no blur and no title on hover, so the motion stays visible.
+     Keyboard focus still shows the title. */
+  .card--motion:hover .card__media,
+  .card--motion:focus-visible .card__media { filter: none; transform: none; }
+  .card--motion:hover:not(:focus-visible) .card__title { opacity: 0; }
 }
 
 /* Touch fallback: title always visible */
@@ -273,9 +286,19 @@ a { color: inherit; }
   background: var(--surface);
   display: grid;
   place-items: center;
+  overflow: hidden;
+}
+.cs__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.cs__head { padding-top: 64px; }
+.cs__title { padding-top: 40px; }
+.cs__title .page-title { font-size: clamp(28px, 2.7vw, 36px); text-wrap: pretty; }
+.cs__head { padding-top: 48px; }
+.cs__head .cs__lead { margin-top: 0; }
 .cs__meta {
   margin: 0 0 16px;
   font-size: 13px;
@@ -307,7 +330,7 @@ a { color: inherit; }
 .cs__toc a:hover,
 .cs__toc a.is-active { color: var(--text); }
 
-.cs__content { max-width: 60ch; }
+.cs__content { max-width: none; }
 .cs__section { padding-bottom: 64px; scroll-margin-top: 24px; }
 .cs__section h2 {
   margin: 0;
@@ -316,6 +339,76 @@ a { color: inherit; }
   letter-spacing: -0.03em;
 }
 .cs__request p { margin: 16px 0 24px; }
+
+.cs__lead {
+  margin: 24px 0 0;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+  color: var(--text-2);
+}
+
+.cs__snapshot {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  margin: 48px 0 0;
+  font-size: 15px;
+}
+.cs__snapshot dt {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--accent-text);
+}
+.cs__snapshot dd { font-size: 17px; }
+.cs__row dt {
+  font-size: 13px;
+  color: var(--text-2);
+}
+.cs__hl { color: var(--accent-text); }
+.cs__snapshot dd,
+.cs__row dd { margin: 4px 0 0; }
+
+.cs__content p,
+.cs__content ul { margin: 16px 0 0; }
+.cs__content ul { padding-left: 20px; }
+.cs__content li + li { margin-top: 8px; }
+.cs__content a { color: var(--accent-text); }
+.cs__section h3 {
+  margin: 40px 0 0;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* Pull quote: same type as the home intro */
+.cs__quote {
+  margin: 24px 0 32px;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+.cs__quote p { margin: 0; }
+
+/* Table content as stacked rows, readable on phones */
+.cs__rows { margin-top: 24px; }
+.cs__row {
+  padding: 24px;
+  border-radius: 24px;
+  background: var(--surface);
+}
+.cs__row + .cs__row { margin-top: 12px; }
+.cs__section .cs__row-title { margin: 0; font-size: 17px; }
+.cs__row dl { margin: 12px 0 0; }
+.cs__row dl > div + div { margin-top: 12px; }
+
+@media (max-width: 720px) {
+  .cs__lead { font-size: 20px; }
+  .cs__snapshot { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cs__quote { font-size: 22px; }
+}
 
 @media (max-width: 720px) {
   .cs__body { grid-template-columns: 1fr; gap: 24px; }
@@ -388,4 +481,99 @@ a { color: inherit; }
   .js .card--left.reveal,
   .js .card--right.reveal { opacity: 1; transform: none; }
   .card:hover .card__media { transform: none; }
+}
+
+/* Process timeline: the line fills as you scroll, each step lights up in turn */
+.steps {
+  --fill: 0;
+  position: relative;
+  margin: 40px 0 0;
+  padding: 0 0 0 40px;
+  list-style: none;
+}
+.steps::before,
+.steps::after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--surface);
+}
+.steps::after {
+  background: var(--accent);
+  transform-origin: top;
+  transform: scaleY(var(--fill));
+}
+.step {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+.step + .step { margin-top: 64px; }
+.step::before {
+  content: "";
+  position: absolute;
+  left: -40px;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--text-2);
+  z-index: 1;
+  transition: background .4s var(--ease), border-color .4s var(--ease);
+}
+.step.is-on::before { background: var(--accent); border-color: var(--accent); }
+.cs__content .step p { margin: 8px 0 0; }
+.cs__content .step .step__phase {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent-text);
+}
+.cs__content .step .step__stat {
+  margin-top: 4px;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.step__num {
+  font-size: 48px;
+  line-height: 1;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.step__tools { font-size: 13px; color: var(--text-2); }
+.step__media {
+  aspect-ratio: 16 / 10;
+  border-radius: 24px;
+  background: var(--surface);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.step__media img { width: 100%; height: 100%; object-fit: cover; }
+
+.js .step .step__text,
+.js .step .step__media {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .6s var(--ease), transform .6s var(--ease);
+}
+.js .step .step__media { transition-delay: .12s; }
+.js .step.is-seen .step__text,
+.js .step.is-seen .step__media { opacity: 1; transform: none; }
+
+@media (max-width: 720px) {
+  .step { grid-template-columns: 1fr; gap: 16px; }
+  .step__num { font-size: 40px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .step .step__text,
+  .js .step .step__media { opacity: 1; transform: none; }
 }

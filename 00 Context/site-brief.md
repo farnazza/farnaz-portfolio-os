@@ -30,6 +30,7 @@
 - Cards are visual only (full image or animated device mockup). No title under the card.
 - Home featured cards: mosaic of two squares side by side, then one full-width card, repeating (6 cards: square, square, wide, square, square, wide). Reference: tomasnozina.com home.
 - Card hover: the image blurs and the project title appears over it.
+- Cards with a motion mockup (decided 2026-11-04): a still frame until hovered or scrolling; plays on hover and while the page scrolls; no blur and no title on hover (changed 2026-11-05), title shows on keyboard focus and on touch screens. Background `#BABBC1` (mockup background, changed 2026-11-05). Phone and desktop mockups with micro animations, recorded from the live prototype with /mockup-motion. With reduced motion on, only the still frame shows.
 - Mobile / touch fallback: project title always visible over the image (no hover needed).
 - Card shape, image ratio, corners and grid spacing: reference tomasnozina.com.
 - No shadows on cards (decided in /visual-direction, 2026-11-02).

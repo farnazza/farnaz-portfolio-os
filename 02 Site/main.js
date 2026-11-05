@@ -37,6 +37,59 @@ if ("IntersectionObserver" in window) {
   reveals.forEach((el) => el.classList.add("is-in"));
 }
 
+// Motion cards: still frame until hovered or scrolling; never plays with reduced motion
+const cardVideos = document.querySelectorAll(".card__video");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+if (cardVideos.length) {
+  const inView = new Set();
+  const hovered = new Set();
+  let scrollTimer = 0;
+  const play = (v) => { if (!reduceMotion.matches) v.play().catch(() => {}); };
+  const pause = (v) => { if (!hovered.has(v)) v.pause(); };
+
+  cardVideos.forEach((v) => {
+    const card = v.closest(".card");
+    card.addEventListener("mouseenter", () => { hovered.add(v); play(v); });
+    card.addEventListener("mouseleave", () => { hovered.delete(v); v.pause(); });
+    card.addEventListener("focus", () => { hovered.add(v); play(v); });
+    card.addEventListener("blur", () => { hovered.delete(v); v.pause(); });
+  });
+
+  if ("IntersectionObserver" in window) {
+    const watch = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) inView.add(e.target);
+        else { inView.delete(e.target); pause(e.target); }
+      });
+    });
+    cardVideos.forEach((v) => watch.observe(v));
+  }
+
+  window.addEventListener("scroll", () => {
+    inView.forEach(play);
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(() => inView.forEach(pause), 600);
+  }, { passive: true });
+
+  reduceMotion.addEventListener?.("change", () => {
+    if (reduceMotion.matches) cardVideos.forEach((v) => v.pause());
+  });
+}
+
+// Case study cover: plays while in view; never plays with reduced motion
+const coverVideo = document.querySelector(".cs__video");
+if (coverVideo && "IntersectionObserver" in window) {
+  new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting && !reduceMotion.matches) coverVideo.play().catch(() => {});
+      else coverVideo.pause();
+    });
+  }).observe(coverVideo);
+  reduceMotion.addEventListener?.("change", () => {
+    if (reduceMotion.matches) coverVideo.pause();
+  });
+}
+
 // Case study: highlight the section in view
 const tocLinks = document.querySelectorAll(".cs__toc a");
 if (tocLinks.length && "IntersectionObserver" in window) {
@@ -52,4 +105,41 @@ if (tocLinks.length && "IntersectionObserver" in window) {
     const el = document.getElementById(id);
     if (el) spy.observe(el);
   });
+}
+
+// Process timeline: steps slide in, numbers count up, the line fills with scroll
+const steps = document.querySelectorAll(".step");
+const stepList = document.querySelector(".steps");
+if (steps.length && "IntersectionObserver" in window) {
+  const countUp = (el) => {
+    const end = Number(el.dataset.count);
+    if (reduceMotion.matches || !end) return;
+    const start = performance.now();
+    const tick = (now) => {
+      const t = Math.min((now - start) / 900, 1);
+      el.textContent = Math.round(end * (1 - Math.pow(1 - t, 3)));
+      if (t < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+  const seen = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add("is-seen");
+      e.target.querySelectorAll("[data-count]").forEach(countUp);
+      seen.unobserve(e.target);
+    });
+  }, { rootMargin: "0px 0px -15% 0px" });
+  steps.forEach((s) => seen.observe(s));
+
+  const fill = () => {
+    const r = stepList.getBoundingClientRect();
+    const mid = window.innerHeight / 2;
+    const p = Math.min(Math.max((mid - r.top) / r.height, 0), 1);
+    stepList.style.setProperty("--fill", p.toFixed(3));
+    steps.forEach((s) => s.classList.toggle("is-on", s.getBoundingClientRect().top < mid));
+  };
+  window.addEventListener("scroll", fill, { passive: true });
+  window.addEventListener("resize", fill);
+  fill();
 }

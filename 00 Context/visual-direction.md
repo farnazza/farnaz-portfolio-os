@@ -11,6 +11,7 @@ Buttons / pills: #FFFFFF (sampled, Tomas pill buttons)
 Text primary: #0E0E0E (sampled, Jay Brown screenshot)
 Text secondary: #666666 (darkened from sampled #6D6D6D to pass WCAG AA: about 4.8:1 on #ECECEC)
 Accent: #6E64FD (supplied by me, 2026-11-02)
+Mockup background: #BABBC1 (sampled from my swatch, 2026-11-05). Exception to "color comes from the project work itself": used only as the background behind device mockups in card media. Not for UI, text or other surfaces.
 
 Accent contrast (WCAG 2.2 AA):
 - On #ECECEC background: 3.62:1
@@ -25,7 +26,7 @@ Accent usage rules:
 - If a button is filled with the accent, its label is #0E0E0E (passes at 4.51:1), or #FFFFFF only when the label is large text.
 - Small accent text (inline links, small labels): use Accent text #4F43FD (chosen by me, 2026-11-03). Same hue as #6E64FD, darker. Contrast: 5.00:1 on #ECECEC, 5.51:1 on #F7F7F4, 5.91:1 on #FFFFFF.
 - #4F43FD is a shade of the one accent, not a second accent. Use it only for small text. Use #6E64FD everywhere else.
-Do not introduce any other colors. Project images and mockups carry their own color; UI does not.
+Do not introduce any other colors. Project images and mockups carry their own color; UI does not. The one exception is the mockup background #BABBC1 above.
 
 ## Typography
 
