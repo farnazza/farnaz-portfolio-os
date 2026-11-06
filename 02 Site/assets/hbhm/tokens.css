@@ -1,6 +1,6 @@
 /* Her Body, Her Mind tokens, from 01 Projects/.../Assets/design system-tokens/tokens.css (export of 6 Nov 2026).
-   Scoped to #hbhm-ds (bento) and #hbhm-hp (happy path) by a script; values unchanged. Re-run the script after a new export, don't edit by hand. */
-:is(#hbhm-ds, #hbhm-hp), :is(#hbhm-ds, #hbhm-hp) {
+   Scoped to #hbhm-ds (bento), #hbhm-hp (happy path) and #hbhm-hero (case study hero) by a script; values unchanged. Re-run the script after a new export, don't edit by hand. */
+:is(#hbhm-ds, #hbhm-hp, #hbhm-hero), :is(#hbhm-ds, #hbhm-hp, #hbhm-hero) {
   --color-black: #000000; 
   --color-white: #ffffff; 
   --color-twilight-50: #f7edff; 
@@ -139,7 +139,7 @@
   --shadow-sheet: 0 -4px 16px 0 #1e1b1614; 
   --color-overlay-hero: #1e1b1680;
   --shadow-text-hero: 0 1px 8px #1e1b1673; }
-:is(#hbhm-ds, #hbhm-hp)[data-theme="dark"] {
+:is(#hbhm-ds, #hbhm-hp, #hbhm-hero)[data-theme="dark"] {
   --color-content-primary: var(--color-sand-50);
   --color-content-secondary: var(--color-sand-200);
   --color-content-tertiary: var(--color-sand-300);
@@ -193,7 +193,7 @@
   --color-status-info: var(--color-info-200);
   --color-status-inactive: var(--color-sand-500);
   color-scheme: dark; }
-:is(#hbhm-ds, #hbhm-hp) {
+:is(#hbhm-ds, #hbhm-hp, #hbhm-hero) {
   --spacing-0: 0px; 
   --spacing-1: 4px; 
   --spacing-2: 8px; 
@@ -264,104 +264,104 @@
   --text-label-default: 500 14px/1.25 var(--font-body); 
   --text-label-small: 500 12px/1.25 var(--font-body); 
   --text-overline: 500 12px/1.3 var(--font-body); }
-:is(#hbhm-ds, #hbhm-hp) .heading-display {
+:is(#hbhm-ds, #hbhm-hp, #hbhm-hero) .heading-display {
   font-family: var(--font-heading);
   font-size: 40px;
   line-height: 1.1;
   font-weight: 400;
   letter-spacing: -0.01em; }
-:is(#hbhm-ds, #hbhm-hp) .heading-h1 {
+:is(#hbhm-ds, #hbhm-hp, #hbhm-hero) .heading-h1 {
   font-family: var(--font-heading);
   font-size: 32px;
   line-height: 1.15;
   font-weight: 400;
   letter-spacing: -0.005em; }
-:is(#hbhm-ds, #hbhm-hp) .heading-h2 {
+:is(#hbhm-ds, #hbhm-hp, #hbhm-hero) .heading-h2 {
   font-family: var(--font-heading);
   font-size: 28px;
   line-height: 1.2;
   font-weight: 400;
   letter-spacing: 0; }
-:is(#hbhm-ds, #hbhm-hp) .heading-h3 {
+:is(#hbhm-ds, #hbhm-hp, #hbhm-hero) .heading-h3 {
   font-family: var(--font-heading);
   font-size: 24px;
   line-height: 1.25;
   font-weight: 600;
   letter-spacing: 0; }
-:is(#hbhm-ds, #hbhm-hp) .heading-h4 {
+:is(#hbhm-ds, #hbhm-hp, #hbhm-hero) .heading-h4 {
   font-family: var(--font-heading);
   font-size: 20px;
   line-height: 1.3;
   font-weight: 600;
   letter-spacing: 0; }
-:is(#hbhm-ds, #hbhm-hp) .heading-h5 {
+:is(#hbhm-ds, #hbhm-hp, #hbhm-hero) .heading-h5 {
   font-family: var(--font-heading);
   font-size: 18px;
   line-height: 1.3;
   font-weight: 600;
   letter-spacing: 0; }
-:is(#hbhm-ds, #hbhm-hp) .quote {
+:is(#hbhm-ds, #hbhm-hp, #hbhm-hero) .quote {
   font-family: var(--font-heading);
   font-size: 24px;
   line-height: 1.3;
   font-weight: 400;
   letter-spacing: 0;
   font-style: italic; }
-:is(#hbhm-ds, #hbhm-hp) .body-large {
+:is(#hbhm-ds, #hbhm-hp, #hbhm-hero) .body-large {
   font-family: var(--font-body);
   font-size: 18px;
   line-height: 1.55;
   font-weight: 400;
   letter-spacing: 0; }
-:is(#hbhm-ds, #hbhm-hp) .body-default {
+:is(#hbhm-ds, #hbhm-hp, #hbhm-hero) .body-default {
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.5;
   font-weight: 400;
   letter-spacing: 0; }
-:is(#hbhm-ds, #hbhm-hp) .body-small {
+:is(#hbhm-ds, #hbhm-hp, #hbhm-hero) .body-small {
   font-family: var(--font-body);
   font-size: 14px;
   line-height: 1.45;
   font-weight: 400;
   letter-spacing: 0; }
-:is(#hbhm-ds, #hbhm-hp) .caption {
+:is(#hbhm-ds, #hbhm-hp, #hbhm-hero) .caption {
   font-family: var(--font-body);
   font-size: 12px;
   line-height: 1.4;
   font-weight: 400;
   letter-spacing: 0; }
-:is(#hbhm-ds, #hbhm-hp) .label-xlarge {
+:is(#hbhm-ds, #hbhm-hp, #hbhm-hero) .label-xlarge {
   font-family: var(--font-body);
   font-size: 18px;
   line-height: 1.25;
   font-weight: 500;
   letter-spacing: 0; }
-:is(#hbhm-ds, #hbhm-hp) .label-large {
+:is(#hbhm-ds, #hbhm-hp, #hbhm-hero) .label-large {
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.25;
   font-weight: 500;
   letter-spacing: 0; }
-:is(#hbhm-ds, #hbhm-hp) .label-default {
+:is(#hbhm-ds, #hbhm-hp, #hbhm-hero) .label-default {
   font-family: var(--font-body);
   font-size: 14px;
   line-height: 1.25;
   font-weight: 500;
   letter-spacing: 0; }
-:is(#hbhm-ds, #hbhm-hp) .label-small {
+:is(#hbhm-ds, #hbhm-hp, #hbhm-hero) .label-small {
   font-family: var(--font-body);
   font-size: 12px;
   line-height: 1.25;
   font-weight: 500;
   letter-spacing: 0; }
-:is(#hbhm-ds, #hbhm-hp) .overline {
+:is(#hbhm-ds, #hbhm-hp, #hbhm-hero) .overline {
   font-family: var(--font-body);
   font-size: 12px;
   line-height: 1.3;
   font-weight: 500;
   letter-spacing: 0.06em; }
-:is(#hbhm-ds, #hbhm-hp) .heading-displayLarge {
+:is(#hbhm-ds, #hbhm-hp, #hbhm-hero) .heading-displayLarge {
   font-family: var(--font-heading);
   font-size: 64px;
   line-height: 1.05;

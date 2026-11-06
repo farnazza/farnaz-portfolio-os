@@ -1038,3 +1038,45 @@ a { color: inherit; }
   .js .insight { opacity: 1; transform: none; transition: none; }
 }
 
+/* Case study hero (founder, 6 Nov 2026): logo and title centred, then two highlighted cards (same style as The insight) with the prototype panel beside them, 15px apart (option A) */
+.cs__title.cs-hero { padding-top: 120px; text-align: center; }
+.cs-hero .page-title { font-size: 28px; } /* founder, 6 Nov 2026: 20px smaller */
+.cs-hero__logo { display: block; width: auto; height: 48px; margin: 0 auto 24px; }
+.cs-hero__row { display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 64px; text-align: left; }
+.cs-hero__cards { flex: 0 1 660px; display: flex; flex-direction: column; gap: 16px; }
+.cs-hero__card {
+  padding: 32px;
+  border-top: 4px solid var(--accent);
+  border-radius: 24px;
+  background: var(--pill);
+  box-shadow: 0 12px 40px rgba(14, 14, 14, .08);
+}
+.cs-hero__card--meta { border-top: 0; }
+.cs-hero__card p { margin: 0; }
+/* Industry tags: The insight pill shape, filled with the accent (founder, 6 Nov 2026) */
+.cs-hero__tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 0; list-style: none; }
+.cs-hero__tags li { display: inline-flex; align-items: center; min-height: 32px; padding-inline: 14px; border-radius: 999px; background: var(--accent-text); color: #FFFFFF; font-size: 13px; font-weight: 500; } /* white on #4F43FD: 5.91:1 (white on #6E64FD would be 4.28:1, below AA at 13px) */
+.cs-hero__headline { font-size: var(--cs-lead); font-weight: 500; letter-spacing: -0.02em; line-height: 1.3; }
+.cs-hero__card .cs-hero__body { margin-top: 16px; }
+.cs-hero__meta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin: 0; }
+.cs-hero__meta .cs-hero__wide { grid-column: span 2; }
+.cs-hero__meta dt { font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--accent-text); }
+.cs-hero__meta dd { margin: 6px 0 0; font-size: 15px; line-height: 1.45; }
+.cs-hero__mock { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.js .cs-hero__cards, .js .cs-hero__mock { animation: cs-hero-in 600ms cubic-bezier(0, 0, .2, 1) both; }
+.js .cs-hero__mock { animation-delay: 150ms; }
+@keyframes cs-hero-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@media (max-width: 960px) {
+  .cs-hero__row { flex-direction: column; align-items: stretch; gap: 32px; }
+  .cs-hero__cards { flex: none; }
+  .cs-hero__mock { align-items: center; }
+}
+@media (max-width: 720px) {
+  .cs__title.cs-hero { padding-top: 64px; }
+  .cs-hero .page-title { font-size: 24px; }
+  .cs-hero__card { padding: 24px; }
+  .cs-hero__headline { font-size: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .cs-hero__cards, .js .cs-hero__mock { animation: none; }
+}
