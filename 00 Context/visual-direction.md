@@ -121,3 +121,11 @@ All motion respects prefers-reduced-motion.
 - More than a few icons. Use an icon only where it carries meaning (e.g. the email icon in the CTA).
 - Dense layouts. Keep generous whitespace.
 - An accent purple chosen by Claude.
+
+## Contact form (founder, 6 Nov 2026)
+
+- Error colour: #C01600 (`--error`), taken from the Her Body, Her Mind design system `color/error/600` by the founder. 5.3:1 on #ECECEC, 6.3:1 on white. Always with a "!" icon and words, never colour alone.
+- Fields: white fill (`--pill`), no stroke at rest, radius 24px, 47px height (textarea 165px), Manrope 17px; labels 15px/500 above every field. Focus: border #0E0E0E plus the focus ring. Error: #C01600 border, 2px.
+- ⚠️ Accepted exception (founder, 6 Nov 2026): without a stroke the white field is about 1.2:1 on #ECECEC, below the 3:1 WCAG 2.2 AA asks for input boundaries (1.4.11). Field height 47px meets the 44px touch target.
+- Submit: the dark CTA (`.cta--dark`).
+

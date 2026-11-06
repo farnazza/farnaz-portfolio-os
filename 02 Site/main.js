@@ -1,5 +1,5 @@
 // Set these once and every page picks them up.
-const EMAIL = "";               // ⚠️ your email address, e.g. "name@example.com"
+const EMAIL = "farnaz.za@icloud.com"; // shown in the contact form's error message
 const RESUME = "";              // ⚠️ path to your resume PDF, e.g. "assets/resume.pdf"
 
 document.documentElement.classList.add("js");
@@ -313,3 +313,76 @@ if (track) {
     });
   });
 }
+
+// Contact form (founder, 6 Nov 2026): checks fields on blur and on submit, sends to Formspree with fetch so the
+// visitor stays on the page. Without JavaScript the form posts normally. The Formspree ID is in the form's action.
+document.querySelectorAll("[data-cform]").forEach((form) => {
+  form.noValidate = true;
+  const done = form.nextElementSibling;
+  const send = form.querySelector(".cform__send");
+  const sendLabel = send.querySelector(".cta__label");
+  const fail = form.querySelector(".cform__fail");
+  const fields = [...form.querySelectorAll("input[required], textarea[required]")];
+  const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+  const MSG = {
+    name: "Please add your name.",
+    email: "Please add your email, so I can reply.",
+    emailBad: "This email looks incomplete. Check it has an @ and an ending like .com.",
+    message: "Please write a short message.",
+  };
+  const errorFor = (f) => {
+    const v = f.value.trim();
+    if (!v) return MSG[f.name];
+    if (f.name === "email" && !isEmail(v)) return MSG.emailBad;
+    return "";
+  };
+  const check = (f) => {
+    const msg = errorFor(f);
+    const err = document.getElementById(f.getAttribute("aria-describedby"));
+    err.textContent = msg;
+    err.hidden = !msg;
+    f.classList.toggle("is-error", !!msg);
+    if (msg) f.setAttribute("aria-invalid", "true"); else f.removeAttribute("aria-invalid");
+    return !msg;
+  };
+  fields.forEach((f) => {
+    f.addEventListener("blur", () => { if (f.value.trim() || f.classList.contains("is-error")) check(f); });
+    f.addEventListener("input", () => {
+      f.classList.toggle("is-filled", !!f.value.trim());
+      if (f.classList.contains("is-error")) check(f);
+    });
+  });
+
+  // A case study request link can pass its own subject, e.g. contact.html?subject=Full case study request: …
+  const subject = new URLSearchParams(location.search).get("subject");
+  if (subject) form.querySelector('[name="_subject"]').value = subject.slice(0, 120);
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const bad = fields.filter((f) => !check(f));
+    if (bad.length) { bad[0].focus(); return; }
+    fail.hidden = true;
+    send.disabled = true;
+    sendLabel.textContent = "Sending…";
+    try {
+      const res = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
+      if (!res.ok) throw new Error(res.status);
+      form.classList.add("is-leaving");
+      setTimeout(() => {
+        form.hidden = true;
+        done.hidden = false;
+        done.focus({ preventScroll: true });
+      }, reduceMotion.matches ? 0 : 300);
+    } catch {
+      fail.innerHTML = "";
+      const mail = EMAIL ? Object.assign(document.createElement("a"), { href: `mailto:${EMAIL}`, textContent: EMAIL }) : document.createTextNode("⚠️ [MY EMAIL]");
+      const text = document.createElement("span");
+      text.append("Something went wrong. Please try again, or email me directly at ", mail, ".");
+      fail.append(text);
+      fail.hidden = false;
+      send.disabled = false;
+      sendLabel.textContent = "Send message";
+    }
+  });
+});
+

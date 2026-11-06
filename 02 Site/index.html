@@ -25,7 +25,7 @@
         <p class="hero__text">a Berlin-based product designer with 7+ years in digital products. My mixed bag of crafts shapes how I think and design.</p>
         <p class="hero__text hero__thesis">I work with AI-assisted workflows I build myself, starting from people and ending with a test.</p>
         <ul class="stack" aria-label="My AI stack"><li>Claude Code</li><li>Claude Design</li><li>ChatGPT</li><li>Figma</li><li>FigJam</li></ul>
-        <a class="cta cta--dark hero__cta" data-email data-subject="Let's work together" href="#"><svg class="cta__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="cta__label">Let’s work together</span></a>
+        <a class="cta cta--dark hero__cta" href="#contact"><svg class="cta__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="cta__label">Let’s work together</span></a>
       </div>
       <div class="hstack" aria-label="Case studies">
           <a class="hstack__card" href="herbody-her-mind.html" data-tag="Own project · Since September 2025 · AI-assisted" data-title="Her Body, Her Mind" data-problem="Designing a first service for women caring for someone with cancer using AI-assisted workflows as solo founder" aria-label="Her Body, Her Mind"><img src="assets/herbody-her-mind/stack.jpg" alt=""></a>
@@ -41,10 +41,32 @@
   <footer class="site-footer" id="contact">
     <div class="container footer">
       <p class="footer__label">Contact</p>
-      <div class="footer__ctas">
-        <a class="cta" data-email href="#"><svg class="cta__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="cta__label">Email me</span></a>
-        <a class="cta" data-resume href="#" download><svg class="cta__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="cta__label">Download resume</span></a>
-      </div>
+        <h2 class="cform__title" id="cf-title">Have an idea or a problem to untangle? Say hello.</h2>
+        <!-- Formspree: replace YOUR_FORM_ID with your form's ID (formspree.io, your form, Integration). The same form is in index.html and contact.html. -->
+        <form class="cform" data-cform method="POST" action="https://formspree.io/f/YOUR_FORM_ID" aria-labelledby="cf-title">
+          <input type="hidden" name="_subject" value="New message from portfolio">
+          <div class="cform__hp" aria-hidden="true"><label>Leave this empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+          <div class="cform__field">
+            <label for="cf-name">Name</label>
+            <input id="cf-name" name="name" type="text" autocomplete="name" required aria-describedby="cf-name-err">
+            <p class="cform__err" id="cf-name-err" hidden></p>
+          </div>
+          <div class="cform__field">
+            <label for="cf-email">Email</label>
+            <input id="cf-email" name="email" type="email" autocomplete="email" required aria-describedby="cf-email-err">
+            <p class="cform__err" id="cf-email-err" hidden></p>
+          </div>
+          <div class="cform__field">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" rows="6" required aria-describedby="cf-message-err"></textarea>
+            <p class="cform__err" id="cf-message-err" hidden></p>
+          </div>
+          <div class="cform__actions">
+            <button class="cta cta--dark cform__send" type="submit"><span class="cta__label">Send message</span></button>
+            <p class="cform__fail" role="alert" hidden></p>
+          </div>
+        </form>
+        <p class="cform__done" tabindex="-1" aria-live="polite" hidden>Thanks, your message is on its way. I’ll get back to you soon.</p>
       <p class="todo" data-config-note hidden></p>
     </div>
   </footer>

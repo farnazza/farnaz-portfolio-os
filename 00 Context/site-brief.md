@@ -100,3 +100,11 @@
 - Option B: under the card stack, the front card's tag and dates, title and description, with previous and next arrows and a count ("3 / 6"). The stack no longer rotates by itself.
 - Dates: Her Body, Her Mind since September 2025; Data viz 2022 to 2024; Profile & Settings 2022 to 2023; Fee summary 2023 to 2024; First time user experience 2023 to 2024; Zizoo 2020 to 2021.
 
+## Contact form (founder, 6 Nov 2026)
+
+- Lives on `contact.html` and in the home page footer. Project and other pages link to `contact.html` ("Say hello" in the footer; nav "Contact"). The home hero "Let's work together" scrolls to the footer form.
+- About me: a dark "Say hello" CTA under the second paragraph opens `contact.html`; the About and contact pages have no footer. "Download resume" is removed from every page (founder, 6 Nov 2026).
+- The form's error message links to farnaz.za@icloud.com (`EMAIL` in main.js).
+- Fields: Name, Email, Message, all required. Heading: "Have an idea or a problem to untangle? Say hello." Success: "Thanks, your message is on its way. I'll get back to you soon."
+- Formspree: `action="https://formspree.io/f/YOUR_FORM_ID"` in index.html and contact.html; hidden `_subject` "New message from portfolio" (SumUp "Request the full case study" links pass their own subject); `_gotcha` honeypot; sent with fetch, plain POST without JavaScript.
+

@@ -7,6 +7,7 @@
   --text-2: #666666;
   --accent: #6E64FD;      /* large text, icons, focus, shapes */
   --accent-text: #4F43FD; /* small accent text only */
+  --error: #C01600;       /* form errors, from the HBHM design system error/600 (founder, 6 Nov 2026); 5.3:1 on --bg, 6.3:1 on white */
   --mockup-bg: #D4D5DA;   /* behind device mockups only */
   --font: "Manrope", system-ui, sans-serif;
 
@@ -879,9 +880,10 @@ a { color: inherit; }
   line-height: 1.6;
   color: var(--text-2);
 }
+.aboutme__action { margin: 32px 0 0 calc(50% - 6ch); text-align: left; }
 @media (max-width: 720px) {
   .aboutme__intro { font-size: 20px; }
-  .aboutme__more { margin-left: 15%; }
+  .aboutme__more, .aboutme__action { margin-left: 15%; }
 }
 
 /* Experience string: the line draws with scroll, one dot per role (most recent first), education last */
@@ -938,4 +940,59 @@ a { color: inherit; }
 }
 @media (prefers-reduced-motion: reduce) {
   .js .tl__item { opacity: 1; transition: none; }
+}
+
+/* Contact form (founder, 6 Nov 2026; no stroke at rest by founder decision, 47px fields, an accepted accessibility exception): on the contact page and in the home page footer. Formspree, sent with fetch. */
+.cform__title { margin: 0 0 32px; max-width: 18ch; font-size: 40px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; }
+.cpage .cform__title { margin-bottom: 48px; font-size: clamp(36px, 5vw, 64px); max-width: 16ch; letter-spacing: -0.04em; line-height: 1.04; }
+.cform[hidden], .cform__done[hidden], .cform__err[hidden], .cform__fail[hidden] { display: none; }
+.cform, .cform__done { max-width: 640px; }
+.cform { display: grid; gap: 24px; margin-bottom: 48px; }
+.cform__field label { display: block; margin-bottom: 8px; font-size: 15px; font-weight: 500; }
+.cform input, .cform textarea {
+  display: block;
+  width: 100%;
+  min-height: 47px;
+  padding: 6px 20px;
+  border: 1.5px solid transparent;
+  border-radius: 24px;
+  background: var(--pill);
+  color: var(--text);
+  font: inherit;
+  font-size: 17px;
+  transition: border-color .3s var(--ease), box-shadow .3s var(--ease);
+}
+.cform textarea { min-height: 165px; padding-block: 10px; resize: vertical; line-height: 1.5; }
+.cform input:focus, .cform textarea:focus { border-color: var(--text); }
+.cform .is-error, .cform .is-error:hover, .cform .is-error:focus { border-color: var(--error); box-shadow: inset 0 0 0 1px var(--error); }
+.cform__err, .cform__fail { display: flex; gap: 8px; align-items: flex-start; margin: 8px 0 0; font-size: 15px; line-height: 1.4; color: var(--error); }
+.cform__err::before, .cform__fail::before {
+  content: "!";
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+  border-radius: 50%;
+  background: var(--error);
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 600;
+}
+.cform__fail a { color: inherit; }
+.cform__actions { display: grid; gap: 16px; justify-items: start; }
+.cform__send { border: 0; font: inherit; font-size: 15px; font-weight: 500; cursor: pointer; }
+.cform__send:disabled { opacity: .6; cursor: progress; }
+.cform__hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.cform__done { margin: 0 0 48px; font-size: var(--cs-lead, 28px); font-weight: 500; letter-spacing: -0.02em; line-height: 1.3; }
+.cform__done:focus { outline: none; }
+.cform, .cform__done { transition: opacity .3s var(--ease); }
+.cform.is-leaving { opacity: 0; }
+@media (max-width: 720px) {
+  .cform__title { font-size: 28px; }
+  .cform__done { font-size: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cform, .cform__done, .cform input, .cform textarea { transition: none; }
 }
