@@ -394,3 +394,20 @@ if (insight) {
   const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } }), { threshold: 0.15 });
   grids.forEach((g) => io.observe(g));
 })();
+
+// "My AI OS" pills: one tooltip at a time, on hover, keyboard focus or tap; Esc closes it
+const pills = [...document.querySelectorAll(".stack__pill")];
+if (pills.length) {
+  const close = () => pills.forEach((p) => p.parentElement.classList.remove("is-tip"));
+  const open = (p) => { close(); p.parentElement.classList.add("is-tip"); };
+  pills.forEach((p) => {
+    p.addEventListener("mouseenter", () => open(p));
+    p.addEventListener("mouseleave", close);
+    p.addEventListener("focus", () => open(p));
+    p.addEventListener("blur", close);
+    p.addEventListener("click", () => (p.parentElement.classList.contains("is-tip") && !p.matches(":hover") ? close() : open(p)));
+  });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+  document.addEventListener("click", (e) => { if (!e.target.closest(".stack__pill")) close(); });
+}
+

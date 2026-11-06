@@ -145,5 +145,16 @@
 
 ## Cache (6 Nov 2026)
 
-- Every page links its stylesheets and scripts with a version tag (`style.css?v=20261106b`). GitHub Pages lets browsers keep these files for 10 minutes, so a visitor could get a new page with an old stylesheet. Change the tag on every page whenever CSS or JS changes, before sending to GitHub.
+- Every page links its stylesheets and scripts with a version tag (`style.css?v=20261106i`). GitHub Pages lets browsers keep these files for 10 minutes, so a visitor could get a new page with an old stylesheet. Change the tag on every page whenever CSS or JS changes, before sending to GitHub.
 
+## Home hero refresh (founder, 6 Nov 2026)
+
+- One column: intro, then the card stack below it on every screen size (it was in a right column on desktop).
+- Copy (founder's): intro "a Berlin-based product designer with 7+ years in digital products. I connect research, UX, UI and motion into one practice, from first insight to final animation." Second paragraph "I build my own AI-assisted workflows, starting from people and ending with a test. AI speeds me up. Every decision is mine."
+- "My AI OS" label (case study label style) above the pills. Tooltips: Claude Code "Builds and ships this portfolio."; Claude Design "The source of truth for my design systems."; ChatGPT "Helps me write up and document my case studies." (Claude's suggestion from the honesty rule above); Figma "Where I explore and refine UI."; FigJam "Where I map journeys, run workshops and synthesise research." (founder added "synthesise").
+- Buttons: "See my work" (outline) scrolls to the card stack; "Let's work together" (dark) goes to the footer form. On phones they stack full width, dark button first.
+- Proof line removed (founder, 6 Nov 2026). The neue fische tag was tried and removed (founder, 6 Nov 2026). "My AI OS" label 17px, 600. More space before the highlighted paragraph (32px) and above the label (48px). Contact form centred in the home footer and on the contact page. On phones the card fan is clipped at the screen edge so the page no longer scrolls sideways. Everything in the hero is centred; the first paragraph is 20px and exactly as wide as the headline; the second paragraph has the light purple marker from the Her Body, Her Mind case study, with dark text.
+- Staggered fade and lift on load, 500ms each, 100ms apart; still with reduced motion.
+- Home footer label now reads "Say hello" at 17px, 600, accent text (founder, 6 Nov 2026). The Her Body, Her Mind stack card image was rebuilt: no flat black phone frame, the screen on white with rounded corners and a soft shadow, like the other stack cards (old version kept in the scratchpad).
+- About page: the "About me" headline is now 40px (28px on phones), the size of the contact heading, set below the portrait instead of overlapping it (founder, 6 Nov 2026).
+- About page intro now matches the home hero's first paragraph (20px, line height 1.5, #666), and the second paragraph has the same style in the same centred 420px column, 48px below (founder, 6 Nov 2026; replaces the 28px intro and the off-centre second paragraph). "Say hello" centred under them.

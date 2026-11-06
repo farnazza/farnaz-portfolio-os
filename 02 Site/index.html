@@ -7,8 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap">
-  <link rel="stylesheet" href="style.css?v=20261106b">
-  <script src="main.js?v=20261106b" defer></script>
+  <link rel="stylesheet" href="style.css?v=20261106i">
+  <script src="main.js?v=20261106i" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -21,13 +21,19 @@
   <main id="main">
     <section class="hero container section" id="work">
       <div class="hero__intro">
+        <div class="hero__lead">
         <h1 class="hero__title">Hi, I’m Farnaz,</h1>
-        <p class="hero__text">a Berlin-based product designer with 7+ years in digital products. My mixed bag of crafts shapes how I think and design.</p>
-        <p class="hero__text hero__thesis">I work with AI-assisted workflows I build myself, starting from people and ending with a test.</p>
-        <ul class="stack" aria-label="My AI stack"><li>Claude Code</li><li>Claude Design</li><li>ChatGPT</li><li>Figma</li><li>FigJam</li></ul>
-        <a class="cta cta--dark hero__cta" href="#contact"><svg class="cta__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="cta__label">Let’s work together</span></a>
+        <p class="hero__text">a Berlin-based product designer with 7+ years in digital products. I connect research, UX, UI and motion into one practice, from first insight to final animation.</p>
+        </div>
+        <p class="hero__text hero__thesis"><span class="hero__mark">I build my own AI-assisted workflows, starting from people and ending with a test. AI speeds me up. Every decision is mine.</span></p>
+        <p class="cs__label hero__label" id="ai-os">My AI OS</p>
+        <ul class="stack" aria-labelledby="ai-os"><li><button class="stack__pill" type="button" aria-describedby="tip-1">Claude Code</button><span class="stack__tip" id="tip-1" role="tooltip">Builds and ships this portfolio.</span></li><li><button class="stack__pill" type="button" aria-describedby="tip-2">Claude Design</button><span class="stack__tip" id="tip-2" role="tooltip">The source of truth for my design systems.</span></li><li><button class="stack__pill" type="button" aria-describedby="tip-3">ChatGPT</button><span class="stack__tip" id="tip-3" role="tooltip">Helps me write up and document my case studies.</span></li><li><button class="stack__pill" type="button" aria-describedby="tip-4">Figma</button><span class="stack__tip" id="tip-4" role="tooltip">Where I explore and refine UI.</span></li><li><button class="stack__pill" type="button" aria-describedby="tip-5">FigJam</button><span class="stack__tip" id="tip-5" role="tooltip">Where I map journeys, run workshops and synthesise research.</span></li></ul>
+        <div class="hero__ctas">
+          <a class="cta cta--outline" href="#cases"><span class="cta__label">See my work</span></a>
+          <a class="cta cta--dark hero__cta" href="#contact"><svg class="cta__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="cta__label">Let’s work together</span></a>
+        </div>
       </div>
-      <div class="hstack" aria-label="Case studies">
+      <div class="hstack" id="cases" aria-label="Case studies">
           <a class="hstack__card" href="herbody-her-mind.html" data-tag="Own project · Since September 2025 · AI-assisted" data-title="Her Body, Her Mind" data-problem="Designing a first service for women caring for someone with cancer using AI-assisted workflows as solo founder" aria-label="Her Body, Her Mind"><img src="assets/herbody-her-mind/stack.jpg" alt=""></a>
           <a class="hstack__card" href="sumup-data-viz.html" data-tag="SumUp · 2022 to 2024" data-title="Building SumUp’s Chart System" data-problem="I systemized SumUp’s complex chart patterns, with many variables and states, into simple building blocks. Designers and engineers can now build consistent charts faster, from dashboards to the homescreen sales widget." aria-label="Data viz for SumUp products"><img src="assets/sumup-data-viz/stack.jpg" alt="" style="--pos: 78% 50%"></a>
           <a class="hstack__card" href="sumup-first-time-user-experience.html" data-tag="SumUp · 2023 to 2024" data-title="Shaping How New Users Get Started" data-problem="I helped define how new users get started after sign-up. I mapped the journey, built the logic that routes users to what they need, and designed the cards, banners, and states that guide them to activation." aria-label="First time user experience"><img src="assets/sumup-first-time-user-experience/stack.jpg" alt=""></a>
@@ -40,7 +46,7 @@
   </main>
   <footer class="site-footer" id="contact">
     <div class="container footer">
-      <p class="footer__label">Contact</p>
+      <p class="footer__label footer__label--hello">Say hello</p>
         <h2 class="cform__title" id="cf-title">Have an idea or a problem to untangle? Say hello.</h2>
         <!-- Formspree form meaadwvb (formspree.io). The same form is in index.html and contact.html; change the ID in both. -->
         <form class="cform" data-cform method="POST" action="https://formspree.io/f/meaadwvb" aria-labelledby="cf-title">

@@ -10,7 +10,8 @@ Background texture: small static white dots (#FFFFFF, 1 to 1.8px, randomly place
 Surface (light cards, panels): #F7F7F4 (sampled, Tomas "Pagent" card)
 Buttons / pills: #FFFFFF (sampled, Tomas pill buttons)
 Hero card stack: no outline, surface #F7F7F4 behind each card's image, 380px wide on desktop (founder, 5 Nov 2026).
-AI stack pills: surface #F7F7F4 fill, no outline, text primary labels (founder, 5 Nov 2026). Labels only, not buttons.
+AI stack pills: surface #F7F7F4 fill, no outline, text primary labels (founder, 5 Nov 2026). Since 6 Nov 2026 (founder): "My AI OS" pills, 44px tall, each shows a one-line tooltip (#0E0E0E fill, white 13px text) on hover, focus or tap.
+Outline button (founder, 6 Nov 2026): the CTA pill with a transparent fill and a 1.5px #0E0E0E outline, for secondary actions such as "See my work".
 Dark button: the hero CTA "Let's work together" uses text primary #0E0E0E as its fill with a #FFFFFF label (founder, 5 Nov 2026; contrast about 19:1). The email icon stays accent #6E64FD (about 4.5:1 on #0E0E0E).
 Text primary: #0E0E0E (sampled, Jay Brown screenshot)
 Text secondary: #666666 (darkened from sampled #6D6D6D to pass WCAG AA: about 4.8:1 on #ECECEC)
