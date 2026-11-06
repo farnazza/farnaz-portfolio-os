@@ -115,3 +115,13 @@
 - 🟡 "Weekday evenings" comes from desk research (landscape section 4), not from participants; kept by the founder.
 - Fades and lifts 12px in 500ms the first time it scrolls into view; still with reduced motion.
 
+## Her Body, Her Mind: happy path (founder, 6 Nov 2026)
+
+- The design system part of the case study shows only its heading, then the bento; the paragraph and the six bullets were removed (founder, 6 Nov 2026).
+
+- Replaces the "Visual to come: the chosen concept" placeholder in Act 3. Four live panels from the prototype, in HBHM tokens and components (no phone frames): S1 Upcoming workshops (clay card only), S2 Event detail (Open), S3 Sign up (larger cell), S4 You're signed up. Grid with thin divider lines; captions "Bold title. Muted description."; "Try it" on each panel; one "Restart".
+- Panel 1: clicking the clay card opens the event detail inside the same panel, as in the prototype, with an "All workshops" back link (founder, 6 Nov 2026).
+- Finishing a step lights up the next panel (scrolls to it on phones) and announces it. First name and the emails choice carry over to S4 ("You're signed up, [first name]", from implementation-document.md). Nothing is sent or stored.
+- Copy from the prototype screens, with the founder's fixes (Barsega studio, 2 PM, capital H) and the founder's privacy text. Left out: back links, the hero, "What you'll do" (example wording), "See all workshops", "Contact us" and "Read the privacy notice" (no pages behind them).
+- Photo: `02 Site/assets/hbhm/workshop-clay.jpg` (founder's), also used in the bento's event card.
+
