@@ -106,5 +106,5 @@
 - About me: a dark "Say hello" CTA under the second paragraph opens `contact.html`; the About and contact pages have no footer. "Download resume" is removed from every page (founder, 6 Nov 2026).
 - The form's error message links to farnaz.za@icloud.com (`EMAIL` in main.js).
 - Fields: Name, Email, Message, all required. Heading: "Have an idea or a problem to untangle? Say hello." Success: "Thanks, your message is on its way. I'll get back to you soon."
-- Formspree: `action="https://formspree.io/f/YOUR_FORM_ID"` in index.html and contact.html; hidden `_subject` "New message from portfolio" (SumUp "Request the full case study" links pass their own subject); `_gotcha` honeypot; sent with fetch, plain POST without JavaScript.
+- Formspree: form `meaadwvb`, `action="https://formspree.io/f/meaadwvb"` in index.html and contact.html (tested 6 Nov 2026: Formspree answered 200 ok); hidden `_subject` "New message from portfolio" (SumUp "Request the full case study" links pass their own subject); `_gotcha` honeypot; sent with fetch, plain POST without JavaScript.
 
