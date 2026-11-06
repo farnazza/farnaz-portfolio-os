@@ -896,17 +896,13 @@ a { color: inherit; }
 .tl__item { margin: 0 0 32px; }
 .js .tl__item { position: absolute; margin: 0; width: max-content; opacity: 0; transition: opacity .6s var(--ease); }
 .js .tl__item.is-in { opacity: 1; }
-.tl__btn {
+.tl__head {
   display: flex;
   align-items: center;
   gap: 12px;
+  margin: 0;
   padding: 8px;
-  border: 0;
-  background: none;
-  color: inherit;
   font: inherit;
-  text-align: inherit;
-  cursor: pointer;
 }
 .tl__dot {
   flex: none;
@@ -917,7 +913,10 @@ a { color: inherit; }
   background: var(--bg);
   transition: background .3s, border-color .3s;
 }
-.tl__btn[aria-expanded="true"] .tl__dot { border-color: var(--accent); background: var(--accent); }
+/* Progressive disclosure on scroll (founder, 6 Nov 2026): when the line reaches a dot, the dot fills and the logo and details fade up, then stay */
+.tl__item.is-in .tl__dot { border-color: var(--accent); background: var(--accent); }
+.js .tl__item :is(.tl__logo, .tl__more) { opacity: 0; transform: translateY(8px); transition: opacity .6s var(--ease) .25s, transform .6s var(--ease) .25s; }
+.js .tl__item.is-in :is(.tl__logo, .tl__more) { opacity: 1; transform: none; }
 .tl__short { white-space: nowrap; font-size: 20px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.2; }
 .tl__more { max-width: 34ch; padding: 0 8px 0 34px; }
 /* Company logo under the name, lined up with the label text (founder, 2026-11-05); the name is in the label, so the logo is decorative */
@@ -929,7 +928,7 @@ a { color: inherit; }
 .tl__meta { color: var(--text-2); }
 /* Labels on the left of the line: dot on the right, text right-aligned */
 .tl__item--left { text-align: right; }
-.tl__item--left .tl__btn { flex-direction: row-reverse; margin-left: auto; }
+.tl__item--left .tl__head { flex-direction: row-reverse; margin-left: auto; }
 .tl__item--left .tl__more { margin-left: auto; padding: 0 34px 0 8px; }
 /* Phones: entries flow in order; the script draws the line through the dots */
 .tl__track.is-flow .tl__items { padding-top: 40px; }
@@ -939,7 +938,7 @@ a { color: inherit; }
   .tl__short { white-space: normal; font-size: 17px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .js .tl__item { opacity: 1; transition: none; }
+  .js .tl__item, .js .tl__item :is(.tl__logo, .tl__more) { opacity: 1; transform: none; transition: none; }
 }
 
 /* Contact form (founder, 6 Nov 2026; no stroke at rest by founder decision, 47px fields, an accepted accessibility exception): on the contact page and in the home page footer. Formspree, sent with fetch. */

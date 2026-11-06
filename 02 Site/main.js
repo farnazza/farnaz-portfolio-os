@@ -213,7 +213,7 @@ document.querySelectorAll(".story-card__toggle").forEach((b) => {
   });
 });
 
-// About me string: a winding line with one loop, drawn as you scroll; each dot fades in when the line reaches it.
+// About me string: a winding line with one loop, drawn as you scroll; when the line reaches a dot, that entry and its details fade in and stay.
 // Desktop labels alternate left and right; on phones the line is a gentle vertical path with labels on one side.
 const track = document.querySelector(".tl__track");
 if (track) {
@@ -229,7 +229,7 @@ if (track) {
     const W = track.clientWidth;
     const phone = narrow.matches;
     let pts, H;
-    // Phones: entries flow one under another (open details push the next one down); the line follows the dots
+    // Phones: entries flow one under another, details included; the line follows the dots
     track.classList.toggle("is-flow", phone);
     if (phone) {
       track.style.height = "";
@@ -289,7 +289,9 @@ if (track) {
       return;
     }
     const r = track.getBoundingClientRect();
-    const p = Math.min(Math.max((window.innerHeight * 0.75 - r.top) / r.height, 0), 1);
+    // At the bottom of the page the line finishes, so the last entry always appears
+    const atEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+    const p = atEnd ? 1 : Math.min(Math.max((window.innerHeight * 0.75 - r.top) / r.height, 0), 1);
     const drawn = len * p;
     line.style.strokeDashoffset = len - drawn;
     items.forEach((it, i) => { if (marks[i] <= drawn + 1) it.classList.add("is-in"); });
@@ -298,20 +300,6 @@ if (track) {
   window.addEventListener("resize", build);
   window.addEventListener("scroll", draw, { passive: true });
 
-  // One open dot at a time
-  items.forEach((it) => {
-    const btn = it.querySelector(".tl__btn");
-    btn.addEventListener("click", () => {
-      const open = btn.getAttribute("aria-expanded") !== "true";
-      items.forEach((o) => {
-        o.querySelector(".tl__btn").setAttribute("aria-expanded", "false");
-        o.querySelector(".tl__more").hidden = true;
-      });
-      btn.setAttribute("aria-expanded", open);
-      it.querySelector(".tl__more").hidden = !open;
-      if (narrow.matches) build();
-    });
-  });
 }
 
 // Contact form (founder, 6 Nov 2026): checks fields on blur and on submit, sends to Formspree with fetch so the
