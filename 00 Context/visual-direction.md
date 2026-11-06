@@ -113,7 +113,7 @@ All motion respects prefers-reduced-motion.
 
 - More than one accent color, or any color not listed above.
 - Borders on case study cards.
-- Shadows of any kind.
+- Shadows of any kind. Exception (founder, 6 Nov 2026): the Her Body, Her Mind insight card, a soft 0 12px 40px shadow at 8% black, with a 4px accent top line like the role cards and a white fill.
 - Gradients.
 - Fonts other than Manrope.
 - Lots of text: keep copy short, let the work carry the page.

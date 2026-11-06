@@ -374,3 +374,14 @@ document.querySelectorAll("[data-cform]").forEach((form) => {
   });
 });
 
+// The insight card fades and lifts in once, the first time it scrolls into view
+const insight = document.querySelector(".insight");
+if (insight) {
+  if ("IntersectionObserver" in window && !reduceMotion.matches) {
+    const io = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) { insight.classList.add("is-in"); io.disconnect(); }
+    }, { threshold: 0.2 });
+    io.observe(insight);
+  } else insight.classList.add("is-in");
+}
+

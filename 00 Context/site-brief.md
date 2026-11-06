@@ -108,3 +108,10 @@
 - Fields: Name, Email, Message, all required. Heading: "Have an idea or a problem to untangle? Say hello." Success: "Thanks, your message is on its way. I'll get back to you soon."
 - Formspree: form `meaadwvb`, `action="https://formspree.io/f/meaadwvb"` in index.html and contact.html (tested 6 Nov 2026: Formspree answered 200 ok); hidden `_subject` "New message from portfolio" (SumUp "Request the full case study" links pass their own subject); `_gotcha` honeypot; sent with fetch, plain POST without JavaScript.
 
+## Her Body, Her Mind: the insight card (founder, 6 Nov 2026)
+
+- "The insight" is a white card in the Research section: 4px accent top line (like the role cards) and a soft shadow (approved exception, see visual-direction.md), 32px padding, 24px radius.
+- Two columns on desktop with a thin divider, "What helps" and "What gets in the way" (labels approved by the founder); one column on phones. Quotes in `<blockquote>`, upright Manrope (no italic exists); the closing quote is the largest. Barriers as pills: Built for the patient, In German, Weekday evenings.
+- 🟡 "Weekday evenings" comes from desk research (landscape section 4), not from participants; kept by the founder.
+- Fades and lifts 12px in 500ms the first time it scrolls into view; still with reduced motion.
+
