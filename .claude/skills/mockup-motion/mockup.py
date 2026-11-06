@@ -460,7 +460,7 @@ def main():
     c.add_argument("--phone", help="folder from a phone recording")
     c.add_argument("--out", required=True, help="output path without extension")
     c.add_argument("--size", default="1248x1248", help="1248x1248 for a square card, 2544x1248 for a wide one")
-    c.add_argument("--bg", default="#F7F7F4")
+    c.add_argument("--bg", default="#D4D5DA")
     c.add_argument("--frame-color", default="#0E0E0E", help="phone frame color")
     c.add_argument("--chrome-color", default="#FFFFFF", help="browser window color")
     c.add_argument("--fps", type=int, default=60)

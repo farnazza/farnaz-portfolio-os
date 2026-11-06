@@ -13,7 +13,7 @@ Works for every project. The founder decides what is shown. Claude records it.
 
 - **Don't invent anything. Ask first.** This covers which screens, which steps, the content typed into forms, devices, colors, crops and the still frame. Use only what exists in the prototype.
 - Read before starting: `CLAUDE.md`, `00 Context/visual-direction.md`, `00 Context/site-brief.md`, and the project's `visual.md` and `motion.md` (in `01 Projects/<project>/`). Follow `.claude/voice.md` in every message.
-- Colors come only from `visual-direction.md`. Defaults: background `#BABBC1` (mockup background exception in `visual-direction.md`, founder, 5 Nov 2026), phone frame `#0E0E0E`, browser window `#FFFFFF`. No shadows, no gradients, no tilt.
+- Colors come only from `visual-direction.md`. Defaults: background `#D4D5DA` (mockup background exception in `visual-direction.md`, made lighter by the founder, 5 Nov 2026), phone frame `#0E0E0E`, browser window `#FFFFFF`. No shadows, no gradients, no tilt.
 - **3D tilt:** not built yet. The founder may want it for other case studies (4 Nov 2026), not for Her Body, Her Mind. Ask per project; if wanted, add it to `mockup.py` first and add it to `visual-direction.md`.
 - **Blocked links:** claude.ai artifact links stop headless Chrome at a "verify you are human" check. Never work around it. If the artifact is the founder's own, download it with the Artifact tool (`action: "read"`) and record the local copy.
 - **SumUp or any client work:** ask what the NDA allows before recording anything.

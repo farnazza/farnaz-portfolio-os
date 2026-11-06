@@ -8,6 +8,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=Roboto+Mono&display=swap">
+  <link rel="stylesheet" href="assets/hbhm/tokens.css">
+  <link rel="stylesheet" href="assets/hbhm/components.css">
+  <link rel="stylesheet" href="assets/hbhm/bento.css">
+  <script src="assets/hbhm/bento.js" defer></script>
   <script src="main.js" defer></script>
 </head>
 <body>
@@ -15,61 +20,109 @@
   <header class="site-header">
     <nav class="nav container" aria-label="Main">
       <a class="nav__home" href="index.html" aria-label="Farnaz Zamanian, home"><svg class="logo" viewBox="82 6 348 500" aria-hidden="true" focusable="false"><path d="M307.298 8.20898C339.814 5.30316 336.316 33.285 328.627 54.3984C308.853 108.698 273.041 160.387 232.014 201.142C224.745 208.503 216.998 215.389 208.826 221.754C200.422 228.169 191.078 231.038 186.95 240.13C183.36 248.037 179.671 256.204 176.059 264.461C166.529 286.24 179.042 309.8 200.924 300.509C234.007 286.46 257.809 255.288 276.921 226.456C288.72 208.657 299.004 190.495 317.171 178.233C333.674 165.115 365.833 166.449 377.212 186.185C401.327 228.013 365.692 281.834 332.319 306.9C328.589 309.703 326.84 315.054 327.489 319.675C328.464 326.607 335.839 328.576 341.574 324.561C378.059 299.019 393.196 285.173 421.891 244.902C422.743 243.706 423.875 242.552 425.321 242.808C427.142 243.129 428.756 244.733 428.507 246.565C427.128 256.704 405.803 280.187 400.363 286.557C394.262 293.702 387.477 300.314 380.286 306.552C351.636 331.403 332.497 365.231 315.018 398.89C309.653 409.22 303.227 419.217 295.889 429.108C272.165 459.653 240.599 495.682 200.924 503.237C181.516 506.933 166.406 496.988 163.854 477.857C163.312 421.827 260.702 370.568 309.542 344.035C313.824 341.709 316.378 337.125 315.821 332.283C315.411 328.715 314.885 325.37 314.247 321.642C313.877 319.478 311.641 318.179 309.558 318.869C300.068 321.99 280.174 325.458 276.649 312.515C275.882 309.603 276.317 306.507 277.857 303.914C290.083 283.186 329.113 291.074 344.763 272.793C349.681 267.048 354.107 260.928 357.358 254.126C365.285 237.545 380.638 193.138 351.081 182.028C321.523 170.919 293.761 221.754 272.903 249.93C266.989 257.919 261.683 266.334 255.353 274.004C252.06 277.967 248.4 281.954 244.438 285.821C206.471 322.877 137.004 354.949 118.156 404.54C115.755 410.859 111.068 421.158 107.497 430.136C104.922 436.61 97.5858 440.306 91.3115 437.274C85.1284 434.287 82.3163 426.478 85.04 420.175C90.3221 407.95 96.7966 391.263 99.7461 383.979L135.475 295.416C138.038 289.063 137.797 281.922 135.437 275.49C133.602 270.489 132.807 264.473 136.341 260.487C142.117 253.974 149.851 261.039 153.254 254.126C180.196 199.389 242.364 20.1179 307.298 8.20898ZM312.146 359.053C311.788 358.118 310.782 358.011 309.899 358.482C265.121 382.412 199.877 416.162 179.975 465.539C177.712 471.154 179.617 478.369 183.101 484.067C185.146 487.413 188.495 489.847 192.385 490.344C233.6 495.606 316.963 394.35 312.332 359.705C312.305 359.5 312.219 359.246 312.146 359.053ZM308.918 21.8477C299 26.3564 291.326 32.4171 284.113 40.5283C253.822 74.5938 217.723 160.934 201.337 204.847C200.024 208.378 198.787 211.937 197.629 215.521C200.313 213.337 202.978 211.128 205.621 208.896C246.649 169.135 282.272 125.9 306.68 74.0479C312.883 60.8682 318.46 46.3257 319.492 31.6904C320.005 24.4195 315.833 21.6544 308.918 21.8477Z" fill="currentColor"/></svg></a>
-      <ul class="nav__links"><li><a href="index.html#work">Work</a></li><li><a href="about.html">About</a></li><li><a href="playground.html">Playground</a></li><li><a href="#contact">Contact</a></li></ul>
+      <ul class="nav__links"><li><a href="about.html">About me</a></li><li><a href="playground.html">Playground</a></li><li><a href="#contact">Contact</a></li></ul>
     </nav>
   </header>
   <main id="main">
     <article class="cs">
       <header class="cs__title container">
-        <p class="cs__meta">Her Body, Her Mind · September 2025 to now</p>
-        <h1 class="page-title">Designing a first service for women caring for someone with cancer</h1>
+        <p class="cs__tags">Caregiver Support · Mental Wellbeing · FemTech</p>
+        <h1 class="page-title">Her Body, Her Mind</h1>
+        <p class="cs__lead cs__subtitle">Designing a first service for women caring for someone with cancer using AI-assisted workflows as solo founder</p>
       </header>
-      <div class="cs__cover container">
-        <video class="cs__video" muted loop playsinline preload="metadata" poster="assets/herbody-her-mind/cover-poster.jpg" aria-label="Four phone screens of the Her Body, Her Mind website: home page, upcoming workshops scrolling, a workshop page, and the filled-in sign-up form">
-          <source src="assets/herbody-her-mind/cover.webm" type="video/webm">
-          <source src="assets/herbody-her-mind/cover.mp4" type="video/mp4">
-        </video>
-      </div>
       <div class="cs__head container">
-        <p class="cs__lead">Her Body, Her Mind offers creative and reflective workshops in Berlin for women caring for someone with cancer. This case study follows it from my own caregiving to a prototype website, ready for its first usability test.</p>
+        <h2 class="cs__label">Executive summary</h2>
+        <p class="cs__summary">Her Body, Her Mind offers creative and reflective workshops in Berlin for women caring for someone with cancer. This case study follows it from my own caregiving to a prototype website, ready for its first usability test.</p>
         <dl class="cs__snapshot">
           <div><dt>Role</dt><dd>Founder and sole designer</dd></div>
           <div><dt>Timeframe</dt><dd>Project started September 2025; one week in Design OS, from brief to test-ready prototype</dd></div>
           <div><dt>Tools</dt><dd>Claude Code (Design OS) in VS Code, Google Meet, Apple Notes transcription, FigJam, Claude Design</dd></div>
           <div><dt>Status</dt><dd>Working prototype website, ready for its first usability test</dd></div>
         </dl>
-      </div>
-      <div class="cs__body container">
-        <nav class="cs__toc" aria-label="Sections"><ul><li><a href="#problem">The problem</a></li><li><a href="#where-it-started">Where it started</a></li><li><a href="#research">Research and insight</a></li><li><a href="#how-i-worked">How I worked</a></li><li><a href="#concept-to-prototype">From concept to prototype</a></li><li><a href="#decisions">Decisions as hypotheses</a></li><li><a href="#whats-next">What's next</a></li></ul></nav>
-        <div class="cs__content">
-        <section class="cs__section" id="problem">
+        <section class="cs__problem" id="problem">
           <h2>The problem</h2>
           <p>Women in Berlin who care in person for a loved one with cancer find it hard to switch off, and the support they come across is usually built for the patient, not for them. Both women I interviewed described it that way. One found a group that was “much more geared to people with cancer”.</p>
         </section>
+      </div>
+      <div class="cs__body container">
+        <nav class="cs__toc" aria-label="Acts"><ul><li><a href="#act-1">01 Listening</a></li><li><a href="#act-2">02 The system</a></li><li><a href="#act-3">03 The test</a></li></ul></nav>
+        <div class="cs__content">
+        <div class="act" id="act-1">
+          <header class="act__head"><span class="act__num" aria-hidden="true">01</span><h2 class="act__title"><span class="sr-only">Act 1: </span>Listening</h2></header>
         <section class="cs__section" id="where-it-started">
-          <h2>Before the design process: where this started</h2>
-          <blockquote class="cs__quote"><p>“The human side of the project came first: the real human contact, before all the technicality of the design process.”</p></blockquote>
-          <p><strong class="cs__hl">It began at home.</strong> This project didn’t begin with a brief or a design tool. Last year, I was the primary caregiver for my mom, who had end-stage cancer. I won’t share much about her here, but that experience is where this idea came from. Caring for someone you love through that time changes how you see things: what support looks like, what’s missing, and how alone you can feel even when you’re surrounded by people.</p>
-          <p><strong class="cs__hl">Listening first.</strong> From there, I kept thinking about how to support women going through something similar, so I started where it felt most natural: by listening. When I kicked off the project in September 2025, I interviewed 3 women who were going through chemotherapy. I don’t share these interviews, for consent reasons. I shared questionnaires through a cancer support group in Berlin. I did guerrilla research and went where people were, for example to Yes Cancer, a cancer convention, where I talked to caregivers and listened to their stories. At home, I kept researching and watched videos of cancer survivors talking about what helped them heal.</p>
-          <p><strong class="cs__hl">A space for conversation.</strong> I also started an Instagram page where I talk about the emotional side of cancer, for both patients and caregivers. It became a quiet space for conversation. People reached out, shared their stories, and told me what they were missing.</p>
-          <p><strong class="cs__hl">A sharing circle.</strong> In March 2026, I organized my first event: sound meditation, breathwork and a sharing circle, co-facilitated with a yoga teacher who wanted to contribute to the project. Eight women came, three of them caregivers. Sitting in that circle, hearing what they shared and how they responded to the different practices, gave me some of the most valuable insights of the whole project. In the closing circle, the caregivers said they’d love a space where they feel held and don’t have to prove anything to anyone, and language came up as a big barrier.</p>
-          <p><strong class="cs__hl">Narrowing the focus.</strong> In June 2026, at a Charité event, I met women from Charité’s international cancer support groups. Caregivers had asked them whether any community for caregivers existed. They knew of none, and they shared that one would be very helpful. That pushed me to look more closely at what caregivers actually need. Between that research and my own experience, I realized how little exists, especially for international caregivers, who told me there are few events or communities for them. So I decided to narrow my focus to women caregivers.</p>
-          <h3>From listening to building</h3>
+          <h3>Before the design process: where this started</h3>
+          <blockquote class="cs__quote cs__quote--body"><p>“The human side of the project came first: the real human contact, before all the technicality of the design process.”</p></blockquote>
+          <div class="story-cards">
+            <article class="story-card">
+              <h4 class="story-card__title">It began at home</h4>
+              <p class="story-card__summary">This project didn’t begin with a brief or a design tool. Last year, I was the primary caregiver for my mom, who had end-stage cancer.</p>
+              <div class="story-card__more" id="story-1"><p>I won’t share much about her here, but that experience is where this idea came from. Caring for someone you love through that time changes how you see things: what support looks like, what’s missing, and how alone you can feel even when you’re surrounded by people.</p></div>
+              <button class="story-card__toggle" type="button" aria-expanded="false" aria-controls="story-1">Read more</button>
+            </article>
+            <article class="story-card">
+              <h4 class="story-card__title">Listening first</h4>
+              <p class="story-card__summary">From there, I kept thinking about how to support women going through something similar, so I started where it felt most natural: by listening.</p>
+              <div class="story-card__more" id="story-2"><p>When I kicked off the project in September 2025, I interviewed 3 women who were going through chemotherapy. I don’t share these interviews, for consent reasons. I shared questionnaires through a cancer support group in Berlin. I did guerrilla research and went where people were, for example to Yes Cancer, a cancer convention, where I talked to caregivers and listened to their stories. At home, I kept researching and watched videos of cancer survivors talking about what helped them heal.</p></div>
+              <button class="story-card__toggle" type="button" aria-expanded="false" aria-controls="story-2">Read more</button>
+            </article>
+            <article class="story-card">
+              <h4 class="story-card__title">A space for conversation</h4>
+              <p class="story-card__summary">I also started an Instagram page where I talk about the emotional side of cancer, for both patients and caregivers.</p>
+              <div class="story-card__more" id="story-3"><p>It became a quiet space for conversation. People reached out, shared their stories, and told me what they were missing.</p></div>
+              <button class="story-card__toggle" type="button" aria-expanded="false" aria-controls="story-3">Read more</button>
+            </article>
+            <article class="story-card">
+              <h4 class="story-card__title">A sharing circle</h4>
+              <p class="story-card__summary">In March 2026, I organized my first event: sound meditation, breathwork and a sharing circle, co-facilitated with a yoga teacher who wanted to contribute to the project.</p>
+              <div class="story-card__more" id="story-4"><p>Eight women came, three of them caregivers. Sitting in that circle, hearing what they shared and how they responded to the different practices, gave me some of the most valuable insights of the whole project. In the closing circle, the caregivers said they’d love a space where they feel held and don’t have to prove anything to anyone, and language came up as a big barrier.</p></div>
+              <button class="story-card__toggle" type="button" aria-expanded="false" aria-controls="story-4">Read more</button>
+            </article>
+            <article class="story-card">
+              <h4 class="story-card__title">Narrowing the focus</h4>
+              <p class="story-card__summary">In June 2026, at a Charité event, I met women from Charité’s international cancer support groups.</p>
+              <div class="story-card__more" id="story-5"><p>Caregivers had asked them whether any community for caregivers existed. They knew of none, and they shared that one would be very helpful. That pushed me to look more closely at what caregivers actually need. Between that research and my own experience, I realized how little exists, especially for international caregivers, who told me there are few events or communities for them. So I decided to narrow my focus to women caregivers.</p></div>
+              <button class="story-card__toggle" type="button" aria-expanded="false" aria-controls="story-5">Read more</button>
+            </article>
+          </div>
+          <h4>From listening to building</h4>
           <p>As a solo founder, I used AI-assisted design workflows to bring this vision to life and build something tangible, so I could test my hypothesis and validate my assumptions: do creative and reflective workshops help women navigate this time? Most of what I had heard came from people who had already chosen a space like mine, so this was something to test, not confirm.</p>
           <p>The interviews, the synthesis of those insights, and the desk research all shaped the product. It offers different creative and reflective workshops and makes signing up as easy as possible, to test whether this is what she needs: a hands-on session nearby, without planning ahead, among people who understand, where she talks only if she wants to.</p>
         </section>
-        <section class="cs__section" id="research">
-          <h2>Research and insight</h2>
-          <p><strong>Desk research.</strong> I ran the desk research with a multi-agent skill I built in Claude Code: several agents worked on independent research tasks in parallel, and I checked every quote word for word against its source. I mapped what already exists in Berlin. Groups for relatives do exist, but every one I found is in German or doesn’t state a language, meets in person on weekday evenings, and asks for registration or a preliminary talk. Hospital support is framed around the patient, for “Angehörige des Patienten” (<a href="https://cccc.charite.de/fuer_patientinnen_interessierte/psychoonkologische_beratung_und_begleitung_1">Charité</a>). I found no drop-in space in Berlin that you can join without registering.</p>
-          <p><strong>Interviews.</strong> I interviewed two women over Google Meet. Each received a consent form beforehand, with a separate consent for recording. I transcribed with Apple Notes instead of a third-party transcription tool: the data is sensitive, some tools’ privacy terms weren’t clear enough, and each extra tool would have needed its own consent, so I kept the number of tools as low as possible. I anonymized the transcripts myself before any AI saw them, then turned them into 51 observations, which I reviewed one by one against the transcript.</p>
-          <p>One woman cares for her husband now in Berlin. The other cared in the past in the UK, which is outside my criteria, so her points count as hypotheses for Berlin.</p>
-          <p><strong>What it couldn’t tell me.</strong> Both women’s care is light, so how needs change with heavier care is still open.</p>
-          <h3>The insight</h3>
-          <p>What helps these women is getting out of their head: into their hands, a different place or company. One described it as “getting you out of your head and into your body”; the other said “you can’t relax, can you? So I had to kind of find things to do”.</p>
-          <p>But the support around them is built for the patient, in German, on weekday evenings, so what helps is getting harder to reach: “going out in the evening is just hard”.</p>
-        </section>
+        </div>
+        <div class="act" id="act-2">
+          <header class="act__head"><span class="act__num" aria-hidden="true">02</span><h2 class="act__title"><span class="sr-only">Act 2: </span>The system</h2></header>
         <section class="cs__section" id="how-i-worked">
-          <h2>How I worked: an AI-assisted process, with me making the decisions</h2>
+          <h3>How I worked: an AI-assisted process, with me making the decisions</h3>
+          <div class="roles" aria-label="Where AI helped and where I decided">
+            <div class="role-card">
+              <p class="role-card__phase">01 Discover</p>
+              <p class="role-card__who role-card__who--me">Me</p>
+              <p class="role-card__text">Ran 2 interviews and anonymized every transcript myself before any AI saw it</p>
+              <p class="role-card__who role-card__who--ai">AI</p>
+              <p class="role-card__text">Turned each transcript into an observation list for my review</p>
+            </div>
+            <div class="role-card">
+              <p class="role-card__phase">02 Define</p>
+              <p class="role-card__who role-card__who--me">Me</p>
+              <p class="role-card__text">Built the theme clusters in FigJam and chose the How Might We question to design for</p>
+              <p class="role-card__who role-card__who--ai">AI</p>
+              <p class="role-card__text">Audited my clusters against the data: only claims in both interviews carried forward</p>
+            </div>
+            <div class="role-card">
+              <p class="role-card__phase">03 Develop</p>
+              <p class="role-card__who role-card__who--me">Me</p>
+              <p class="role-card__text">Chose concept C4, “Come as you are, hands first”, and a working prototype website as the fidelity</p>
+              <p class="role-card__who role-card__who--ai">AI</p>
+              <p class="role-card__text">Generated 5 concepts, audited them for diversity, drafted the MVP scope and audited the flow</p>
+            </div>
+            <div class="role-card">
+              <p class="role-card__phase">04 Deliver</p>
+              <p class="role-card__who role-card__who--me">Me</p>
+              <p class="role-card__text">Made the Claude Design system the source of truth, not the Figma file</p>
+              <p class="role-card__who role-card__who--ai">AI</p>
+              <p class="role-card__text">Built the screens in Claude Design and wrote the handoff: design rationale, implementation document, screenshots</p>
+            </div>
+          </div>
           <p>I ran the project in Design OS, my workspace in Claude Code, set up in VS Code with a rules file every step had to follow:</p>
           <ul>
             <li>AI speeds up my thinking and challenges it, but every decision is mine.</li>
@@ -77,6 +130,13 @@
             <li>Transcripts are anonymized by me before any AI touches them.</li>
           </ul>
           <p>I used the skills from the Design OS course, and built my own where I needed them, for example desk research where several agents work on independent tasks in parallel.</p>
+        </section>
+        <section class="cs__section" id="research">
+          <h3>Research and insight</h3>
+          <p><strong>Desk research.</strong> I ran the desk research with a multi-agent skill I built in Claude Code: several agents worked on independent research tasks in parallel, and I checked every quote word for word against its source. I mapped what already exists in Berlin. Groups for relatives do exist, but every one I found is in German or doesn’t state a language, meets in person on weekday evenings, and asks for registration or a preliminary talk. Hospital support is framed around the patient, for “Angehörige des Patienten” (<a href="https://cccc.charite.de/fuer_patientinnen_interessierte/psychoonkologische_beratung_und_begleitung_1">Charité</a>). I found no drop-in space in Berlin that you can join without registering.</p>
+          <p><strong>Interviews.</strong> I interviewed two women over Google Meet. Each received a consent form beforehand, with a separate consent for recording. I transcribed with Apple Notes instead of a third-party transcription tool: the data is sensitive, some tools’ privacy terms weren’t clear enough, and each extra tool would have needed its own consent, so I kept the number of tools as low as possible. I anonymized the transcripts myself before any AI saw them, then turned them into 51 observations, which I reviewed one by one against the transcript.</p>
+          <p>One woman cares for her husband now in Berlin. The other cared in the past in the UK, which is outside my criteria, so her points count as hypotheses for Berlin.</p>
+          <p><strong>What it couldn’t tell me.</strong> Both women’s care is light, so how needs change with heavier care is still open.</p>
           <ol class="steps">
             <li class="step">
               <div class="step__text">
@@ -86,7 +146,6 @@
                 <p class="step__why"><strong>Why this way:</strong> A sensitive health topic, so consent and a distress protocol came first, and as few tools as possible touched the interview data. Every desk quote was checked word for word against its source.</p>
                 <p class="step__tools">Google Meet, Apple Notes transcription, Claude Code skills (space map, gap questions, interview processing), parallel research agents, FigJam</p>
               </div>
-              <div class="step__media" data-shot="process/discover"><span class="card__placeholder">Screenshot to come</span></div>
             </li>
             <li class="step">
               <div class="step__text">
@@ -96,8 +155,12 @@
                 <p class="step__why"><strong>Why this way:</strong> Nothing went forward until I had approved it.</p>
                 <p class="step__tools">Claude Code review page, S/W/I tags</p>
               </div>
-              <div class="step__media" data-shot="process/synthesis"><span class="card__placeholder">Screenshot to come</span></div>
             </li>
+          </ol>
+          <h4>The insight</h4>
+          <p>What helps these women is getting out of their head: into their hands, a different place or company. One described it as “getting you out of your head and into your body”; the other said “you can’t relax, can you? So I had to kind of find things to do”.</p>
+          <p>But the support around them is built for the patient, in German, on weekday evenings, so what helps is getting harder to reach: “going out in the evening is just hard”.</p>
+          <ol class="steps">
             <li class="step">
               <div class="step__text">
                 <p class="step__phase">03 · Define</p>
@@ -106,8 +169,17 @@
                 <p class="step__why"><strong>Why this way:</strong> The audit checked my clusters, so I didn’t just find what I expected.</p>
                 <p class="step__tools">FigJam, Claude Code skills</p>
               </div>
-              <div class="step__media" data-shot="process/define"><span class="card__placeholder">Screenshot to come</span></div>
             </li>
+          </ol>
+        </section>
+        </div>
+        <div class="act" id="act-3">
+          <header class="act__head"><span class="act__num" aria-hidden="true">03</span><h2 class="act__title"><span class="sr-only">Act 3: </span>The test</h2></header>
+        <section class="cs__section" id="concept-to-prototype">
+          <h3>From concept to prototype</h3>
+          <h4>Which concept, and why</h4>
+          <p>I generated five concepts through five lenses and audited them for diversity instead of ranking them. Two turned out to be the same behavior in different forms, and one rested on one participant and conflicted with the other’s needs. I chose “Come as you are, hands first”: a hands-on session nearby, without planning ahead, among people who understand, talking only if she wants to. It is also the concept closest to my starting hypothesis, so I designed it as a test of that hypothesis.</p>
+          <ol class="steps">
             <li class="step">
               <div class="step__text">
                 <p class="step__phase">04 · Develop</p>
@@ -116,45 +188,10 @@
                 <p class="step__why"><strong>Why this way:</strong> Parallel agents gave different directions; the audit flagged the 2 closest to my own idea.</p>
                 <p class="step__tools">Claude Code, FigJam</p>
               </div>
-              <div class="step__media" data-shot="process/develop"><span class="card__placeholder">Screenshot to come</span></div>
-            </li>
-            <li class="step">
-              <div class="step__text">
-                <p class="step__phase">05 · Design system</p>
-                <p class="step__stat"><span class="step__num" data-count="3">3</span> versions until it held up</p>
-                <p>Brand guideline and design system, through three versions and four contrast checks before any screen was generated.</p>
-                <p class="step__why"><strong>Why this way:</strong> Claude Design builds screens from the system, so the system had to be right first.</p>
-                <p class="step__tools">Figma, Claude Design, Claude Code contrast checks</p>
-              </div>
-              <div class="step__media" data-shot="process/design-system"><span class="card__placeholder">Screenshot to come</span></div>
-            </li>
-            <li class="step">
-              <div class="step__text">
-                <p class="step__phase">06 · Prototype</p>
-                <p class="step__stat"><span class="step__num" data-count="4">4</span> contrast issues fixed</p>
-                <p>Website screens and design system built from the screen map; later changes sent as change-only prompts.</p>
-                <p class="step__why"><strong>Why this way:</strong> “Change only the listed elements” kept approved screens stable. 4 contrast issues fixed to WCAG AA.</p>
-                <p class="step__tools">Claude Design</p>
-              </div>
-              <div class="step__media" data-shot="process/prototype"><span class="card__placeholder">Screenshot to come</span></div>
-            </li>
-            <li class="step">
-              <div class="step__text">
-                <p class="step__phase">07 · Deliver</p>
-                <p class="step__stat"><span class="step__num" data-count="28">28</span> screenshots handed off</p>
-                <p>Design rationale, implementation document, 28 screenshots, gap list.</p>
-                <p class="step__why"><strong>Why this way:</strong> So a developer or tester can pick it up without me in the room.</p>
-                <p class="step__tools">Claude Code handoff skill</p>
-              </div>
-              <div class="step__media" data-shot="process/deliver"><span class="card__placeholder">Screenshot to come</span></div>
             </li>
           </ol>
-        </section>
-        <section class="cs__section" id="concept-to-prototype">
-          <h2>From concept to prototype</h2>
-          <h3>Which concept, and why</h3>
-          <p>I generated five concepts through five lenses and audited them for diversity instead of ranking them. Two turned out to be the same behavior in different forms, and one rested on one participant and conflicted with the other’s needs. I chose “Come as you are, hands first”: a hands-on session nearby, without planning ahead, among people who understand, talking only if she wants to. It is also the concept closest to my starting hypothesis, so I designed it as a test of that hypothesis.</p>
-          <h3>Design system and brand guideline: the step the prototype stands on</h3>
+          <div class="cs__placeholder" role="img" aria-label="Visual to come: the chosen concept"><span>Visual to come: the chosen concept</span></div>
+          <h4>Design system and brand guideline: the step the prototype stands on</h4>
           <p>Before generating any screen, I built the brand guideline and the design system, and iterated on both until they held up:</p>
           <ul>
             <li><strong>First version (v1.1).</strong> A palette of plum, ivory, lilac, ochre and sage. The check showed lilac, ochre and sage on ivory fall below 2:1, so they could never carry text.</li>
@@ -164,34 +201,281 @@
             <li><strong>Ready to upload.</strong> A final check found 74 primitives and 46 semantic tokens with 0 mismatches, and 34 of 35 contrast pairings passing.</li>
             <li><strong>One source of truth.</strong> I made the Claude Design system the source of truth instead of the Figma file, so the screens and the system can’t drift apart.</li>
           </ul>
+          <section id="hbhm-ds" class="hb-bento" data-theme="default" aria-label="Her Body, Her Mind design system">
+          <div class="hb-grid">
+          <div class="hb-tile hb-tile--logo">
+          <p class="hb-tile__label overline">Logo</p>
+          <div class="hb-tile__body">
+          <button class="hb-logo" type="button" aria-pressed="false" aria-label="Logo construction: lift the layers apart">
+          <span class="hb-logo__stack" aria-hidden="true">
+          <span class="hb-logo__layer hb-logo__layer--grid"></span>
+          <svg class="hb-logo__layer hb-logo__layer--shapes" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"><g vector-effect="non-scaling-stroke"><circle cx="24" cy="24" r="20" vector-effect="non-scaling-stroke"/><rect x="6.05" y="6.05" width="35.9" height="35.9" rx="0.95" vector-effect="non-scaling-stroke"/><rect x="4.05" y="8.05" width="39.9" height="31.9" rx="0.95" vector-effect="non-scaling-stroke"/><rect x="8.05" y="4.05" width="31.9" height="39.9" rx="0.95" vector-effect="non-scaling-stroke"/></g></svg>
+          <svg class="hb-logo__layer hb-logo__layer--mark" viewBox="0 0 48 48"><path d="M30.4462 33.9794C30.4462 34.3833 30.5808 34.7434 30.8501 35.0595C31.1208 35.3742 31.4479 35.5651 31.8307 35.6332V35.8352H23.9979V35.6332C24.3798 35.5651 24.7062 35.3742 24.9755 35.0595C25.2463 34.7434 25.3824 34.3833 25.3824 33.9794V24.0216C25.3824 23.4362 25.5287 22.9752 25.8214 22.6371C26.1141 22.2997 26.4068 21.98 26.6995 21.677C26.9922 21.3726 27.1386 21.0177 27.1386 20.6116C27.1386 20.2296 26.9234 19.9369 26.4946 19.7335C26.0673 19.5308 25.517 19.429 24.8438 19.429C24.0103 19.429 23.2844 19.5483 22.6661 19.7861C22.047 20.0225 21.6811 20.163 21.5684 20.2076V33.9794C21.5684 34.3833 21.7031 34.7434 21.9723 35.0595C22.2431 35.3742 22.5702 35.5651 22.9529 35.6332V35.8352H15.1201V35.6332C15.5021 35.5651 15.8285 35.3742 16.0978 35.0595C16.3685 34.7434 16.5046 34.3833 16.5046 33.9794V14.9067C16.5046 14.5028 16.3685 14.1443 16.0978 13.8296C15.8285 13.5135 15.5021 13.3218 15.1201 13.253V13.051L20.8923 12.208C20.9157 12.208 20.9318 12.208 20.942 12.208C20.9537 12.208 20.9713 12.208 20.9947 12.208C21.3767 12.208 21.5684 12.41 21.5684 12.8139V19.9705C22.1985 19.6566 22.9017 19.4042 23.6788 19.2124C24.4552 19.0193 25.2367 18.9227 26.0234 18.9227C26.8115 18.9227 27.5433 19.0749 28.2187 19.3793C28.8934 19.6837 29.4334 20.1681 29.8373 20.8311C30.2427 21.4948 30.4462 22.4 30.4462 23.5474V33.9794Z" fill="#1E1B16"/><path d="M35.3286 34.9453C35.7947 34.9453 36.1899 35.1085 36.514 35.4341C36.8375 35.7583 36.9999 36.1527 36.9999 36.6167C36.9999 38.0509 36.1862 39.442 34.5588 40.7906L33.8182 40.1789C33.8841 40.1203 33.9682 40.0325 34.07 39.9154C34.1731 39.7998 34.3231 39.5657 34.5207 39.213C34.7198 38.8595 34.8529 38.5031 34.9217 38.1446C34.5529 38.0568 34.2522 37.8753 34.0202 37.6001C33.7875 37.3235 33.6719 36.9957 33.6719 36.6167C33.6719 36.1527 33.8336 35.7583 34.1578 35.4341C34.4834 35.1085 34.8734 34.9453 35.3286 34.9453Z" fill="#1E1B16"/><path d="M12.6567 8C13.1228 8 13.518 8.16318 13.8422 8.48882C14.1656 8.81299 14.3281 9.20741 14.3281 9.67135C14.3281 11.1056 13.5143 12.4967 11.8869 13.8453L11.1464 13.2336C11.2122 13.175 11.2964 13.0872 11.3981 12.9701C11.5013 12.8545 11.6513 12.6203 11.8488 12.2676C12.0479 11.9142 12.1811 11.5578 12.2499 11.1993C11.881 11.1115 11.5803 10.93 11.3483 10.6548C11.1156 10.3782 11 10.0504 11 9.67135C11 9.20741 11.1617 8.81299 11.4859 8.48882C11.8115 8.16318 12.2016 8 12.6567 8Z" fill="#1E1B16"/></svg>
+          </span>
+          <span class="hb-logo__names caption" aria-hidden="true"><span>Grid</span><span>Key shapes</span><span>Logo</span></span>
+          </button>
+          </div>
+          <p class="hb-tile__hint caption">Hover to see the grid, tap to lift the layers apart</p>
+          </div>
+          <div class="hb-tile hb-tile--pal">
+          <p class="hb-tile__label overline">Color palette</p>
+          <div class="hb-tile__body">
+          <div class="hb-swatches" role="group" aria-label="Dusk palette">
+          <button class="hb-swatch" type="button" style="--sw: var(--color-twilight-500)" data-name="Twilight" data-hex="#5E4A7E" data-token="color/twilight/500" data-role="Primary brand: buttons, links, focus" aria-pressed="true"><span class="hb-sr">Twilight</span></button>
+          <button class="hb-swatch" type="button" style="--sw: var(--color-mauve-500)" data-name="Dusty mauve" data-hex="#83727F" data-token="color/mauve/500" data-role="Secondary: quiet tonal actions, filters" aria-pressed="false"><span class="hb-sr">Dusty mauve</span></button>
+          <button class="hb-swatch" type="button" style="--sw: var(--color-apricot-300)" data-name="Apricot" data-hex="#E7A67A" data-token="color/apricot/300" data-role="Highlight: badges, warm accents (not status). Backgrounds only, never text" aria-pressed="false"><span class="hb-sr">Apricot</span></button>
+          <button class="hb-swatch" type="button" style="--sw: var(--color-sand-100)" data-name="Sand" data-hex="#F3ECE3" data-token="color/sand/100" data-role="Surfaces: backgrounds, cards. Backgrounds only, never text" aria-pressed="false"><span class="hb-sr">Sand</span></button>
+          <button class="hb-swatch" type="button" style="--sw: var(--color-sand-900)" data-name="Warm near-black" data-hex="#1E1B16" data-token="color/sand/900" data-role="Text" aria-pressed="false"><span class="hb-sr">Warm near-black</span></button>
+          </div>
+          <div class="hb-pal__info">
+          <p class="hb-pal__name heading-h4">Twilight</p>
+          <p class="hb-pal__hex">#5E4A7E</p>
+          <p class="hb-pal__meta body-small"><span class="hb-pal__token">color/twilight/500</span> · <span class="hb-pal__role">Primary brand: buttons, links, focus</span></p>
+          <p class="hb-pal__ratio body-small"><strong>7.2:1</strong> <span>on the page background</span></p>
+          <p class="hb-pal__copied caption" aria-live="polite"></p>
+          </div>
+          </div>
+          <p class="hb-tile__hint caption">Tap a colour to see its details and copy the hex</p>
+          </div>
+          <div class="hb-tile hb-tile--per">
+          <p class="hb-tile__label overline">Brand personality</p>
+          <div class="hb-tile__body">
+          <div class="hb-stack hb-traits">
+          <article class="hb-trait hb-fade" aria-label="Trait 1 of 4">
+          <p class="hb-trait__num" aria-hidden="true">01</p>
+          <h3 class="heading-h3">Warm &amp; Compassionate</h3>
+          <p class="quote">“You are welcome here.”</p>
+          <dl>
+          <div><dt class="label-default">She feels</dt><dd>Accepted</dd></div>
+          <div><dt class="label-default">We are</dt><dd>kind, attentive, understanding, gentle</dd></div>
+          <div><dt class="label-default">We are not</dt><dd>sentimental, patronizing, excessively cheerful</dd></div>
+          </dl>
+          </article>
+          <article class="hb-trait hb-fade is-off" aria-label="Trait 2 of 4">
+          <p class="hb-trait__num" aria-hidden="true">02</p>
+          <h3 class="heading-h3">Grounded &amp; Emotionally Honest</h3>
+          <p class="quote">“You don’t have to pretend everything is fine.”</p>
+          <dl>
+          <div><dt class="label-default">She feels</dt><dd>Understood</dd></div>
+          <div><dt class="label-default">We are</dt><dd>honest, thoughtful, steady, realistic</dd></div>
+          <div><dt class="label-default">We are not</dt><dd>dramatic, clinical, falsely reassuring</dd></div>
+          </dl>
+          </article>
+          <article class="hb-trait hb-fade is-off" aria-label="Trait 3 of 4">
+          <p class="hb-trait__num" aria-hidden="true">03</p>
+          <h3 class="heading-h3">Creative &amp; Exploratory</h3>
+          <p class="quote">“You don’t need the right words.”</p>
+          <dl>
+          <div><dt class="label-default">She feels</dt><dd>Free to explore</dd></div>
+          <div><dt class="label-default">We are</dt><dd>curious, expressive, open-minded, imaginative</dd></div>
+          <div><dt class="label-default">We are not</dt><dd>childish, prescriptive, focused on perfection</dd></div>
+          </dl>
+          </article>
+          <article class="hb-trait hb-fade is-off" aria-label="Trait 4 of 4">
+          <p class="hb-trait__num" aria-hidden="true">04</p>
+          <h3 class="heading-h3">Connecting &amp; Inclusive</h3>
+          <p class="quote">“You don’t have to do this alone.”</p>
+          <dl>
+          <div><dt class="label-default">She feels</dt><dd>Less alone</dd></div>
+          <div><dt class="label-default">We are</dt><dd>open, respectful, welcoming, human</dd></div>
+          <div><dt class="label-default">We are not</dt><dd>exclusive, overly familiar, demanding openness</dd></div>
+          </dl>
+          </article>
+          </div>
+          <div class="hb-pager">
+          <p class="hb-pager__count label-default" aria-live="polite">1 of 4</p>
+          <button class="hb-btn hb-btn--secondary hb-btn--small hb-pager__prev" type="button" aria-label="Previous trait"><svg class="hb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><g transform="matrix(1 0 0 1 8.59 6)"><path d="M1.41 0L0 1.41L4.58 6L0 10.59L1.41 12L7.41 6L1.41 0Z" fill-rule="nonzero" fill="currentColor"></path></g></svg></button>
+          <button class="hb-btn hb-btn--secondary hb-btn--small hb-pager__next" type="button" aria-label="Next trait"><svg class="hb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><g transform="matrix(1 0 0 1 8.59 6)"><path d="M1.41 0L0 1.41L4.58 6L0 10.59L1.41 12L7.41 6L1.41 0Z" fill-rule="nonzero" fill="currentColor"></path></g></svg></button>
+          </div>
+          </div>
+          <p class="hb-tile__hint caption">Use the arrows to move between traits</p>
+          </div>
+          <div class="hb-tile hb-tile--voice">
+          <p class="hb-tile__label overline">Voice and tone</p>
+          <div class="hb-tile__body">
+          <h3 class="heading-h3">Warm. Honest. Grounded. Inviting.</h3>
+          <ul class="hb-voice">
+          <li><button class="hb-say" type="button" aria-pressed="false">
+          <span class="hb-say__pair label-default">Warm, not sentimental</span>
+          <span class="hb-stack body-default">
+          <span class="hb-say__instead hb-fade"><span class="hb-say__k caption">Instead of</span><s>“Beautiful souls, give yourself the healing love you so deeply deserve.”</s></span>
+          <span class="hb-say__say hb-fade is-off"><span class="hb-say__k caption">Say</span>“You spend a lot of time caring for someone else. This is time for you.”</span>
+          </span>
+          </button></li>
+          <li><button class="hb-say" type="button" aria-pressed="false">
+          <span class="hb-say__pair label-default">Honest, not clinical</span>
+          <span class="hb-stack body-default">
+          <span class="hb-say__instead hb-fade"><span class="hb-say__k caption">Instead of</span><s>“Caregiver burden can negatively affect psychological functioning.”</s></span>
+          <span class="hb-say__say hb-fade is-off"><span class="hb-say__k caption">Say</span>“Caring for someone you love can take up more of your life than you expected.”</span>
+          </span>
+          </button></li>
+          <li><button class="hb-say" type="button" aria-pressed="false">
+          <span class="hb-say__pair label-default">Grounded, not falsely reassuring</span>
+          <span class="hb-stack body-default">
+          <span class="hb-say__instead hb-fade"><span class="hb-say__k caption">Instead of</span><s>“Release your stress and restore your inner balance.”</s></span>
+          <span class="hb-say__say hb-fade is-off"><span class="hb-say__k caption">Say</span>“Take a couple of hours to make something, write, or simply be quiet.”</span>
+          </span>
+          </button></li>
+          <li><button class="hb-say" type="button" aria-pressed="false">
+          <span class="hb-say__pair label-default">Inviting, not prescriptive</span>
+          <span class="hb-stack body-default">
+          <span class="hb-say__instead hb-fade"><span class="hb-say__k caption">Instead of</span><s>“It’s time to put yourself first and start your healing journey.”</s></span>
+          <span class="hb-say__say hb-fade is-off"><span class="hb-say__k caption">Say</span>“You don’t need a plan for what you’ll make, or a reason to be here.”</span>
+          </span>
+          </button></li>
+          </ul>
+          </div>
+          <p class="hb-tile__hint caption">Tap a line to see what we say instead</p>
+          </div>
+          <div class="hb-tile hb-tile--form">
+          <p class="hb-tile__label overline">Sign-up form</p>
+          <div class="hb-tile__body">
+          <div class="hb-stack hb-form-swap">
+          <form class="hb-form hb-fade" novalidate>
+          <h3 class="heading-h3">Sign up for Hand building with clay</h3>
+          <div class="hb-field"><label class="hb-field__label" for="hb-fn">First name</label><div class="hb-input"><input id="hb-fn" type="text" class="hb-input__el" placeholder="Your first name" autocomplete="off" aria-describedby="hb-fn-err"></div><div id="hb-fn-err" class="hb-field__hint is-error" hidden></div></div>
+          <div class="hb-field"><label class="hb-field__label" for="hb-em">Email</label><div class="hb-input"><input id="hb-em" type="email" class="hb-input__el" placeholder="you@example.com" autocomplete="off" aria-describedby="hb-em-hint"></div><div id="hb-em-hint" class="hb-field__hint">We send the details and directions here.</div></div>
+          <div><label class="hb-check"><input type="checkbox" class="hb-sr" aria-describedby="hb-opt-help"><span class="hb-check__box" aria-hidden="true"><svg class="hb-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><g transform="matrix(1 0 0 1 3.41 5.59)"><path d="M5.59 10.58L1.42 6.41L0 7.82L5.59 13.41L17.59 1.41L16.18 0L5.59 10.58Z" fill-rule="nonzero" fill="currentColor"></path></g></svg></span><span class="hb-control__label">Email me about upcoming sessions (optional)</span></label><p class="hb-check__help caption" id="hb-opt-help">We’ll ask you to confirm by email first. You can unsubscribe anytime.</p></div>
+          <aside class="hb-nt hb-nt--compact" aria-label="About these workshops"><svg class="hb-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><g transform="matrix(1 0 0 1 2.781 2.988)"><path d="M8.5 13.5L9.5 13.5L9.5 8L8.5 8L8.5 13.5ZM9 6.577C9.174 6.577 9.321 6.518 9.439 6.4C9.557 6.282 9.616 6.136 9.616 5.962C9.616 5.787 9.557 5.641 9.439 5.523C9.321 5.405 9.174 5.346 9 5.346C8.826 5.346 8.679 5.405 8.561 5.523C8.443 5.641 8.385 5.787 8.385 5.962C8.385 6.136 8.443 6.282 8.561 6.4C8.679 6.518 8.826 6.577 9 6.577ZM9.003 18C7.759 18 6.589 17.764 5.493 17.292C4.398 16.819 3.444 16.178 2.634 15.368C1.824 14.559 1.182 13.607 0.709 12.512C0.236 11.418 0 10.248 0 9.003C0 7.759 0.236 6.589 0.708 5.493C1.181 4.397 1.822 3.444 2.632 2.634C3.441 1.823 4.393 1.182 5.488 0.709C6.582 0.236 7.752 0 8.997 0C10.241 0 11.411 0.236 12.507 0.709C13.603 1.181 14.556 1.822 15.366 2.632C16.177 3.441 16.818 4.393 17.291 5.488C17.764 6.583 18 7.752 18 8.997C18 10.241 17.764 11.411 17.292 12.507C16.819 13.602 16.178 14.556 15.368 15.366C14.559 16.177 13.607 16.818 12.512 17.291C11.418 17.764 10.248 18 9.003 18ZM9 17C11.233 17 13.125 16.225 14.675 14.675C16.225 13.125 17 11.233 17 9C17 6.767 16.225 4.875 14.675 3.325C13.125 1.775 11.233 1 9 1C6.767 1 4.875 1.775 3.325 3.325C1.775 4.875 1 6.767 1 9C1 11.233 1.775 13.125 3.325 14.675C4.875 16.225 6.767 17 9 17Z" fill-rule="nonzero" fill="currentColor"></path></g></svg><p class="body-small">A creative space, not therapy, counselling or medical care. <a class="hb-link" href="https://krebsberatung-berlin.de/angebote/counselling-in-english/" target="_blank" rel="noopener">Find support</a>.</p></aside>
+          <button type="submit" class="hb-btn hb-btn--primary hb-btn--large hb-btn--full"><span class="hb-btn__label">Reserve your place</span></button>
+          <p class="hb-form__fine caption">Nothing to pay now. You’ll pay on the day.</p>
+          </form>
+          <div class="hb-done hb-fade is-off">
+          <span class="hb-done__disc"><svg class="hb-icon" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><g transform="matrix(1 0 0 1 2 2)"><path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM10 18C5.59 18 2 14.41 2 10C2 5.59 5.59 2 10 2C14.41 2 18 5.59 18 10C18 14.41 14.41 18 10 18ZM14.59 5.58L8 12.17L5.41 9.59L4 11L8 15L16 7L14.59 5.58Z" fill-rule="nonzero" fill="currentColor"></path></g></svg></span>
+          <h3 class="heading-h3" tabindex="-1">You’re signed up</h3>
+          <div class="hb-list is-two no-divider"><span class="hb-list__icon"><svg class="hb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><g transform="matrix(1 0 0 1 4.012 2.8)"><path d="M1.615 18.231C1.155 18.231 0.771 18.077 0.463 17.768C0.154 17.46 0 17.076 0 16.615L0 3.846C0 3.386 0.154 3.002 0.463 2.693C0.771 2.385 1.155 2.231 1.615 2.231L3.385 2.231L3.385 0L4.461 0L4.461 2.231L11.616 2.231L11.616 0L12.616 0L12.616 2.231L14.385 2.231C14.845 2.231 15.229 2.385 15.538 2.693C15.846 3.002 16 3.386 16 3.846L16 16.615C16 17.076 15.846 17.46 15.538 17.768C15.229 18.077 14.845 18.231 14.385 18.231L1.615 18.231ZM1.615 17.231L14.385 17.231C14.539 17.231 14.68 17.167 14.808 17.038C14.936 16.91 15 16.769 15 16.615L15 7.846L1 7.846L1 16.615C1 16.769 1.064 16.91 1.192 17.038C1.32 17.167 1.461 17.231 1.615 17.231ZM1 6.846L15 6.846L15 3.846C15 3.692 14.936 3.551 14.808 3.423C14.68 3.295 14.539 3.231 14.385 3.231L1.615 3.231C1.461 3.231 1.32 3.295 1.192 3.423C1.064 3.551 1 3.692 1 3.846L1 6.846Z" fill-rule="nonzero" fill="currentColor"></path></g></svg></span><span class="hb-list__text"><span class="hb-list__title body-default">Hand building with clay</span><span class="hb-list__sub body-small">Thu 6 Nov, 6:00 PM · Werkraum Mitte</span></span></div>
+          <p class="hb-done__text body-default">We’ve sent a confirmation to your email. You’ll pay on the day, cash or card.</p>
+          <a class="hb-btn hb-btn--primary hb-btn--large hb-btn--full" href="https://t.me/+EkbLy9s7T2o5MTE8" target="_blank" rel="noopener"><span class="hb-btn__label">Join us on Telegram</span></a>
+<p class="body-default"><a class="hb-link" href="https://www.instagram.com/herbody.hermind/" target="_blank" rel="noopener">Instagram</a></p>
+          <button class="hb-again label-default" type="button">Start again</button>
+          </div>
+          </div>
+          </div>
+          <p class="hb-tile__hint caption">Try it: leave a field empty, or fill it in and reserve</p>
+          </div>
+          <div class="hb-tile hb-tile--ev">
+          <p class="hb-tile__label overline">Event card</p>
+          <div class="hb-tile__body">
+          <fieldset class="hb-radios"><legend class="hb-sr">Event card state</legend><label class="hb-radio"><input type="radio" class="hb-sr" name="hb-ev" value="open" checked><span class="hb-radio__outer" aria-hidden="true"></span><span class="hb-control__label">Open</span></label><label class="hb-radio"><input type="radio" class="hb-sr" name="hb-ev" value="full"><span class="hb-radio__outer" aria-hidden="true"></span><span class="hb-control__label">Full</span></label><label class="hb-radio"><input type="radio" class="hb-sr" name="hb-ev" value="moved"><span class="hb-radio__outer" aria-hidden="true"></span><span class="hb-control__label">Moved</span></label><label class="hb-radio"><input type="radio" class="hb-sr" name="hb-ev" value="cancelled"><span class="hb-radio__outer" aria-hidden="true"></span><span class="hb-control__label">Cancelled</span></label></fieldset>
+          <div class="hb-eventp" aria-live="polite">
+          <div class="hb-eventp__placeholder caption">Photo: hands shaping a clay bowl</div>
+          <span class="hb-eventp__badge"><span class="hb-badge hb-badge--highlight"><svg class="hb-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><g transform="matrix(1 0 0 1 3.41 5.59)"><path d="M5.59 10.58L1.42 6.41L0 7.82L5.59 13.41L17.59 1.41L16.18 0L5.59 10.58Z" fill-rule="nonzero" fill="currentColor"></path></g></svg><span>2 places left</span></span></span>
+          <div class="hb-eventp__panel"><div class="hb-eventp__text">
+          <div class="overline hb-eventp__eyebrow">Clay</div>
+          <h3 class="heading-h4 hb-eventp__title hb-card__title">Hand building with clay</h3>
+          <p class="body-small hb-eventp__meta hb-ev__when">Thu 27 Nov, 6:00 PM · Werkraum Mitte</p>
+          <p class="body-small hb-eventp__meta hb-ev__extra">From €10, paid on the day</p>
+          </div><span class="hb-eventp__arrow" aria-hidden="true"><svg class="hb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><g transform="matrix(1 0 0 1 4 5)"><path d="M5 0L5 2L11.59 2L0 13.59L1.41 15L13 3.41L13 10L15 10L15 0L5 0Z" fill-rule="nonzero" fill="currentColor"></path></g></svg></span></div>
+          </div>
+          <div class="hb-notice hb-ev__notice" hidden><span class="hb-notice__icon" aria-hidden="true"></span><div class="hb-notice__text"><p class="hb-notice__title label-large"></p><div class="hb-notice__body body-small"></div></div></div>
+          <template id="hb-ev-icons"><span data-k="full"><svg class="hb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><g transform="matrix(1 0 0 1 3 2)"><path d="M16 2L15 2L15 0L13 0L13 2L5 2L5 0L3 0L3 2L2 2C0.89 2 0.01 2.9 0.01 4L0 18C0 19.1 0.89 20 2 20L16 20C17.1 20 18 19.1 18 18L18 4C18 2.9 17.1 2 16 2ZM16 18L2 18L2 8L16 8L16 18ZM16 6L2 6L2 4L16 4L16 6ZM9 11L14 11L14 16L9 16L9 11Z" fill-rule="nonzero" fill="currentColor"></path></g></svg></span><span data-k="moved"><svg class="hb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><g transform="matrix(1 0 0 1 2.781 2.988)"><path d="M8.5 13.5L9.5 13.5L9.5 8L8.5 8L8.5 13.5ZM9 6.577C9.174 6.577 9.321 6.518 9.439 6.4C9.557 6.282 9.616 6.136 9.616 5.962C9.616 5.787 9.557 5.641 9.439 5.523C9.321 5.405 9.174 5.346 9 5.346C8.826 5.346 8.679 5.405 8.561 5.523C8.443 5.641 8.385 5.787 8.385 5.962C8.385 6.136 8.443 6.282 8.561 6.4C8.679 6.518 8.826 6.577 9 6.577ZM9.003 18C7.759 18 6.589 17.764 5.493 17.292C4.398 16.819 3.444 16.178 2.634 15.368C1.824 14.559 1.182 13.607 0.709 12.512C0.236 11.418 0 10.248 0 9.003C0 7.759 0.236 6.589 0.708 5.493C1.181 4.397 1.822 3.444 2.632 2.634C3.441 1.823 4.393 1.182 5.488 0.709C6.582 0.236 7.752 0 8.997 0C10.241 0 11.411 0.236 12.507 0.709C13.603 1.181 14.556 1.822 15.366 2.632C16.177 3.441 16.818 4.393 17.291 5.488C17.764 6.583 18 7.752 18 8.997C18 10.241 17.764 11.411 17.292 12.507C16.819 13.602 16.178 14.556 15.368 15.366C14.559 16.177 13.607 16.818 12.512 17.291C11.418 17.764 10.248 18 9.003 18ZM9 17C11.233 17 13.125 16.225 14.675 14.675C16.225 13.125 17 11.233 17 9C17 6.767 16.225 4.875 14.675 3.325C13.125 1.775 11.233 1 9 1C6.767 1 4.875 1.775 3.325 3.325C1.775 4.875 1 6.767 1 9C1 11.233 1.775 13.125 3.325 14.675C4.875 16.225 6.767 17 9 17Z" fill-rule="nonzero" fill="currentColor"></path></g></svg></span><span data-k="cancelled"><svg class="hb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><g transform="matrix(1 0 0 1 2 2)"><path d="M9 13L11 13L11 15L9 15L9 13ZM9 5L11 5L11 11L9 11L9 5ZM9.99 0C4.47 0 0 4.48 0 10C0 15.52 4.47 20 9.99 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 9.99 0ZM10 18C5.58 18 2 14.42 2 10C2 5.58 5.58 2 10 2C14.42 2 18 5.58 18 10C18 14.42 14.42 18 10 18Z" fill-rule="nonzero" fill="currentColor"></path></g></svg></span><span data-k="check"><svg class="hb-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><g transform="matrix(1 0 0 1 3.41 5.59)"><path d="M5.59 10.58L1.42 6.41L0 7.82L5.59 13.41L17.59 1.41L16.18 0L5.59 10.58Z" fill-rule="nonzero" fill="currentColor"></path></g></svg></span></template>
+          </div>
+          <p class="hb-tile__hint caption">Switch the state to see the card change</p>
+          </div>
+          <div class="hb-tile hb-tile--list">
+          <p class="hb-tile__label overline">List item</p>
+          <div class="hb-tile__body">
+          <div class="hb-listbox" role="group" aria-label="Workshops">
+          <button class="hb-list is-two" type="button" aria-pressed="false"><span class="hb-list__icon"><svg class="hb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><g transform="matrix(1 0 0 1 4.012 2.8)"><path d="M1.615 18.231C1.155 18.231 0.771 18.077 0.463 17.768C0.154 17.46 0 17.076 0 16.615L0 3.846C0 3.386 0.154 3.002 0.463 2.693C0.771 2.385 1.155 2.231 1.615 2.231L3.385 2.231L3.385 0L4.461 0L4.461 2.231L11.616 2.231L11.616 0L12.616 0L12.616 2.231L14.385 2.231C14.845 2.231 15.229 2.385 15.538 2.693C15.846 3.002 16 3.386 16 3.846L16 16.615C16 17.076 15.846 17.46 15.538 17.768C15.229 18.077 14.845 18.231 14.385 18.231L1.615 18.231ZM1.615 17.231L14.385 17.231C14.539 17.231 14.68 17.167 14.808 17.038C14.936 16.91 15 16.769 15 16.615L15 7.846L1 7.846L1 16.615C1 16.769 1.064 16.91 1.192 17.038C1.32 17.167 1.461 17.231 1.615 17.231ZM1 6.846L15 6.846L15 3.846C15 3.692 14.936 3.551 14.808 3.423C14.68 3.295 14.539 3.231 14.385 3.231L1.615 3.231C1.461 3.231 1.32 3.295 1.192 3.423C1.064 3.551 1 3.692 1 3.846L1 6.846Z" fill-rule="nonzero" fill="currentColor"></path></g></svg></span><span class="hb-list__text"><span class="hb-list__title body-default">Hand building with clay</span><span class="hb-list__sub body-small">10.12.2026, 2 PM · Barsega studio</span></span><svg class="hb-icon hb-list__chev" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><g transform="matrix(1 0 0 1 8.59 6)"><path d="M1.41 0L0 1.41L4.58 6L0 10.59L1.41 12L7.41 6L1.41 0Z" fill-rule="nonzero" fill="currentColor"></path></g></svg></button>
+          <button class="hb-list is-two" type="button" aria-pressed="false"><span class="hb-list__icon"><svg class="hb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><g transform="matrix(1 0 0 1 4.012 2.8)"><path d="M1.615 18.231C1.155 18.231 0.771 18.077 0.463 17.768C0.154 17.46 0 17.076 0 16.615L0 3.846C0 3.386 0.154 3.002 0.463 2.693C0.771 2.385 1.155 2.231 1.615 2.231L3.385 2.231L3.385 0L4.461 0L4.461 2.231L11.616 2.231L11.616 0L12.616 0L12.616 2.231L14.385 2.231C14.845 2.231 15.229 2.385 15.538 2.693C15.846 3.002 16 3.386 16 3.846L16 16.615C16 17.076 15.846 17.46 15.538 17.768C15.229 18.077 14.845 18.231 14.385 18.231L1.615 18.231ZM1.615 17.231L14.385 17.231C14.539 17.231 14.68 17.167 14.808 17.038C14.936 16.91 15 16.769 15 16.615L15 7.846L1 7.846L1 16.615C1 16.769 1.064 16.91 1.192 17.038C1.32 17.167 1.461 17.231 1.615 17.231ZM1 6.846L15 6.846L15 3.846C15 3.692 14.936 3.551 14.808 3.423C14.68 3.295 14.539 3.231 14.385 3.231L1.615 3.231C1.461 3.231 1.32 3.295 1.192 3.423C1.064 3.551 1 3.692 1 3.846L1 6.846Z" fill-rule="nonzero" fill="currentColor"></path></g></svg></span><span class="hb-list__text"><span class="hb-list__title body-default">Between sound &amp; stillness</span><span class="hb-list__sub body-small">04.12.2026, 3PM · Svera studio</span></span><svg class="hb-icon hb-list__chev" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><g transform="matrix(1 0 0 1 8.59 6)"><path d="M1.41 0L0 1.41L4.58 6L0 10.59L1.41 12L7.41 6L1.41 0Z" fill-rule="nonzero" fill="currentColor"></path></g></svg></button>
+          <button class="hb-list is-two no-divider" type="button" aria-pressed="false"><span class="hb-list__icon"><svg class="hb-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><g transform="matrix(1 0 0 1 4.012 2.8)"><path d="M1.615 18.231C1.155 18.231 0.771 18.077 0.463 17.768C0.154 17.46 0 17.076 0 16.615L0 3.846C0 3.386 0.154 3.002 0.463 2.693C0.771 2.385 1.155 2.231 1.615 2.231L3.385 2.231L3.385 0L4.461 0L4.461 2.231L11.616 2.231L11.616 0L12.616 0L12.616 2.231L14.385 2.231C14.845 2.231 15.229 2.385 15.538 2.693C15.846 3.002 16 3.386 16 3.846L16 16.615C16 17.076 15.846 17.46 15.538 17.768C15.229 18.077 14.845 18.231 14.385 18.231L1.615 18.231ZM1.615 17.231L14.385 17.231C14.539 17.231 14.68 17.167 14.808 17.038C14.936 16.91 15 16.769 15 16.615L15 7.846L1 7.846L1 16.615C1 16.769 1.064 16.91 1.192 17.038C1.32 17.167 1.461 17.231 1.615 17.231ZM1 6.846L15 6.846L15 3.846C15 3.692 14.936 3.551 14.808 3.423C14.68 3.295 14.539 3.231 14.385 3.231L1.615 3.231C1.461 3.231 1.32 3.295 1.192 3.423C1.064 3.551 1 3.692 1 3.846L1 6.846Z" fill-rule="nonzero" fill="currentColor"></path></g></svg></span><span class="hb-list__text"><span class="hb-list__title body-default">Crochet workshop</span><span class="hb-list__sub body-small">06.04.2027 · Studio V</span></span><svg class="hb-icon hb-list__chev" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><g transform="matrix(1 0 0 1 8.59 6)"><path d="M1.41 0L0 1.41L4.58 6L0 10.59L1.41 12L7.41 6L1.41 0Z" fill-rule="nonzero" fill="currentColor"></path></g></svg></button>
+          </div>
+          </div>
+          <p class="hb-tile__hint caption">Hover or tap a row to select it</p>
+          </div>
+          <div class="hb-tile hb-tile--type">
+          <p class="hb-tile__label overline">Typography</p>
+          <div class="hb-tile__body">
+          <button class="hb-type" type="button" aria-describedby="hb-type-name">
+          <span class="hb-type__specimen" style="font-family: var(--font-heading); font-weight: 400;">
+          <span class="hb-type__aa" aria-hidden="true">Aa</span>
+          <span class="hb-type__line">There is space for you, too.</span>
+          </span>
+          <span class="hb-type__name label-default" id="hb-type-name" aria-live="polite">Fraunces Regular · Headings</span>
+          </button>
+          </div>
+          <p class="hb-tile__hint caption">Tap to change the weight</p>
+          </div>
+          <div class="hb-tile hb-tile--tags">
+          <p class="hb-tile__label overline">Tags and badges</p>
+          <div class="hb-tile__body">
+          <p class="hb-sub label-default">Tags</p>
+          <div class="hb-row" role="group" aria-label="Workshop types">
+          <button class="hb-tag" type="button" aria-pressed="false">Relax &amp; clay</button><button class="hb-tag" type="button" aria-pressed="false">Dance &amp; movement</button><button class="hb-tag" type="button" aria-pressed="false">Sound bath &amp; journaling</button><button class="hb-tag" type="button" aria-pressed="false">Art workshop</button><button class="hb-tag" type="button" aria-pressed="false">Handcraft</button>
+          </div>
+          <p class="hb-sub label-default">Badges</p>
+          <div class="hb-row">
+          <span class="hb-badge hb-badge--highlight"><svg class="hb-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><g transform="matrix(1 0 0 1 3.41 5.59)"><path d="M5.59 10.58L1.42 6.41L0 7.82L5.59 13.41L17.59 1.41L16.18 0L5.59 10.58Z" fill-rule="nonzero" fill="currentColor"></path></g></svg><span>2 places left</span></span><span class="hb-badge hb-badge--brand"><span>Full</span></span><span class="hb-badge hb-badge--info"><span>Moved</span></span><span class="hb-badge hb-badge--error"><span>Cancelled</span></span>
+          </div>
+          </div>
+          <p class="hb-tile__hint caption">Tap a tag to select it</p>
+          </div>
+          <div class="hb-tile hb-tile--theme">
+          <p class="hb-tile__label overline">Dark mode</p>
+          <div class="hb-tile__body">
+          <fieldset class="hb-radios hb-theme"><legend class="hb-sub label-default">Theme</legend><label class="hb-radio"><input type="radio" class="hb-sr" name="hb-theme" value="default" checked><span class="hb-radio__outer" aria-hidden="true"></span><span class="hb-control__label">Light</span></label><label class="hb-radio"><input type="radio" class="hb-sr" name="hb-theme" value="dark"><span class="hb-radio__outer" aria-hidden="true"></span><span class="hb-control__label">Dark</span></label></fieldset>
+          </div>
+          <p class="hb-tile__hint caption">Switch the whole set between light and dark</p>
+          </div>
+          </div>
+          </section>
+          <ol class="steps">
+            <li class="step">
+              <div class="step__text">
+                <p class="step__phase">05 · Design system</p>
+                <p class="step__stat"><span class="step__num" data-count="3">3</span> versions until it held up</p>
+                <p>Brand guideline and design system, through three versions and four contrast checks before any screen was generated.</p>
+                <p class="step__why"><strong>Why this way:</strong> Claude Design builds screens from the system, so the system had to be right first.</p>
+                <p class="step__tools">Figma, Claude Design, Claude Code contrast checks</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="step__text">
+                <p class="step__phase">06 · Prototype</p>
+                <p class="step__stat"><span class="step__num" data-count="4">4</span> contrast issues fixed</p>
+                <p>Website screens and design system built from the screen map; later changes sent as change-only prompts.</p>
+                <p class="step__why"><strong>Why this way:</strong> “Change only the listed elements” kept approved screens stable. 4 contrast issues fixed to WCAG AA.</p>
+                <p class="step__tools">Claude Design</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="step__text">
+                <p class="step__phase">07 · Deliver</p>
+                <p class="step__stat"><span class="step__num" data-count="28">28</span> screenshots handed off</p>
+                <p>Design rationale, implementation document, 28 screenshots, gap list.</p>
+                <p class="step__why"><strong>Why this way:</strong> So a developer or tester can pick it up without me in the room.</p>
+                <p class="step__tools">Claude Code handoff skill</p>
+              </div>
+            </li>
+          </ol>
         </section>
         <section class="cs__section" id="decisions">
-          <h2>Decisions as hypotheses</h2>
+          <h3>Decisions as hypotheses</h3>
           <div class="cs__rows">
-            <div class="cs__row"><h3 class="cs__row-title">Talking is optional; leaving early is fine</h3><dl>
+            <div class="cs__row"><h4 class="cs__row-title">Talking is optional; leaving early is fine</h4><dl>
               <div><dt>Why</dt><dd>Talking helped one participant; the other valued not having to talk</dd></div>
               <div><dt>What the test will tell me</dt><dd>“What was it like being there with the others?”</dd></div>
             </dl></div>
-            <div class="cs__row"><h3 class="cs__row-title">No online payment, no price choice on the form; she pays on the day, in private</h3><dl>
+            <div class="cs__row"><h4 class="cs__row-title">No online payment, no price choice on the form; she pays on the day, in private</h4><dl>
               <div><dt>Why</dt><dd>Choosing the reduced tier online means telling a website she can only afford less; it also keeps payment data and a third party off the site</dd></div>
               <div><dt>What the test will tell me</dt><dd>How she would prefer to pay</dd></div>
             </dl></div>
-            <div class="cs__row"><h3 class="cs__row-title">First name and email only, and “Reserve your place”</h3><dl>
+            <div class="cs__row"><h4 class="cs__row-title">First name and email only, and “Reserve your place”</h4><dl>
               <div><dt>Why</dt><dd>A workshop booking could count as health data, so I asked for the minimum; “Reserve” makes clear nothing is paid now</dd></div>
               <div><dt>What the test will tell me</dt><dd>Whether signing up at all is a barrier</dd></div>
             </dl></div>
-            <div class="cs__row"><h3 class="cs__row-title">“Caring for someone with cancer?”, not “caregiver”</h3><dl>
+            <div class="cs__row"><h4 class="cs__row-title">“Caring for someone with cancer?”, not “caregiver”</h4><dl>
               <div><dt>Why</dt><dd>Many women don’t call themselves carers, and most cancer services speak to the patient first</dd></div>
               <div><dt>What the test will tell me</dt><dd>“Who do you think this is for?”</dd></div>
             </dl></div>
-            <div class="cs__row"><h3 class="cs__row-title">In person only, close to where she is</h3><dl>
+            <div class="cs__row"><h4 class="cs__row-title">In person only, close to where she is</h4><dl>
               <div><dt>Why</dt><dd>Being with others is part of what I’m testing. One woman’s hardest moment was having nobody nearby: “there was nobody who I could phone saying, let’s go and meet for a drink”. Online added too much complexity for a first iteration</dd></div>
               <div><dt>What the test will tell me</dt><dd>Whether being with others helps: “What was it like being there with the others?” Whether it is within her reach: I watch for signs of effort or tiredness during set-up and during the activity, and ask “What would make it hard for you to do this again next week?” and “How did it fit with how much energy you had today?”</dd></div>
             </dl></div>
           </div>
         </section>
         <section class="cs__section" id="whats-next">
-          <h2>What’s next</h2>
+          <h3>What’s next</h3>
           <p>The prototype is ready for its first think-aloud usability test, with new testers. I want to find out whether she:</p>
           <ul>
             <li>gets absorbed in the activity, out of her head</li>
@@ -201,6 +485,7 @@
             <li>can tell from the website which session suits her</li>
           </ul>
         </section>
+        </div>
         </div>
       </div>
     </article>

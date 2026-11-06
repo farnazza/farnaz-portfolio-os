@@ -1,0 +1,203 @@
+/* Her Body, Her Mind bento (founder, 6 Nov 2026). Uses only the HBHM tokens and components in this folder, scoped to #hbhm-ds.
+   Motion: soft and slow, 500-700ms ease-out, fades and small lifts only. */
+#hbhm-ds {
+  --hb-ease: cubic-bezier(.22, .61, .36, 1);
+  --hb-slow: 600ms;
+  margin: var(--cs-visual) 0;
+  padding: var(--spacing-3);
+  border-radius: var(--borderRadius-xl);
+  background: var(--color-background-primary);
+  color: var(--color-content-primary);
+  font: var(--text-body-default);
+  transition: background-color var(--hb-slow) var(--hb-ease), color var(--hb-slow) var(--hb-ease);
+}
+
+/* Keep the portfolio's case study styles out of the bento */
+#hbhm-ds :is(h3, h4, h5, p, ul, ol, li, dl, dt, dd) { margin: 0; padding: 0; letter-spacing: normal; }
+#hbhm-ds :is(ul, ol) { list-style: none; }
+#hbhm-ds button { margin: 0; padding: 0; border: 0; background: none; font: inherit; color: inherit; text-align: inherit; cursor: pointer; }
+#hbhm-ds :focus-visible { outline: 2px solid var(--color-border-focus); outline-offset: 2px; border-radius: var(--borderRadius-sm); }
+#hbhm-ds .overline { text-transform: uppercase; }
+
+/* Grid */
+#hbhm-ds .hb-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-areas:
+    "logo logo pal pal"
+    "per per voice voice"
+    "form form ev ev"
+    "form form list list"
+    "type tags tags theme";
+  gap: var(--spacing-3);
+}
+#hbhm-ds .hb-tile--logo { grid-area: logo; }
+#hbhm-ds .hb-tile--pal { grid-area: pal; }
+#hbhm-ds .hb-tile--per { grid-area: per; }
+#hbhm-ds .hb-tile--voice { grid-area: voice; }
+#hbhm-ds .hb-tile--form { grid-area: form; }
+#hbhm-ds .hb-tile--ev { grid-area: ev; }
+#hbhm-ds .hb-tile--list { grid-area: list; }
+#hbhm-ds .hb-tile--type { grid-area: type; }
+#hbhm-ds .hb-tile--tags { grid-area: tags; }
+#hbhm-ds .hb-tile--theme { grid-area: theme; }
+@media (max-width: 1100px) {
+  #hbhm-ds .hb-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas: "logo logo" "pal pal" "per per" "voice voice" "form form" "ev ev" "list list" "type theme" "tags tags";
+  }
+}
+@media (max-width: 600px) {
+  #hbhm-ds { padding: var(--spacing-2); }
+  #hbhm-ds .hb-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "logo" "pal" "per" "voice" "form" "ev" "list" "type" "tags" "theme"; }
+}
+
+/* Tile */
+#hbhm-ds .hb-tile {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  min-width: 0;
+  padding: var(--spacing-5);
+  border-radius: var(--borderRadius-lg);
+  background: var(--color-background-secondary);
+  transition: background-color var(--hb-slow) var(--hb-ease), opacity 700ms var(--hb-ease), transform 700ms var(--hb-ease);
+}
+#hbhm-ds .hb-tile__label { color: var(--color-content-secondary); }
+#hbhm-ds .hb-tile__body { flex: 1; display: flex; flex-direction: column; gap: var(--spacing-4); min-width: 0; }
+#hbhm-ds .hb-tile__hint { display: flex; align-items: center; gap: var(--spacing-2); color: var(--color-content-secondary); }
+#hbhm-ds .hb-tile__hint::before { content: ""; width: 6px; height: 6px; flex: none; border-radius: var(--borderRadius-pill); background: var(--color-interactive-action); }
+.js #hbhm-ds .hb-tile:not(.is-in) { opacity: 0; transform: translateY(12px); }
+
+/* Shared crossfade: the hidden layer leaves the accessibility tree once it has faded */
+#hbhm-ds .hb-fade { transition: opacity var(--hb-slow) var(--hb-ease), transform var(--hb-slow) var(--hb-ease), visibility 0s linear var(--hb-slow); }
+#hbhm-ds .hb-fade.is-off { opacity: 0; transform: translateY(4px); visibility: hidden; }
+#hbhm-ds .hb-fade:not(.is-off) { transition-delay: 0s; }
+#hbhm-ds .hb-stack { display: grid; }
+#hbhm-ds .hb-stack > * { grid-area: 1 / 1; min-width: 0; }
+
+/* 1 · Logo: grid, key shapes and logo as stacked layers */
+#hbhm-ds .hb-logo { position: relative; flex: 1; min-height: 300px; display: grid; place-items: center; perspective: 1200px; border-radius: var(--borderRadius-md); }
+#hbhm-ds .hb-logo__stack { position: relative; width: 150px; height: 150px; transform-style: preserve-3d; transition: transform 700ms var(--hb-ease); }
+#hbhm-ds .hb-logo__layer { position: absolute; inset: 0; width: 100%; height: 100%; transition: transform 700ms var(--hb-ease), opacity var(--hb-slow) var(--hb-ease); }
+#hbhm-ds .hb-logo__layer--grid {
+  background-color: var(--color-background-primary);
+  background-image: linear-gradient(var(--color-sand-300) 1px, transparent 1px), linear-gradient(90deg, var(--color-sand-300) 1px, transparent 1px);
+  background-size: calc(100% / 12) calc(100% / 12);
+  outline: 1px solid var(--color-sand-300);
+  opacity: 0;
+}
+#hbhm-ds .hb-logo__layer--shapes { color: var(--color-twilight-400); opacity: 0; }
+#hbhm-ds .hb-logo__layer--mark { color: var(--color-content-primary); }
+#hbhm-ds .hb-logo__layer--mark path { fill: currentColor; }
+#hbhm-ds .hb-logo:hover .hb-logo__layer, #hbhm-ds .hb-logo:focus-visible .hb-logo__layer, #hbhm-ds .hb-logo[aria-pressed="true"] .hb-logo__layer { opacity: 1; }
+#hbhm-ds .hb-logo[aria-pressed="true"] .hb-logo__stack { transform: translateX(-48px) rotateX(55deg) rotateZ(-45deg); }
+#hbhm-ds .hb-logo[aria-pressed="true"] .hb-logo__layer--grid { transform: translateZ(-70px); }
+#hbhm-ds .hb-logo[aria-pressed="true"] .hb-logo__layer--mark { transform: translateZ(70px); background: color-mix(in srgb, var(--color-background-primary) 25%, transparent); outline: 1px solid var(--color-sand-300); }
+#hbhm-ds .hb-logo__names { position: absolute; left: calc(50% + 70px); top: 50%; width: 0; height: 0; }
+#hbhm-ds .hb-logo__names > span { position: absolute; left: 0; white-space: nowrap; color: var(--color-content-secondary); opacity: 0; transform: translateX(-8px); transition: opacity var(--hb-slow) var(--hb-ease), transform var(--hb-slow) var(--hb-ease); }
+#hbhm-ds .hb-logo__names > span::before { content: ""; display: inline-block; width: 16px; height: 1px; margin-right: var(--spacing-2); vertical-align: middle; background: var(--color-sand-300); }
+#hbhm-ds .hb-logo__names > :nth-child(1) { top: 46px; }
+#hbhm-ds .hb-logo__names > :nth-child(2) { top: -12px; }
+#hbhm-ds .hb-logo__names > :nth-child(3) { top: -70px; }
+#hbhm-ds .hb-logo[aria-pressed="true"] .hb-logo__names > span { opacity: 1; transform: none; transition-delay: 300ms; }
+
+/* 2 · Typography */
+#hbhm-ds .hb-type { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: var(--spacing-3); padding: var(--spacing-3); margin: calc(-1 * var(--spacing-3)); border-radius: var(--borderRadius-md); }
+#hbhm-ds .hb-type__aa { font-size: 72px; line-height: 1; }
+#hbhm-ds .hb-type__line { font-size: var(--fontSize-xl); line-height: 1.3; }
+#hbhm-ds .hb-type__name { color: var(--color-content-secondary); }
+#hbhm-ds .hb-type__specimen { transition: opacity 300ms var(--hb-ease), transform 300ms var(--hb-ease); display: flex; flex-direction: column; gap: var(--spacing-3); }
+#hbhm-ds .hb-type__specimen.is-swap { opacity: 0; transform: translateY(4px); }
+
+/* 3 · Palette */
+#hbhm-ds .hb-swatches { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--spacing-2); }
+#hbhm-ds .hb-swatch { aspect-ratio: 1 / 1.15; min-height: 56px; border-radius: var(--borderRadius-md); background: var(--sw); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-content-primary) 12%, transparent); transition: transform var(--hb-slow) var(--hb-ease); }
+#hbhm-ds .hb-swatch:hover { transform: translateY(-2px); }
+#hbhm-ds .hb-swatch[aria-pressed="true"] { transform: translateY(-4px); outline: 2px solid var(--color-border-brand); outline-offset: 2px; }
+#hbhm-ds .hb-pal__info { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--spacing-1) var(--spacing-4); align-items: start; }
+#hbhm-ds .hb-pal__name { grid-column: 1; }
+#hbhm-ds .hb-pal__hex { grid-column: 2; grid-row: 1; font-family: var(--font-mono); font-size: var(--fontSize-md); }
+#hbhm-ds .hb-pal__meta { grid-column: 1 / -1; color: var(--color-content-secondary); }
+#hbhm-ds .hb-pal__ratio { grid-column: 1 / -1; display: flex; align-items: baseline; gap: var(--spacing-2); }
+#hbhm-ds .hb-pal__ratio strong { font: var(--text-heading-h3); }
+#hbhm-ds .hb-pal__copied { grid-column: 1 / -1; min-height: 1.4em; color: var(--color-content-secondary); }
+
+/* 4 · Brand personality */
+#hbhm-ds .hb-trait { display: flex; flex-direction: column; gap: var(--spacing-4); }
+#hbhm-ds .hb-trait__num { font: var(--text-heading-display); color: var(--color-content-accent); }
+#hbhm-ds .hb-trait .quote { color: var(--color-content-accent); }
+#hbhm-ds .hb-trait dl { display: flex; flex-direction: column; gap: var(--spacing-3); padding-top: var(--spacing-4); border-top: 1px solid var(--color-border-primary); }
+#hbhm-ds .hb-trait dt { color: var(--color-content-secondary); }
+#hbhm-ds .hb-trait dd { margin-top: 2px; }
+#hbhm-ds .hb-pager { display: flex; align-items: center; gap: var(--spacing-2); margin-top: auto; }
+#hbhm-ds .hb-pager__count { margin-right: auto; color: var(--color-content-secondary); }
+#hbhm-ds .hb-pager .hb-btn { width: 44px; padding: 0; }
+#hbhm-ds .hb-pager .hb-btn .hb-icon { width: 24px; height: 24px; }
+#hbhm-ds .hb-pager__prev .hb-icon { transform: rotate(180deg); }
+
+/* 5 · Voice and tone */
+#hbhm-ds .hb-voice { display: flex; flex-direction: column; gap: var(--spacing-2); }
+#hbhm-ds .hb-say { display: flex; flex-direction: column; gap: var(--spacing-2); width: 100%; padding: var(--spacing-4); border-radius: var(--borderRadius-md); background: var(--color-background-primary); transition: background-color var(--hb-slow) var(--hb-ease); }
+#hbhm-ds .hb-say:hover { background: var(--color-background-tertiary); }
+#hbhm-ds .hb-say__pair { color: var(--color-content-accent); }
+#hbhm-ds .hb-say__k { display: block; margin-bottom: 2px; color: var(--color-content-secondary); }
+#hbhm-ds .hb-say s { color: var(--color-content-secondary); }
+
+/* 6 · Tags and badges */
+#hbhm-ds .hb-row { display: flex; flex-wrap: wrap; gap: var(--spacing-2); }
+#hbhm-ds .hb-sub { color: var(--color-content-secondary); }
+#hbhm-ds button.hb-tag { position: relative; transition: background-color var(--hb-slow) var(--hb-ease), color var(--hb-slow) var(--hb-ease); }
+#hbhm-ds button.hb-tag::after { content: ""; position: absolute; inset: -6px 0; }
+#hbhm-ds button.hb-tag:hover:not(.is-selected) { background: var(--color-sand-300); }
+
+/* 7 · Event card */
+#hbhm-ds .hb-radios { display: flex; flex-wrap: wrap; gap: var(--spacing-2) var(--spacing-4); border: 0; margin: 0; padding: 0; min-width: 0; }
+#hbhm-ds .hb-radio { min-height: 32px; }
+#hbhm-ds .hb-radio input:checked + .hb-radio__outer { border-color: var(--color-interactive-action); }
+#hbhm-ds .hb-radio input:checked + .hb-radio__outer::after { content: ""; width: 10px; height: 10px; border-radius: 5px; background: var(--color-interactive-action); }
+#hbhm-ds .hb-eventp { min-height: 320px; }
+#hbhm-ds .hb-eventp .hb-badge, #hbhm-ds .hb-eventp__meta, #hbhm-ds .hb-card__title { transition: background-color var(--hb-slow) var(--hb-ease), color var(--hb-slow) var(--hb-ease); }
+#hbhm-ds .hb-ev__notice { transition: opacity var(--hb-slow) var(--hb-ease), transform var(--hb-slow) var(--hb-ease); }
+#hbhm-ds .hb-ev__notice.is-swap { opacity: 0; transform: translateY(4px); }
+#hbhm-ds .hb-ev__notice[hidden] { display: none; }
+
+/* 8 + 9 · Sign-up form and "You're signed up" */
+#hbhm-ds .hb-form { display: flex; flex-direction: column; gap: var(--spacing-5); padding: var(--spacing-6); border-radius: var(--borderRadius-xl); background: var(--color-background-primary); border: 1px solid var(--color-border-primary); }
+#hbhm-ds .hb-form .hb-input { min-height: 48px; }
+#hbhm-ds .hb-check { align-items: flex-start; }
+#hbhm-ds .hb-check__box { margin-top: 2px; }
+#hbhm-ds .hb-check__box .hb-icon { opacity: 0; }
+#hbhm-ds .hb-check input:checked + .hb-check__box { background: var(--color-interactive-action); border-color: var(--color-interactive-action); }
+#hbhm-ds .hb-check input:checked + .hb-check__box .hb-icon { opacity: 1; }
+#hbhm-ds .hb-check__help { padding-left: 28px; color: var(--color-content-tertiary); }
+#hbhm-ds .hb-form__fine { color: var(--color-content-tertiary); text-align: center; }
+#hbhm-ds .hb-nt .hb-link { color: var(--color-interactive-primary); }
+#hbhm-ds .hb-done { display: flex; flex-direction: column; gap: var(--spacing-4); padding: var(--spacing-6); border-radius: var(--borderRadius-xl); background: var(--color-background-primary); }
+#hbhm-ds .hb-done__disc { width: 56px; height: 56px; border-radius: 28px; display: inline-flex; align-items: center; justify-content: center; background: var(--color-background-brandSubtle); color: var(--color-content-accent); }
+#hbhm-ds .hb-done h3:focus { outline: none; }
+#hbhm-ds .hb-done .hb-list { background: var(--color-background-secondary); border-radius: var(--borderRadius-md); }
+#hbhm-ds .hb-done__text { color: var(--color-content-secondary); }
+#hbhm-ds a.hb-btn { text-decoration: none; }
+#hbhm-ds .hb-done .hb-link { display: inline-flex; align-items: center; min-height: 44px; }
+#hbhm-ds .hb-again { align-self: flex-start; min-height: 44px; color: var(--color-content-link); text-decoration: underline; text-underline-offset: 2px; }
+#hbhm-ds .hb-form-swap .hb-fade.is-off { transform: translateY(8px) scale(.99); }
+
+/* 10 · List item: hover from the design system; selected uses border/brand ("selected-state borders") */
+#hbhm-ds .hb-listbox { border-radius: var(--borderRadius-lg); overflow: hidden; border: 1px solid var(--color-border-primary); }
+#hbhm-ds button.hb-list { transition: background-color var(--hb-slow) var(--hb-ease), box-shadow var(--hb-slow) var(--hb-ease); }
+#hbhm-ds button.hb-list[aria-pressed="true"] { box-shadow: inset 0 0 0 2px var(--color-border-brand); }
+#hbhm-ds button.hb-list:focus-visible { outline-offset: -2px; }
+#hbhm-ds .hb-list__chev { transition: transform var(--hb-slow) var(--hb-ease); }
+#hbhm-ds button.hb-list:hover .hb-list__chev { transform: translateX(2px); }
+
+/* 11 · Dark mode */
+#hbhm-ds .hb-theme { display: flex; flex-direction: column; gap: var(--spacing-3); }
+
+@media (prefers-reduced-motion: reduce) {
+  #hbhm-ds, #hbhm-ds *, #hbhm-ds *::before, #hbhm-ds *::after { transition: none !important; }
+  .js #hbhm-ds .hb-tile:not(.is-in) { opacity: 1; transform: none; }
+  #hbhm-ds .hb-logo[aria-pressed="true"] .hb-logo__stack { transform: none; }
+  #hbhm-ds .hb-logo[aria-pressed="true"] .hb-logo__layer { transform: none; }
+  #hbhm-ds .hb-logo__names { display: none; }
+}
