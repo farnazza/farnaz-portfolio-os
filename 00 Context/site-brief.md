@@ -143,3 +143,7 @@
 - Same style for the story cards in "Before the design process" (3 then 2; "Read more" still opens a card across the row) and the Me/AI cards (4 columns, no accent line; "01" and the phase as a black title, Me/AI pills kept). Titles black 17px everywhere (founder, 6 Nov 2026). Icons: house, ear, messages-square, heart-handshake, focus; search, target, lightbulb, package.
 - Hero and The insight joined the same grid style (founder, 6 Nov 2026), with no accent line and no shadow. Hero: one grid with a full-width lead cell (purple pills, headline, text) and six fact cells with icons (user, sparkles, calendar, smartphone, wrench, circle-check). The insight: heading above the grid, two cells, "What helps" (hand-heart) and "What gets in the way" (circle-slash); quotes and barrier pills kept.
 
+## Cache (6 Nov 2026)
+
+- Every page links its stylesheets and scripts with a version tag (`style.css?v=20261106b`). GitHub Pages lets browsers keep these files for 10 minutes, so a visitor could get a new page with an old stylesheet. Change the tag on every page whenever CSS or JS changes, before sending to GitHub.
+
