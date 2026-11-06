@@ -111,3 +111,30 @@
     pick.focus({ preventScroll: !narrow.matches });
   });
 })();
+
+// Hero panel: the first workshop card opens its event detail in place, as in the prototype; "All workshops" goes back.
+// "Reserve your place" there moves on to the sign-up panel of the happy path further down.
+(() => {
+  const hero = document.getElementById("hbhm-hero");
+  if (!hero) return;
+  const still = matchMedia("(prefers-reduced-motion: reduce)");
+  const panel = hero.querySelector(".hp-panel");
+  const list = hero.querySelector("[data-hero-list]"), detail = hero.querySelector("[data-hero-detail]");
+  const pick = hero.querySelector("[data-hero-pick]");
+  const swap = (from, to, focusEl) => {
+    from.hidden = true;
+    to.hidden = false;
+    panel.scrollTop = 0;
+    to.classList.add("is-entering");
+    requestAnimationFrame(() => requestAnimationFrame(() => to.classList.remove("is-entering")));
+    focusEl.focus({ preventScroll: true });
+  };
+  pick.addEventListener("click", () => swap(list, detail, hero.querySelector("[data-hero-detail-title]")));
+  hero.querySelector("[data-hero-back]").addEventListener("click", () => swap(detail, list, pick));
+  hero.querySelector("[data-hero-reserve]").addEventListener("click", () => {
+    const signup = document.querySelector('#hbhm-hp [data-hp-step="3"]');
+    if (!signup) return;
+    signup.scrollIntoView({ behavior: still.matches ? "auto" : "smooth", block: "center" });
+    setTimeout(() => document.getElementById("hp-fn").focus({ preventScroll: true }), still.matches ? 0 : 600);
+  });
+})();
