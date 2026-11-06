@@ -112,8 +112,8 @@ All motion respects prefers-reduced-motion.
 ## Do NOT generate
 
 - More than one accent color, or any color not listed above.
-- Borders on case study cards.
-- Shadows of any kind. Exception (founder, 6 Nov 2026): the Her Body, Her Mind insight card, a soft 0 12px 40px shadow at 8% black, with a 4px accent top line like the role cards and a white fill. The case study hero card on the same page uses the same style (founder, 6 Nov 2026). Also (founder, 6 Nov 2026): the Her Body, Her Mind happy path panels, which use the HBHM design system's own `shadow-card-elevated` and 1px `border-primary`, and thin grid divider lines (#0E0E0E at 10%) between the cells.
+- Borders on case study cards. Exception (founder, 6 Nov 2026): the feature grids on the Her Body, Her Mind case study (hero facts, story cards, Me/AI cards, The problem, The insight, Decisions as hypotheses, What's next): white container, 1px #ECECEC border and dividers, no shadow. Icons there: Lucide 0.460.0 (ISC), inlined, in the accent.
+- Shadows of any kind. (The insight card and hero card shadows were removed on 6 Nov 2026, when they joined the feature grid style.) Also (founder, 6 Nov 2026): the Her Body, Her Mind happy path panels, which use the HBHM design system's own `shadow-card-elevated` and 1px `border-primary`, and thin grid divider lines (#0E0E0E at 10%) between the cells.
 - Gradients.
 - Fonts other than Manrope.
 - Lots of text: keep copy short, let the work carry the page.

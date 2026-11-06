@@ -996,72 +996,21 @@ a { color: inherit; }
   .cform, .cform__done, .cform input, .cform textarea { transition: none; }
 }
 
-/* The insight as a highlighted card (founder, 6 Nov 2026): white, accent top line like the role cards, soft shadow (approved exception), two columns */
-.cs__content .insight {
-  margin: var(--cs-visual) 0;
-  padding: 32px;
-  border-top: 4px solid var(--accent);
-  border-radius: 24px;
-  background: var(--pill);
-  box-shadow: 0 12px 40px rgba(14, 14, 14, .08);
-}
-.cs__section .insight .insight__title { margin: 0 0 24px; }
-.insight__cols { display: grid; grid-template-columns: 1fr 1fr; }
-.insight__part + .insight__part { margin-left: 32px; padding-left: 32px; border-left: 1px solid var(--bg); }
-.insight__part:first-child { padding-right: 0; }
-.cs__content .insight p { margin: 0; }
-.cs__content .insight .insight__label { margin-bottom: 12px; font-size: 13px; font-weight: 600; color: var(--accent-text); }
-.cs__content .insight .insight__tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 0; padding: 0; list-style: none; }
-.cs__content .insight .insight__tags li {
-  display: inline-flex;
-  align-items: center;
-  min-height: 40px;
-  margin: 0;
-  padding-inline: 16px;
-  border-radius: 999px;
-  background: var(--bg);
-  font-size: 15px;
-  font-weight: 500;
-}
-.insight__quote { margin: 24px 0 0; font-size: 24px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.3; }
-.insight__quote--key { margin-top: 32px; font-size: 32px; line-height: 1.2; }
-.js .insight { opacity: 0; transform: translateY(12px); transition: opacity .5s cubic-bezier(0, 0, .2, 1), transform .5s cubic-bezier(0, 0, .2, 1); }
-.js .insight.is-in { opacity: 1; transform: none; }
-@media (max-width: 720px) {
-  .cs__content .insight { padding: 24px; }
-  .insight__cols { grid-template-columns: 1fr; }
-  .insight__part + .insight__part { margin: 32px 0 0; padding: 32px 0 0; border-left: 0; border-top: 1px solid var(--bg); }
-  .insight__quote { font-size: 20px; }
-  .insight__quote--key { font-size: 26px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .js .insight { opacity: 1; transform: none; transition: none; }
-}
-
 /* Case study hero (founder, 6 Nov 2026): logo and title centred, then two highlighted cards (same style as The insight) with the prototype panel beside them, 15px apart (option A) */
 .cs__title.cs-hero { padding-top: 120px; text-align: center; }
 .cs-hero .page-title { font-size: 28px; } /* founder, 6 Nov 2026: 20px smaller */
 .cs-hero__logo { display: block; width: auto; height: 48px; margin: 0 auto 24px; }
 .cs-hero__row { display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 64px; text-align: left; }
-.cs-hero__cards { flex: 0 1 660px; display: flex; flex-direction: column; gap: 16px; }
-.cs-hero__card {
-  padding: 32px;
-  border-top: 4px solid var(--accent);
-  border-radius: 24px;
-  background: var(--pill);
-  box-shadow: 0 12px 40px rgba(14, 14, 14, .08);
-}
-.cs-hero__card--meta { border-top: 0; }
-.cs-hero__card p { margin: 0; }
+.cs-hero__cards { flex: 0 1 660px; }
+.cs-hero .fgrid { margin: 0; }
+.cs-hero .fgrid--hero { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.cs-hero .fgrid__cell--lead { grid-column: 1 / -1; padding: 32px; }
+.cs-hero .fgrid__cell p, .cs-hero .fgrid__cell dd { margin: 0; }
 /* Industry tags: The insight pill shape, filled with the accent (founder, 6 Nov 2026) */
 .cs-hero__tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 0; list-style: none; }
 .cs-hero__tags li { display: inline-flex; align-items: center; min-height: 32px; padding-inline: 14px; border-radius: 999px; background: var(--accent-text); color: #FFFFFF; font-size: 13px; font-weight: 500; } /* white on #4F43FD: 5.91:1 (white on #6E64FD would be 4.28:1, below AA at 13px) */
 .cs-hero__headline { font-size: var(--cs-lead); font-weight: 500; letter-spacing: -0.02em; line-height: 1.3; }
-.cs-hero__card .cs-hero__body { margin-top: 16px; }
-.cs-hero__meta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin: 0; }
-.cs-hero__meta .cs-hero__wide { grid-column: span 2; }
-.cs-hero__meta dt { font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--accent-text); }
-.cs-hero__meta dd { margin: 6px 0 0; font-size: 15px; line-height: 1.45; }
+.cs-hero .fgrid__cell .cs-hero__body { margin-top: 16px; }
 .cs-hero__mock { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
 .js .cs-hero__cards, .js .cs-hero__mock { animation: cs-hero-in 600ms cubic-bezier(0, 0, .2, 1) both; }
 .js .cs-hero__mock { animation-delay: 150ms; }
@@ -1074,9 +1023,99 @@ a { color: inherit; }
 @media (max-width: 720px) {
   .cs__title.cs-hero { padding-top: 64px; }
   .cs-hero .page-title { font-size: 24px; }
-  .cs-hero__card { padding: 24px; }
+  .cs-hero .fgrid__cell--lead { padding: 24px; }
   .cs-hero__headline { font-size: 22px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .js .cs-hero__cards, .js .cs-hero__mock { animation: none; }
 }
+
+/* Feature grids (founder, 6 Nov 2026): The problem, Decisions as hypotheses, What's next. One white container, thin dividers,
+   line icons (Lucide 0.460.0, ISC, inlined), accent icon, bold title, muted text. Border: approved exception, no shadow. */
+.fgrid {
+  display: grid;
+  margin: 32px 0 var(--cs-visual);
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  border: 1px solid var(--bg);
+  border-radius: 24px;
+  background: var(--pill);
+  gap: 1px;
+  background-image: linear-gradient(var(--bg), var(--bg)); /* the 1px gaps show as dividers */
+}
+.fgrid__cell { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; margin: 0; padding: 28px; background: var(--pill); transition: background-color .4s ease-out; }
+.fgrid__cell:hover { background: var(--surface); }
+.fgrid__icon { width: 22px; height: 22px; margin-bottom: 8px; color: var(--accent); }
+.fgrid .fgrid__cell p, .fgrid .fgrid__cell blockquote, .fgrid .fgrid__title { margin: 0; }
+.cs__content ul.fgrid, .cs__content .fgrid { padding: 0; margin: 32px 0 var(--cs-visual); }
+.fgrid > .fgrid__cell { margin: 0; }
+.fgrid .fgrid__title { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.35; color: var(--text); }
+.fgrid .fgrid__text { font-size: 15px; line-height: 1.5; color: var(--text-2); }
+.fgrid .fgrid__quote { margin: 4px 0 0; font-size: var(--cs-h3); font-weight: 500; letter-spacing: -0.02em; line-height: 1.25; color: var(--text); }
+.fgrid .fgrid__quote p { margin: 0; font: inherit; color: inherit; }
+.fgrid .fgrid__label { margin-top: 8px; font-size: 13px; font-weight: 600; color: var(--text-2); }
+.fgrid__foot { align-self: stretch; display: flex; flex-direction: column; gap: 4px; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--bg); }
+.fgrid .fgrid__foot .fgrid__label { margin-top: 0; }
+.fgrid .fgrid__foot .fgrid__text { font-size: 14px; }
+.fgrid .fgrid__num { font-size: 13px; font-weight: 600; color: var(--text-2); }
+.fgrid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.fgrid--decisions, .fgrid--next { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.fgrid--decisions > *, .fgrid--next > * { grid-column: span 2; }
+.fgrid--decisions > .fgrid__cell--wide { grid-column: span 4; }
+.fgrid--next > :nth-child(4), .fgrid--next > :nth-child(5) { grid-column: span 3; }
+.fgrid--decisions .fgrid__cell { gap: 4px; }
+.fgrid--decisions .fgrid__title.fgrid__title { margin-bottom: 4px; }
+/* The problem: heading above the grid, the paragraph now lives in the cells */
+.cs__problem.cs__problem { display: block; }
+.js .fgrid { opacity: 0; transition: opacity .5s cubic-bezier(0, 0, .2, 1); }
+.js .fgrid.is-in { opacity: 1; }
+@media (max-width: 960px) {
+  .fgrid--3, .fgrid--decisions, .fgrid--next { grid-template-columns: minmax(0, 1fr); }
+  .fgrid--decisions > *, .fgrid--next > *, .fgrid--decisions > .fgrid__cell--wide, .fgrid--next > :nth-child(4), .fgrid--next > :nth-child(5) { grid-column: auto; }
+}
+@media (max-width: 720px) {
+  .fgrid__cell { padding: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .fgrid { opacity: 1; transition: none; }
+  .fgrid__cell { transition: none; }
+}
+
+/* Story cards and Me/AI cards in the same feature grid style (founder, 6 Nov 2026): white container, dividers, icon, black title, no accent line */
+.fgrid.story-cards, .fgrid.roles { gap: 1px; margin: 32px 0 var(--cs-visual); }
+.fgrid.story-cards { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.fgrid.story-cards > .story-card { grid-column: span 2; }
+.fgrid.story-cards > .story-card:nth-child(4), .fgrid.story-cards > .story-card:nth-child(5) { grid-column: span 3; }
+.fgrid.story-cards > .story-card.is-open { grid-column: 1 / -1; }
+.fgrid.roles { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.fgrid .story-card, .fgrid .role-card { padding: 28px; border: 0; border-radius: 0; background: var(--pill); }
+.fgrid .story-card:hover, .fgrid .role-card:hover { background: var(--surface); }
+.cs__section .fgrid .story-card__title, .cs__content .fgrid .role-card__phase { margin: 0; font-size: 17px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.35; color: var(--text); }
+.cs__content .fgrid .story-card__more p { margin-top: 12px; font-size: 15px; line-height: 1.5; color: var(--text-2); }
+.cs__content .fgrid .role-card .role-card__who { margin-top: 12px; }
+.cs__content .fgrid .role-card .role-card__text { margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: var(--text-2); }
+.js .fgrid .story-card__toggle { padding-top: 12px; font-size: 15px; }
+@media (max-width: 1100px) {
+  .fgrid.roles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 960px) {
+  .fgrid.story-cards { grid-template-columns: minmax(0, 1fr); }
+  .fgrid.story-cards > .story-card, .fgrid.story-cards > .story-card:nth-child(4), .fgrid.story-cards > .story-card:nth-child(5) { grid-column: auto; }
+}
+@media (max-width: 720px) {
+  .fgrid.roles { grid-template-columns: minmax(0, 1fr); }
+  .fgrid .story-card, .fgrid .role-card { padding: 24px; }
+}
+
+/* Hero facts and The insight in the same feature grid (founder, 6 Nov 2026) */
+.fgrid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.fgrid .fgrid__quote--key { margin-top: 12px; font-size: 32px; line-height: 1.2; }
+.fgrid .insight__tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 0; padding: 0; list-style: none; }
+.fgrid .insight__tags li { display: inline-flex; align-items: center; min-height: 40px; margin: 0; padding-inline: 16px; border-radius: 999px; background: var(--bg); font-size: 15px; font-weight: 500; }
+.insight-grid .fgrid__quote { margin-top: 12px; }
+@media (max-width: 720px) {
+  .fgrid--2, .cs-hero .fgrid--hero { grid-template-columns: minmax(0, 1fr); }
+  .fgrid .fgrid__quote--key { font-size: 26px; }
+}
+

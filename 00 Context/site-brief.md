@@ -133,3 +133,13 @@
 - Fade and lift on load, card first, panel 150ms later; still with reduced motion.
 - Revised (founder, 6 Nov 2026, option A from a preview): 120px between the site logo and the HBHM logo; logo and title centred, title 28px (24px on phones; founder asked for 20px smaller); the headline shortened by the founder to "Designing a first service for women caring for someone with cancer."; the industry line became three pills filled with #4F43FD (accent text colour) and white text, 5.91:1 (founder asked for white text, 6 Nov 2026) (Caregiver Support, Mental Wellbeing, FemTech) at the top of the first card; the card split in two, story card (accent top line) and facts card (2 columns); card and panel centred as a group, 15px apart, no overlap.
 
+## Her Body, Her Mind: feature grids (founder, 6 Nov 2026)
+
+- The problem, Decisions as hypotheses and What's next are each one white container split into cells by thin dividers (framer.com feature grid as reference, light version). Each cell: a Lucide line icon in the accent, a bold title, muted text. Cells warm to the surface colour on hover; each grid fades in once.
+- The problem: 3 cells. Titles "Hard to switch off" and "Support built for the patient" (founder's); the paragraph split across the cells unchanged; the quote large and upright.
+- Decisions: 5 cells, 3 then 2 (the last one twice as wide for its long test text); "Why" and a quieter "What the test will tell me" footer.
+- What's next: the intro sentence, then 5 numbered cells with the five bullets as titles.
+- Icons: brain, stethoscope, quote; message-circle, wallet, mail, quote, map-pin; hand, clock, battery-medium, users, calendar-check.
+- Same style for the story cards in "Before the design process" (3 then 2; "Read more" still opens a card across the row) and the Me/AI cards (4 columns, no accent line; "01" and the phase as a black title, Me/AI pills kept). Titles black 17px everywhere (founder, 6 Nov 2026). Icons: house, ear, messages-square, heart-handshake, focus; search, target, lightbulb, package.
+- Hero and The insight joined the same grid style (founder, 6 Nov 2026), with no accent line and no shadow. Hero: one grid with a full-width lead cell (purple pills, headline, text) and six fact cells with icons (user, sparkles, calendar, smartphone, wrench, circle-check). The insight: heading above the grid, two cells, "What helps" (hand-heart) and "What gets in the way" (circle-slash); quotes and barrier pills kept.
+

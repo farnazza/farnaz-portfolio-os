@@ -385,3 +385,12 @@ if (insight) {
   } else insight.classList.add("is-in");
 }
 
+
+// Feature grids fade in once as they scroll into view
+(() => {
+  const grids = document.querySelectorAll(".fgrid");
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!("IntersectionObserver" in window) || still) return grids.forEach((g) => g.classList.add("is-in"));
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } }), { threshold: 0.15 });
+  grids.forEach((g) => io.observe(g));
+})();
