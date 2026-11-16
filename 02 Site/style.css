@@ -406,6 +406,7 @@ a { color: inherit; }
   line-height: 1.3;
   color: var(--text-2);
 }
+.cs__lead--small { font-size: 20px; font-weight: 400; letter-spacing: 0; line-height: 1.5; } /* founder, 16 Nov 2026: SumUp FTU, 04 Validation and testing */
 
 .cs__snapshot {
   display: grid;
@@ -1199,3 +1200,56 @@ a { color: inherit; }
 /* "Say hello" above the home form: the "My AI OS" label size (founder, 6 Nov 2026) */
 .footer__label.footer__label--hello { margin-bottom: 16px; font-size: 17px; font-weight: 600; color: var(--accent-text); }
 
+
+/* SumUp summary pages (founder, 11 Nov 2026): same hero and feature grids as Her Body, Her Mind.
+   Minimal phone mockups: one dark stroke, rounded corners, no notch, no buttons, no shadow (founder's reference, 11 Nov 2026). */
+.cs--sumup .cs__section > h2 { margin: 0; font-size: var(--cs-h2); font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; }
+.cs--sumup .cs__section > .cs__point { margin: 24px 0 0; }
+.cs--sumup .cs__story { margin-top: 16px; }
+.cs--sumup .cs__request .cta { margin-top: 32px; }
+.phone-line { overflow: hidden; padding-block: 14px; border: 3px solid var(--text); border-radius: 36px; background: #FFFFFF; }
+.phone-line img { display: block; width: 100%; height: auto; }
+.phone-line--dim { background: #999999; } /* matches the screen's own modal overlay, so it runs full height */
+.phone-line--hero { width: 280px; }
+.phone-strip { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; margin: 32px 0 0; }
+.phone-strip__item { margin: 0; }
+.phone-strip .phone-line { border-width: 2px; border-radius: 24px; padding-block: 10px; }
+.phone-strip figcaption { margin-top: 12px; font-size: 13px; font-weight: 500; line-height: 1.4; color: var(--text-2); text-align: center; }
+@media (max-width: 960px) {
+  .phone-strip { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
+  .phone-strip__item { flex: 0 0 180px; scroll-snap-align: start; }
+}
+@media (max-width: 720px) {
+  .phone-line--hero { width: 240px; }
+}
+.cs--sumup .cta--dark, .cs--sumup .cta--dark .cta__label { color: #FFFFFF; } /* white on #0E0E0E */
+.cs--sumup .cs__content, .cs--sumup .cs__body > * { min-width: 0; } /* keep the phone strip scrolling inside its column on phones */
+
+/* Case study visual slot: animated mockup (video), image or placeholder (founder, 12 Nov 2026) */
+.cs-media { margin: 32px 0 0; }
+.cs-media__item, .cs-media__placeholder { display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: 24px; background: var(--mockup-bg); object-fit: cover; }
+.cs-media__placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; border: 2px dashed var(--text); color: var(--text); font-size: 16px; font-weight: 600; text-align: center; padding: 16px; } /* #0E0E0E on #D4D5DA: 13.5:1 */
+.cs-media__hint { font-size: 14px; font-weight: 400; }
+.cs-media__item--full { aspect-ratio: auto; height: auto; }
+.cs-media__item--stacked { margin-top: 24px; }
+/* Outline laptop, same line style as .phone-line (founder, 16 Nov 2026) */
+.laptop { width: min(640px, 100%); margin: 48px auto 0; }
+.laptop__screen { padding: 10px; border: 3px solid var(--text); border-radius: 16px 16px 4px 4px; background: #FFFFFF; }
+.laptop__screen img { display: block; width: 100%; height: auto; border-radius: 4px; }
+.laptop__base { height: 14px; margin: 0 -7%; border: 3px solid var(--text); border-radius: 2px 2px 14px 14px; background: #FFFFFF; }
+.laptop figcaption { margin-top: 12px; font-size: 13px; font-weight: 500; line-height: 1.4; color: var(--text-2); text-align: center; }
+/* Phone on the left, cards on the right, like the hero row */
+.cs-split { display: flex; justify-content: center; align-items: center; gap: 24px; margin-top: 32px; }
+.cs-split__mock { display: flex; flex-direction: column; align-items: center; gap: 12px; margin: 0; }
+.cs-split__mock figcaption { font-size: 13px; font-weight: 500; line-height: 1.4; color: var(--text-2); text-align: center; }
+.cs__content .cs-split .cs-split__cards { flex: 0 1 660px; margin: 0; }
+@media (max-width: 960px) {
+  .cs-split { flex-direction: column; align-items: stretch; gap: 32px; }
+  .cs__content .cs-split .cs-split__cards { flex: none; }
+} /* show the whole board, no 16:9 crop */
+.cs-media figcaption { margin-top: 12px; font-size: 13px; font-weight: 500; line-height: 1.4; color: var(--text-2); } /* #666 on #ECECEC: 4.9:1 */
+.cs--sumup .cs-media + .cs__point { margin-top: 48px; }
+.cs--sumup .cs-media + .cs-media { margin-top: 48px; }
+/* Same gap between info cards and the visuals around them */
+.cs--sumup .phone-strip + .fgrid, .cs--sumup .cs-media + .fgrid, .cs--sumup .laptop + .fgrid { margin-top: var(--cs-visual); }
+.cs--sumup .fgrid + .laptop, .cs--sumup .fgrid + .cs-media { margin-top: var(--cs-visual); }

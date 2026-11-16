@@ -10,6 +10,7 @@ Background texture: small static white dots (#FFFFFF, 1 to 1.8px, randomly place
 Surface (light cards, panels): #F7F7F4 (sampled, Tomas "Pagent" card)
 Buttons / pills: #FFFFFF (sampled, Tomas pill buttons)
 Hero card stack: no outline, surface #F7F7F4 behind each card's image, 380px wide on desktop (founder, 5 Nov 2026).
+Laptop frame (founder, 16 Nov 2026): outline laptop in the same line style as the phone frames: 3px #0E0E0E outline, #FFFFFF screen bezel, rounded screen, a thin base slightly wider than the screen. No shadow, no tilt. Max 640px wide, centered. First used for the web dashboard in SumUp FTU, 03 Key decisions.
 AI stack pills: surface #F7F7F4 fill, no outline, text primary labels (founder, 5 Nov 2026). Since 6 Nov 2026 (founder): "My AI OS" pills, 44px tall, each shows a one-line tooltip (#0E0E0E fill, white 13px text) on hover, focus or tap.
 Outline button (founder, 6 Nov 2026): the CTA pill with a transparent fill and a 1.5px #0E0E0E outline, for secondary actions such as "See my work".
 Dark button: the hero CTA "Let's work together" uses text primary #0E0E0E as its fill with a #FFFFFF label (founder, 5 Nov 2026; contrast about 19:1). The email icon stays accent #6E64FD (about 4.5:1 on #0E0E0E).
@@ -65,7 +66,7 @@ All Manrope. Headings 600, letter-spacing about -0.03em to -0.04em.
 
 | Role | Desktop | Mobile ⚠️ proposal | Weight | Color |
 |---|---|---|---|---|
-| Meta and section labels | 13px | 13px | 500 | text secondary (meta), accent text #4F43FD (section labels) |
+| Meta labels | 13px | 13px | 500 | text secondary. Section labels were dropped on 16 Nov 2026 (numbers moved into the H2) |
 | Title (H1) | 64px | 36px | 600 | text primary |
 | Intro (lead) | 28px, line-height 1.3 | 20px | 500 | text secondary |
 | Section heading (H2) | 40px | 28px | 600 | text primary |
@@ -97,9 +98,9 @@ Text and visuals both span the full content width next to the side menu. Excepti
 **Side menu:** sticky on the left, links to every section, highlights the section in view. On mobile it becomes a row of links above the sections.
 
 **Every section follows the same pattern:**
-1. Small numbered label, for example "02 · Where it started" (13px, accent text).
-2. Section heading (H2).
-3. One short line that says the point of the section (lead style). ⚠️ The wording is mine to approve, section by section.
+1. Section heading (H2) with its number in front, for example "02. Where it started". No separate small purple label above it (founder, 16 Nov 2026, every case study). "Want the details?" has no number.
+2. One short line that says the point of the section: 20px, regular, text secondary (founder, 16 Nov 2026). ⚠️ The wording is mine to approve, section by section.
+3. Subheadings inside a section, such as "What we learned", stay in lead style (28px, 500) for now (founder, 16 Nov 2026).
 4. The visual: an image, a quote, the timeline or numbers.
 5. Short supporting text.
 

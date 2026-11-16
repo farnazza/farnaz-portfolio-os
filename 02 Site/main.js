@@ -76,17 +76,18 @@ if (cardVideos.length) {
   });
 }
 
-// Case study cover: plays while in view; never plays with reduced motion
-const coverVideo = document.querySelector(".cs__video");
-if (coverVideo && "IntersectionObserver" in window) {
-  new IntersectionObserver((entries) => {
+// Case study cover and section videos: play while in view; never play with reduced motion
+const csVideos = document.querySelectorAll(".cs__video, .cs-media__video");
+if (csVideos.length && "IntersectionObserver" in window) {
+  const watchCs = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
-      if (e.isIntersecting && !reduceMotion.matches) coverVideo.play().catch(() => {});
-      else coverVideo.pause();
+      if (e.isIntersecting && !reduceMotion.matches) e.target.play().catch(() => {});
+      else e.target.pause();
     });
-  }).observe(coverVideo);
+  });
+  csVideos.forEach((v) => watchCs.observe(v));
   reduceMotion.addEventListener?.("change", () => {
-    if (reduceMotion.matches) coverVideo.pause();
+    if (reduceMotion.matches) csVideos.forEach((v) => v.pause());
   });
 }
 
