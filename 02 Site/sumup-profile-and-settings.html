@@ -19,28 +19,178 @@
     </nav>
   </header>
   <main id="main">
-    <article class="cs">
-      <div class="cs__cover container" aria-hidden="true"><span class="card__placeholder">Cover image to come</span></div>
-      <header class="cs__head container">
-        <p class="cs__meta">SumUp · 2023 to early 2025</p>
+    <article class="cs cs--sumup">
+      <header class="cs__title cs-hero container">
+        <img class="cs-hero__logo" src="assets/logos/sumup.svg" alt="SumUp logo" width="48" height="48">
         <h1 class="page-title">Profile and settings</h1>
-        <p class="todo">⚠️ Summary only. Check the NDA for what this page may show. Summary sections not yet decided.</p>
+        <div class="cs-hero__row">
+          <div class="cs-hero__cards fgrid fgrid--hero is-in">
+            <div class="fgrid__cell fgrid__cell--lead">
+            <ul class="cs-hero__tags" aria-label="Industry"><li>Fintech</li><li>Information architecture</li><li>Cross-platform</li></ul>
+            <p class="cs-hero__headline">Redesigning SumUp’s Profile &amp; Settings</p>
+            <p class="cs-hero__body">I helped redesign SumUp’s Profile &amp; Settings to make them easier to navigate and less dependent on support. I led research and card sorting, shaped the new structure, and turned it into UI patterns that scale across web and mobile.</p>
+            </div>
+            <dl class="fgrid__cell"><svg aria-hidden="true" focusable="false" class="fgrid__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg><dt class="fgrid__title">Role</dt><dd class="fgrid__text">Product Designer / UX Strategist</dd></dl>
+            <dl class="fgrid__cell"><svg aria-hidden="true" focusable="false" class="fgrid__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M8 2v4" /><path d="M16 2v4" /><rect width="18" height="18" x="3" y="4" rx="2" /><path d="M3 10h18" /></svg><dt class="fgrid__title">Timeline</dt><dd class="fgrid__text">2023 to 2024</dd></dl>
+            <dl class="fgrid__cell"><svg aria-hidden="true" focusable="false" class="fgrid__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><rect width="14" height="20" x="5" y="2" rx="2" ry="2" /><path d="M12 18h.01" /></svg><dt class="fgrid__title">Platforms</dt><dd class="fgrid__text">Mobile app, web app and dashboard</dd></dl>
+            <dl class="fgrid__cell"><svg aria-hidden="true" focusable="false" class="fgrid__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="12" r="10" /><path d="m9 12 2 2 4-4" /></svg><dt class="fgrid__title">Status</dt><dd class="fgrid__text">Launched on app and web in 2024</dd></dl>
+          </div>
+          <div class="cs-hero__mock">
+            <div class="phone-line phone-line--hero phone-line--flush-top"><img src="assets/sumup-profile-and-settings/hero-profile.jpg" alt="The new app Profile and Settings screen: the user’s name on a black header, a card with personal information, login and security, document upload, cookies and marketing preferences, then Business settings with the business, its plan and Basics" width="560" height="1228"></div>
+          </div>
+        </div>
       </header>
       <div class="cs__body container">
-        <nav class="cs__toc" aria-label="Sections"><ul><li><a href="#section-1">Section 1</a></li><li><a href="#section-2">Section 2</a></li></ul></nav>
+        <nav class="cs__toc" aria-label="Sections"><ul><li><a href="#problem">01 The problem</a></li><li><a href="#what-i-did">02 What I did</a></li><li><a href="#decisions">03 Key decisions</a></li><li><a href="#outcome">04 Outcome</a></li></ul></nav>
         <div class="cs__content">
-        <section class="cs__section" id="section-1">
-          <h2>Section 1</h2>
-          <p class="todo">⚠️ Section title and content to be written by Farnaz.</p>
+        <section class="cs__section" id="problem">
+          <h2>01. The problem</h2>
+          <p class="cs__point cs__lead cs__lead--small">Profile and settings were fragmented across SuperApp and SuperWeb, with different behaviors and incomplete information on App. Most merchants mainly used the app, yet many critical profile and business details were only editable on web. As a result, “changing data” was a top driver of customer support calls, and many merchants had to call us for operations that should have been self-served.</p>
+          <div class="cs-split">
+            <figure class="cs-split__mock">
+              <div class="phone-line phone-line--hero"><img src="assets/sumup-profile-and-settings/status-quo-app.jpg" alt="The old app profile screen: merchant ID and public profile on top, then one long list mixing checkout items, card reader, cash payments, payout settings, account security, tipping, printing, employees, support and cookie preferences" width="560" height="1214" loading="lazy"></div>
+              <figcaption>Status quo in the app</figcaption>
+            </figure>
+            <div class="fgrid cs-split__cards">
+              <div class="fgrid__cell"><svg aria-hidden="true" focusable="false" class="fgrid__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><rect width="7" height="7" x="3" y="3" rx="1" /><rect width="7" height="7" x="14" y="3" rx="1" /><rect width="7" height="7" x="14" y="14" rx="1" /><rect width="7" height="7" x="3" y="14" rx="1" /></svg><h3 class="fgrid__title">Scattered structure</h3><p class="fgrid__text">Settings were split across different menus and sub-pages, making it difficult for merchants to find and manage key information.</p></div>
+              <div class="fgrid__cell"><svg aria-hidden="true" focusable="false" class="fgrid__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z" /><circle cx="7.5" cy="7.5" r=".5" fill="currentColor" /></svg><h3 class="fgrid__title">Inconsistent naming across platforms</h3><p class="fgrid__text">Web and mobile used different labels and groupings, which broke mental models and complicated support and documentation.</p></div>
+              <div class="fgrid__cell"><svg aria-hidden="true" focusable="false" class="fgrid__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8" /> <path d="M10 19v-3.96 3.15" /> <path d="M7 19h5" /> <rect width="6" height="10" x="16" y="12" rx="2" /></svg><h3 class="fgrid__title">Platform cohesiveness</h3><p class="fgrid__text">SuperApp and SuperWeb behaved differently, and the app showed incomplete information.</p></div>
+              <div class="fgrid__cell"><svg aria-hidden="true" focusable="false" class="fgrid__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><rect width="18" height="18" x="3" y="3" rx="2" /><path d="M8 12h8" /><path d="M12 8v8" /></svg><h3 class="fgrid__title">Low extensibility</h3><p class="fgrid__text">There was no robust information architecture to host new features (for example, future identity, security, or financial controls) without adding more friction or duplication.</p></div>
+            </div>
+          </div>
+          <figure class="cs-media">
+            <img class="cs-media__item cs-media__item--full" src="assets/sumup-profile-and-settings/status-quo-web.jpg" alt="The old web dashboard: an account dropdown listing profile details, subscriptions, invoices plans, KassenSichV, settings, employees, receipts, for developers, cookie preferences and logout, next to the profile details page" width="2075" height="1060" loading="lazy">
+            <figcaption>Status quo on the web: the account dropdown and the profile section</figcaption>
+          </figure>
         </section>
-        <section class="cs__section" id="section-2">
-          <h2>Section 2</h2>
-          <p class="todo">⚠️ Section title and content to be written by Farnaz.</p>
+        <section class="cs__section" id="what-i-did">
+          <h2>02. What I did</h2>
+          <p class="cs__point cs__lead cs__lead--small">I led the research, shaped the new information architecture with two other designers, and designed it across app and web.</p>
+          <div class="steps-sticky">
+          <ol class="steps">
+            <li class="step">
+              <div class="step__text">
+                <p class="step__phase">01 · Research and data</p>
+                <p class="step__what"><strong>What:</strong> Found out why merchants called support about their profile and settings.</p>
+                <p><strong>How:</strong> EU customer support data, app and web usage data, and job stories built from the support patterns.</p>
+                <p><strong>Outcome:</strong> Changing data was a key reason for calls, and most merchants worked in the app, so fixing settings there would have the biggest impact.</p>
+                <p class="step__tools">Tableau</p>
+              </div>
+              <div class="swipe step__media--inline"><div class="swipe__track" tabindex="0" role="group" aria-label="2 images, swipe or use the buttons below"><figure class="swipe__slide"><img class="cs-media__item" src="assets/sumup-profile-and-settings/support-data.jpg" alt="Support dashboard for Profile: the reasons merchants contacted support, led by changing their phone number, profile settings, profile closure and bank details. Numbers hidden." width="1223" height="1364" loading="lazy"><figcaption>Support data: why merchants contacted support about their profile (numbers hidden)</figcaption></figure><figure class="swipe__slide"><img class="cs-media__item" src="assets/sumup-profile-and-settings/job-stories.jpg" alt="Four job stories, A to D: checking contact details after they change, checking fees when competitors make offers, checking card reader settings when something goes wrong, and checking security settings after reading about phishing" width="2066" height="790" loading="lazy"><figcaption>Job stories A to D, built from the support patterns</figcaption></figure></div><div class="swipe__dots"><button type="button" aria-label="Show image 1 of 2" aria-current="true"></button><button type="button" aria-label="Show image 2 of 2" aria-current="false"></button></div></div>
+            </li>
+            <li class="step">
+              <div class="step__text">
+                <p class="step__phase">02 · Card sorting</p>
+                <p class="step__stat"><span class="step__num" data-count="25">25</span> participants</p>
+                <p class="step__what"><strong>What:</strong> Learned how merchants group their settings in their head.</p>
+                <p><strong>How:</strong> Remote, unmoderated card sorting.</p>
+                <p><strong>Outcome:</strong> Three mental models: front vs back office, money vs settings, and me vs my store.</p>
+                <p class="step__tools">Lookback, Optimal Workshop</p>
+              </div>
+              <figure class="step__media--inline"><img class="cs-media__item" src="assets/sumup-profile-and-settings/card-sorting.jpg" alt="Card sorting results: method and platforms, three participant quotes, and the three groupings merchants made: account maintenance and back office, settings and billing, and information, store and account details" width="3200" height="1306" loading="lazy"><figcaption>Card sorting: three groupings and participant quotes (names removed)</figcaption></figure>
+            </li>
+            <li class="step">
+              <div class="step__text">
+                <p class="step__phase">03 · Market research</p>
+                <p class="step__what"><strong>What:</strong> Validated and refined the proposed structure.</p>
+                <p><strong>How:</strong> Reviewed N26, Revolut, Klarna, PayPal, Airbnb, Taxfix, Square, Zettle, Monzo and Coinbase.</p>
+                <p><strong>Outcome:</strong> One Profile &amp; Settings hub, a separate security section, and a more prominent Plans &amp; Subscriptions.</p>
+              </div>
+              <figure class="step__media--inline"><img class="cs-media__item" src="assets/sumup-profile-and-settings/market-research.jpg" alt="Market research takeaways with example screens: reference the account holder, one holistic entry point, upsell in prime positions, visualized subscription level, a clear privacy and security section, user and profile management, support entry points first or last, and platform cohesiveness" width="3200" height="1444" loading="lazy"><figcaption>Market research takeaways</figcaption></figure>
+            </li>
+            <li class="step">
+              <div class="step__text">
+                <p class="step__phase">04 · Design principles</p>
+                <p class="step__stat"><span class="step__num" data-count="5">5</span> principles</p>
+                <p class="step__what"><strong>What:</strong> Set the lens every decision was checked against.</p>
+                <p><strong>How:</strong> Drawn from the research and stakeholder alignment.</p>
+                <p><strong>Outcome:</strong> Familiar standards, transparent communication, early security prioritization, defaults for the majority, and no non-settings in global settings.</p>
+              </div>
+              <figure class="step__media--inline"><img class="cs-media__item" src="assets/sumup-profile-and-settings/design-principles.jpg" alt="Five design principles: familiar standards; transparent comms, confident users; early security prioritization; set default for the majority; avoid non settings and preferences" width="2064" height="888" loading="lazy"><figcaption>Five design principles</figcaption></figure>
+            </li>
+            <li class="step">
+              <div class="step__text">
+                <p class="step__phase">05 · Shaping the architecture</p>
+                <p class="step__what"><strong>What:</strong> Defined the backbone structure with two other designers.</p>
+                <p><strong>How:</strong> Grouped settings by relevance, frequency of use and priority, decided what sits under user or business settings, and how sections are named and ordered.</p>
+                <p><strong>Outcome:</strong> A clear split between user settings and business settings: version 1.0 on app and web, then one unified vision.</p>
+              </div>
+              <div class="swipe step__media--inline"><div class="swipe__track" tabindex="0" role="group" aria-label="3 images, swipe or use the buttons below"><figure class="swipe__slide"><img class="cs-media__item" src="assets/sumup-profile-and-settings/grouping-criteria.jpg" alt="Grouping criteria: relevance (settings commonly requested on support channels), frequency of use (most used settings at the top) and priority (critical settings like payment methods easy to find)" width="3200" height="1284" loading="lazy"><figcaption>Grouping criteria: relevance, frequency of use, priority</figcaption></figure><figure class="swipe__slide"><img class="cs-media__item" src="assets/sumup-profile-and-settings/sketches.jpg" alt="Hand-drawn sketches of the app settings: a profile section with personal info, login and security, plans and legal, then merchant settings with hardware, payment methods, business appearance, checkout and payouts, and a support section" width="3200" height="1601" loading="lazy"><figcaption>Early sketches of the app settings</figcaption></figure><figure class="swipe__slide"><img class="cs-media__item" src="assets/sumup-profile-and-settings/ia-2024.jpg" alt="2024 vision for app and web: Profile (user) with inbox, personal information, login and security, cookies and marketing preferences, and log out; Business settings (merchants) with basics, payment methods, fiscalisation, your team, fees and subscriptions, accessories, brand and image, checkout, product settings, support, for developers and for SumUp fans" width="3200" height="1615" loading="lazy"><figcaption>SuperApp and web vision: the 2024 information architecture</figcaption></figure></div><div class="swipe__dots"><button type="button" aria-label="Show image 1 of 3" aria-current="true"></button><button type="button" aria-label="Show image 2 of 3" aria-current="false"></button><button type="button" aria-label="Show image 3 of 3" aria-current="false"></button></div></div>
+            </li>
+          </ol>
+          <div class="steps-stage">
+            <div class="swipe"><div class="swipe__track" tabindex="0" role="group" aria-label="2 images, swipe or use the buttons below"><figure class="swipe__slide"><img class="cs-media__item" src="assets/sumup-profile-and-settings/support-data.jpg" alt="Support dashboard for Profile: the reasons merchants contacted support, led by changing their phone number, profile settings, profile closure and bank details. Numbers hidden." width="1223" height="1364" loading="lazy"><figcaption>Support data: why merchants contacted support about their profile (numbers hidden)</figcaption></figure><figure class="swipe__slide"><img class="cs-media__item" src="assets/sumup-profile-and-settings/job-stories.jpg" alt="Four job stories, A to D: checking contact details after they change, checking fees when competitors make offers, checking card reader settings when something goes wrong, and checking security settings after reading about phishing" width="2066" height="790" loading="lazy"><figcaption>Job stories A to D, built from the support patterns</figcaption></figure></div><div class="swipe__dots"><button type="button" aria-label="Show image 1 of 2" aria-current="true"></button><button type="button" aria-label="Show image 2 of 2" aria-current="false"></button></div></div>
+            <figure><img class="cs-media__item" src="assets/sumup-profile-and-settings/card-sorting.jpg" alt="Card sorting results: method and platforms, three participant quotes, and the three groupings merchants made: account maintenance and back office, settings and billing, and information, store and account details" width="3200" height="1306" loading="lazy"><figcaption>Card sorting: three groupings and participant quotes (names removed)</figcaption></figure>
+            <figure><img class="cs-media__item" src="assets/sumup-profile-and-settings/market-research.jpg" alt="Market research takeaways with example screens: reference the account holder, one holistic entry point, upsell in prime positions, visualized subscription level, a clear privacy and security section, user and profile management, support entry points first or last, and platform cohesiveness" width="3200" height="1444" loading="lazy"><figcaption>Market research takeaways</figcaption></figure>
+            <figure><img class="cs-media__item" src="assets/sumup-profile-and-settings/design-principles.jpg" alt="Five design principles: familiar standards; transparent comms, confident users; early security prioritization; set default for the majority; avoid non settings and preferences" width="2064" height="888" loading="lazy"><figcaption>Five design principles</figcaption></figure>
+            <div class="swipe"><div class="swipe__track" tabindex="0" role="group" aria-label="3 images, swipe or use the buttons below"><figure class="swipe__slide"><img class="cs-media__item" src="assets/sumup-profile-and-settings/grouping-criteria.jpg" alt="Grouping criteria: relevance (settings commonly requested on support channels), frequency of use (most used settings at the top) and priority (critical settings like payment methods easy to find)" width="3200" height="1284" loading="lazy"><figcaption>Grouping criteria: relevance, frequency of use, priority</figcaption></figure><figure class="swipe__slide"><img class="cs-media__item" src="assets/sumup-profile-and-settings/sketches.jpg" alt="Hand-drawn sketches of the app settings: a profile section with personal info, login and security, plans and legal, then merchant settings with hardware, payment methods, business appearance, checkout and payouts, and a support section" width="3200" height="1601" loading="lazy"><figcaption>Early sketches of the app settings</figcaption></figure><figure class="swipe__slide"><img class="cs-media__item" src="assets/sumup-profile-and-settings/ia-2024.jpg" alt="2024 vision for app and web: Profile (user) with inbox, personal information, login and security, cookies and marketing preferences, and log out; Business settings (merchants) with basics, payment methods, fiscalisation, your team, fees and subscriptions, accessories, brand and image, checkout, product settings, support, for developers and for SumUp fans" width="3200" height="1615" loading="lazy"><figcaption>SuperApp and web vision: the 2024 information architecture</figcaption></figure></div><div class="swipe__dots"><button type="button" aria-label="Show image 1 of 3" aria-current="true"></button><button type="button" aria-label="Show image 2 of 3" aria-current="false"></button><button type="button" aria-label="Show image 3 of 3" aria-current="false"></button></div></div>
+          </div>
+          </div>
         </section>
-        <section class="cs__section cs__request">
-          <h2>Full case study</h2>
-          <p>The full case study is available on request.</p>
-          <a class="cta" href="contact.html?subject=Full%20case%20study%20request%3A%20Profile%20and%20settings"><svg class="cta__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="cta__label">Request the full case study</span></a>
+        <section class="cs__section" id="decisions">
+          <h2>03. Key decisions</h2>
+          <p class="cs__point cs__lead cs__lead--small">The first major change was a clear split between user and business settings, the same on app and web.</p>
+          <div class="fgrid fgrid--3">
+            <div class="fgrid__cell"><svg aria-hidden="true" focusable="false" class="fgrid__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg><h3 class="fgrid__title">Split user and business settings</h3><p class="fgrid__text">What relates to the merchant personally (login, security, language, notifications, profile picture) is separate from what belongs to the business (company details, payouts, payment methods, plans &amp; subscriptions). The split follows the card sort and upcoming identity models.</p></div>
+            <div class="fgrid__cell"><svg aria-hidden="true" focusable="false" class="fgrid__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M3 6h18" /><path d="M7 12h10" /><path d="M10 18h4" /></svg><h3 class="fgrid__title">Fewer, calmer entry points</h3><p class="fgrid__text">Payout settings were over-exposed in both the app and the dashboard, so they were consolidated and made less prominent. Payment methods became one global “taking payments” category.</p></div>
+            <div class="fgrid__cell"><svg aria-hidden="true" focusable="false" class="fgrid__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><rect width="20" height="14" x="2" y="5" rx="2" /><line x1="2" x2="22" y1="10" y2="10" /></svg><h3 class="fgrid__title">Transparent Plans &amp; Subscriptions</h3><p class="fgrid__text">A dedicated section shows the total a merchant pays each month or year and highlights plans they don’t use yet, which makes pricing transparent and creates a natural space for value-driven upsell.</p></div>
+          </div>
+          <figure class="cs-media">
+            <img class="cs-media__item cs-media__item--full" src="assets/sumup-profile-and-settings/wireframes.jpg" alt="App wireframes: the home screen, the Profile and Settings page with checkout, payment methods, hardware, staff, communication, system and help sections, the profile page, and detail pages for personal details, bank account, payout preferences, security and the SumUp Business Account, with sensitive data marked for an extra security layer" width="2400" height="2801" loading="lazy">
+            <figcaption>Profile &amp; Settings wireframes: structure in modules to facilitate customization and reorganization when necessary.</figcaption>
+          </figure>
+          <figure class="cs-media">
+            <img class="cs-media__item cs-media__item--full" src="assets/sumup-profile-and-settings/superapp-behavior.jpg" alt="SuperApp behavior: from Home, the profile icon opens the Profile and Settings overview, and each item opens a detail page for edits" width="2400" height="1825" loading="lazy">
+            <figcaption>SuperApp behavior, first release</figcaption>
+          </figure>
+          <h3 class="cs__step">Manage multiple businesses effortlessly within your SumUp account</h3>
+          <p class="cs__story">An opportunity to use this space for short routes to important actions, reduce support calls, and show that SumUp can manage multiple businesses.</p>
+          <div class="fgrid fgrid--3">
+            <div class="fgrid__cell"><svg aria-hidden="true" focusable="false" class="fgrid__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg><h4 class="fgrid__title">Pain points focus</h4><p class="fgrid__text">Adding shortcuts to the user’s requests, based on support calls and complaints, adds significant value to their experience.</p></div>
+            <div class="fgrid__cell"><svg aria-hidden="true" focusable="false" class="fgrid__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><rect width="16" height="20" x="4" y="2" rx="2" /><path d="M9 22v-4h6v4" /><path d="M8 6h.01" /><path d="M16 6h.01" /><path d="M12 6h.01" /><path d="M12 10h.01" /><path d="M12 14h.01" /><path d="M16 10h.01" /><path d="M16 14h.01" /><path d="M8 10h.01" /><path d="M8 14h.01" /></svg><h4 class="fgrid__title">Manage multi business</h4><p class="fgrid__text">Separating the user entry point from the business indicator helps users understand that they have complete control over their businesses. It also shows that they can manage multiple companies within SumUp.</p></div>
+            <div class="fgrid__cell"><svg aria-hidden="true" focusable="false" class="fgrid__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="m6 9 6 6 6-6" /></svg><h4 class="fgrid__title">Familiar standards</h4><p class="fgrid__text">A contextual drop-down menu is a common pattern in products that let users manage multiple accounts and settings, for example Google account, Figma and Slack.</p></div>
+          </div>
+          <figure class="annot">
+            <ol class="annot__labels">
+              <li class="annot__label" style="--top: 5%; --h: 11%; --i: 0"><span class="annot__title">User identification</span></li>
+              <li class="annot__label" style="--top: 19%; --h: 8%; --i: 1"><span class="annot__title">Link to the profile &amp; settings page</span></li>
+              <li class="annot__label" style="--top: 33%; --h: 27%; --i: 2"><span class="annot__title">Shortcuts</span><span class="annot__note">Connected with the job stories and the main user requests</span></li>
+              <li class="annot__label" style="--top: 65%; --h: 21%; --i: 3"><span class="annot__title">Merchant selection</span><span class="annot__note">After the MVP</span></li>
+              <li class="annot__label" style="--top: 91%; --h: 7%; --i: 4"><span class="annot__title">Logout</span></li>
+            </ol>
+            <img class="annot__img" src="assets/sumup-profile-and-settings/dropdown.jpg" alt="The contextual drop-down menu on the web dashboard: the user’s avatar and name, a Settings button, shortcuts to personal information, login and security, bank and payout settings, device troubleshooting and the annual fee summary, the selected business with “Add new business”, and “Log out”" width="1000" height="1484" loading="lazy">
+            <figcaption>Contextual drop-down menu on the web dashboard</figcaption>
+          </figure>
+          <div class="fgrid fgrid--3">
+            <div class="fgrid__cell"><svg aria-hidden="true" focusable="false" class="fgrid__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg><h4 class="fgrid__title">User settings</h4><p class="fgrid__text">Users are the end users of our products. Users sign up and can log in using their credentials and additional factors. They may also configure preferences like their preferred language for localization or their preferred authentication method for MFA.</p></div>
+            <div class="fgrid__cell"><svg aria-hidden="true" focusable="false" class="fgrid__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><rect width="16" height="20" x="4" y="2" rx="2" /><path d="M9 22v-4h6v4" /><path d="M8 6h.01" /><path d="M16 6h.01" /><path d="M12 6h.01" /><path d="M12 10h.01" /><path d="M12 14h.01" /><path d="M16 10h.01" /><path d="M16 14h.01" /><path d="M8 10h.01" /><path d="M8 14h.01" /></svg><h4 class="fgrid__title">Merchant settings</h4><p class="fgrid__text">Merchants are businesses for which we collect, store and verify business details for regulatory purposes. We associate most of SumUp’s products, for example card payments, invoices, online store, or POS Pro, with merchants.</p></div>
+            <div class="fgrid__cell"><svg aria-hidden="true" focusable="false" class="fgrid__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" /><path d="M3 3v5h5" /><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16" /><path d="M16 16h5v5" /></svg><h4 class="fgrid__title">Second iteration</h4><p class="fgrid__text">As we wanted to add more functionality for the user, such as the ability to add a profile and celebrate paid plans and subscriptions, we highlighted this information on the user’s card.</p></div>
+          </div>
+          <div class="final-row">
+          <figure class="cs-split__mock cs-media--phone">
+            <div class="phone-line phone-line--hero phone-line--flush-top"><img src="assets/sumup-profile-and-settings/hero-profile.jpg" alt="The new app Profile and Settings screen: personal information, login and security, document upload, cookies and marketing preferences, then Business settings with the business, its active plan and Basics" width="560" height="1228" loading="lazy"></div>
+            <figcaption>App: the new Profile &amp; Settings</figcaption>
+          </figure>
+          <figure class="laptop laptop--wide">
+            <div class="laptop__screen"><video class="cs-media__video" muted loop playsinline preload="metadata" poster="assets/sumup-profile-and-settings/settings-flow-poster.jpg" aria-label="Web dashboard: the user opens the account drop-down, clicks Settings, and the Personal and Business settings page opens and scrolls down"><source src="assets/sumup-profile-and-settings/settings-flow.webm" type="video/webm"><source src="assets/sumup-profile-and-settings/settings-flow.mp4" type="video/mp4"></video></div>
+            <div class="laptop__base" aria-hidden="true"></div>
+            <figcaption>Web: from the drop-down to personal and business settings</figcaption>
+          </figure>
+          </div>
+        </section>
+        <section class="cs__section" id="outcome">
+          <h2>04. Outcome</h2>
+          <p class="cs__point cs__lead cs__lead--small">The goal was to reduce customer calls by at least 10% by letting merchants change their profile and settings themselves. The new Profile &amp; Settings shipped across mobile and web and became the reference structure for later work.</p>
+          <div class="fgrid fgrid--3">
+            <div class="fgrid__cell"><svg aria-hidden="true" focusable="false" class="fgrid__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 6 9 17l-5-5" /></svg><h3 class="fgrid__title">Less duplication</h3><p class="fgrid__text">It reduced duplication in settings and aligned labels across platforms.</p></div>
+            <div class="fgrid__cell"><svg aria-hidden="true" focusable="false" class="fgrid__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><rect width="18" height="18" x="3" y="3" rx="2" /><path d="M3 9h18" /><path d="M9 21V9" /></svg><h3 class="fgrid__title">A place for what’s next</h3><p class="fgrid__text">Teams got a clear place to attach future features, such as the Fee Summary Box, fee negotiation and payout settings.</p></div>
+            <div class="fgrid__cell"><svg aria-hidden="true" focusable="false" class="fgrid__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z" /><circle cx="7.5" cy="7.5" r=".5" fill="currentColor" /></svg><h3 class="fgrid__title">Teams aligned</h3><p class="fgrid__text">Clearer categories, better alignment with identity and product teams, and a more cohesive web and app experience.</p></div>
+          </div>
+          <p class="cs__point cs__lead">What I learned</p>
+          <div class="fgrid fgrid--2">
+            <div class="fgrid__cell"><svg aria-hidden="true" focusable="false" class="fgrid__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" /><path d="M9 18h6" /><path d="M10 22h4" /></svg><h3 class="fgrid__title">Get the IA and naming right early</h3><p class="fgrid__text">Getting the information architecture and naming system right early made every later feature easier to design and reason about.</p></div>
+            <div class="fgrid__cell"><svg aria-hidden="true" focusable="false" class="fgrid__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></svg><h3 class="fgrid__title">Research first</h3><p class="fgrid__text">Understanding merchants’ mental models through research and card sorting shaped an IA that helps them get jobs done faster. Without that research, none of these solutions would have been possible.</p></div>
+          </div>
         </section>
         </div>
       </div>

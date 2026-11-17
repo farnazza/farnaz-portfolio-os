@@ -28,7 +28,7 @@
   - SumUp: Fee summary box
   - Zizoo: Components library (full case study, OK to publish)
   - ⚠️ [ORDER]: order of the six, and which two get the full-width cards, to be decided by me.
-  - SumUp case studies (2023 to early 2025, all launched): the site shows a short summary only, with a "Request the full case study" CTA (email link). The full case study is shared privately on request, never published on the site or in the repository.
+  - SumUp case studies (2023 to early 2025, all launched): the site shows a short summary only. No "Request the full case study" or "Want the details?" section on any SumUp page (removed by Farnaz, 17 Nov 2026); visitors use the footer "Say hello". The full case study is never published on the site or in the repository.
   - ⚠️ [NDA]: being launched or old does not by itself end an NDA. Check the agreement for what the summary may show.
   - ⚠️ [SUMMARY SECTIONS]: decide what each SumUp summary page contains.
   - Case study content: to be written by me, one folder per project in `01 Projects/`. Do not generate case study copy.
@@ -57,6 +57,8 @@
 ## Motion and Interaction
 - Animation level: 3 (richer).
 - Scroll: case study cards slide in vertically as they enter the viewport (reference: lofi-folio).
+- Scroll: sticky process steps in case studies (founder, 16 Nov 2026): in "What I did", the numbered steps scroll on the left and the visual on the right stays in place and swaps to the step that reaches the middle of the screen. Each step shows What, How and Outcome (Her Body, Her Mind step style). Phones: each visual sits under its step. Reduced motion: the visual swaps without fading.
+- Scroll: annotated screens in case studies (founder, 16 Nov 2026): labels on the left with a bracket pointing at each part of the screen slide in one after another when the screen comes into view; first used for the contextual drop-down menu in Profile and settings, 03 Key decisions. Phones: the labels sit as a list under the screen. Reduced motion: labels show at once.
 - Scroll: featured cards slide up and settle from a slight tilt (left card tilted left, right card tilted right) as they enter the screen. ⚠️ Interpretation of the tomasnozina.com behavior from a screenshot; confirm.
 - Hover on cards: image blurs, project title appears (reference: lofi-folio).
 - Card media: animated device mockups (reference: tomasnozina.com).
@@ -106,7 +108,7 @@
 - About me: a dark "Say hello" CTA under the second paragraph opens `contact.html`; the About and contact pages have no footer. "Download resume" is removed from every page (founder, 6 Nov 2026).
 - The form's error message links to farnaz.za@icloud.com (`EMAIL` in main.js).
 - Fields: Name, Email, Message, all required. Heading: "Have an idea or a problem to untangle? Say hello." Success: "Thanks, your message is on its way. I'll get back to you soon."
-- Formspree: form `meaadwvb`, `action="https://formspree.io/f/meaadwvb"` in index.html and contact.html (tested 6 Nov 2026: Formspree answered 200 ok); hidden `_subject` "New message from portfolio" (SumUp "Request the full case study" links pass their own subject); `_gotcha` honeypot; sent with fetch, plain POST without JavaScript.
+- Formspree: form `meaadwvb`, `action="https://formspree.io/f/meaadwvb"` in index.html and contact.html (tested 6 Nov 2026: Formspree answered 200 ok); hidden `_subject` "New message from portfolio" (the SumUp request links were removed on 17 Nov 2026); `_gotcha` honeypot; sent with fetch, plain POST without JavaScript.
 
 ## Her Body, Her Mind: the insight card (founder, 6 Nov 2026)
 

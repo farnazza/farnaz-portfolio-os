@@ -517,6 +517,7 @@ a { color: inherit; }
   line-height: 1.1;
 }
 .cs__section .cs__point { margin-top: 24px; }
+.cs__section h3.cs__step { margin: var(--cs-h3-above) 0 0; font-size: var(--cs-h3); letter-spacing: -0.02em; line-height: 1.2; } /* numbered process step inside a section */
 .cs__section h4 {
   margin: var(--cs-h3-above) 0 16px;
   font-size: var(--cs-h3);
@@ -725,6 +726,68 @@ a { color: inherit; }
 @media (prefers-reduced-motion: reduce) {
   .js .step .step__text,
   .js .step .step__media { opacity: 1; transform: none; }
+}
+
+/* Sticky process steps (founder, 16 Nov 2026): steps scroll on the left, the visual on the right stays and swaps to the step in view */
+.steps-sticky { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 48px; align-items: start; margin: var(--cs-visual) 0 0; }
+.steps-sticky .steps { margin: 0; }
+.steps-sticky .step + .step { margin-top: 30vh; }
+.steps-sticky .step:last-child { padding-bottom: 20vh; }
+.cs__content .step .step__what { margin-top: 12px; }
+.cs__content .step strong { font-weight: 600; color: var(--text); }
+.step__media--inline { display: none; }
+.steps-stage { position: sticky; top: 15vh; display: grid; margin: 0; }
+.steps-stage > * { grid-area: 1 / 1; margin: 0; opacity: 0; visibility: hidden; transition: opacity .4s var(--ease), visibility .4s; }
+.steps-stage > .is-active { opacity: 1; visibility: visible; }
+/* Two or more images for one step: swipe, or use the dots */
+.swipe__track { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.swipe__track::-webkit-scrollbar { display: none; }
+.swipe__track:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.swipe__slide { flex: 0 0 100%; margin: 0; scroll-snap-align: start; }
+.steps-sticky .swipe .cs-media__item { aspect-ratio: auto; width: auto; max-width: 100%; height: auto; max-height: 60vh; margin-inline: auto; background: none; } /* own shape, no gray letterbox (founder, 16 Nov 2026) */
+.swipe__track { align-items: flex-start; transition: height .3s var(--ease); }
+@media (prefers-reduced-motion: reduce) { .swipe__track { transition: none; } }
+.swipe__dots { display: flex; justify-content: center; margin-top: 4px; }
+.swipe__dots button { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; background: none; cursor: pointer; }
+.swipe__dots button::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--text-2); opacity: .35; transition: opacity .3s, background-color .3s; }
+.swipe__dots button[aria-current="true"]::before { background: var(--accent); opacity: 1; }
+.steps-sticky .cs-media__item { aspect-ratio: auto; height: auto; }
+.steps-sticky .cs-media__placeholder { aspect-ratio: 4 / 3; }
+.steps-sticky figcaption { margin-top: 12px; font-size: 13px; font-weight: 500; line-height: 1.4; color: var(--text-2); }
+@media (max-width: 960px) {
+  .steps-sticky { grid-template-columns: 1fr; }
+  .steps-stage { display: none; }
+  .step__media--inline { display: block; margin: 16px 0 0; }
+  .steps-sticky .step + .step { margin-top: 64px; }
+  .steps-sticky .step:last-child { padding-bottom: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .steps-stage > * { transition: none; }
+}
+
+/* Annotated screen (founder, 16 Nov 2026): labels on the left point at parts of the screen and slide in one by one */
+.annot { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 420px); gap: 0 24px; max-width: 800px; margin: var(--cs-visual) auto 0; }
+.annot__labels { position: relative; margin: 0; padding: 0; list-style: none; }
+.annot__label { position: absolute; left: 0; right: 0; top: var(--top); height: var(--h); display: flex; flex-direction: column; justify-content: center; gap: 2px; padding-right: 40px; }
+.annot__label::after { content: ""; position: absolute; right: 0; top: 0; bottom: 0; width: 16px; border: 1.5px solid var(--text); border-right: 0; }
+.annot__title { font-size: 15px; font-weight: 600; line-height: 1.3; color: var(--text); }
+.annot__note { font-size: 13px; font-style: italic; line-height: 1.4; color: var(--text-2); }
+.annot__img { display: block; width: 100%; height: auto; border-radius: 24px; }
+.annot figcaption { grid-column: 2; margin-top: 12px; font-size: 13px; font-weight: 500; line-height: 1.4; color: var(--text-2); text-align: center; }
+/* Revealed one by one while scrolling, like the About me experience string: the bracket draws, then the label fades up */
+.js .annot__label .annot__title, .js .annot__label .annot__note { opacity: 0; transform: translateY(8px); transition: opacity .5s var(--ease) .15s, transform .5s var(--ease) .15s; }
+.js .annot__label::after { transform: scaleY(0); transform-origin: top; transition: transform .4s var(--ease); }
+.js .annot__label.is-in .annot__title, .js .annot__label.is-in .annot__note { opacity: 1; transform: none; }
+.js .annot__label.is-in::after { transform: none; }
+@media (max-width: 720px) {
+  .annot { grid-template-columns: 1fr; }
+  .annot__labels { order: 2; margin-top: 16px; }
+  .annot__label { position: static; height: auto; padding: 0 0 12px; }
+  .annot__label::after { display: none; }
+  .annot figcaption { order: 3; grid-column: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .annot__label .annot__title, .js .annot__label .annot__note, .js .annot__label::after { opacity: 1; transform: none; transition: none; }
 }
 
 /* Text for screen readers only */
@@ -1211,6 +1274,7 @@ a { color: inherit; }
 .phone-line img { display: block; width: 100%; height: auto; }
 .phone-line--dim { background: #999999; } /* matches the screen's own modal overlay, so it runs full height */
 .phone-line--hero { width: 280px; }
+.phone-line--flush-top { padding-top: 0; } /* screen with a dark header runs to the top of the frame */
 .phone-strip { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; margin: 32px 0 0; }
 .phone-strip__item { margin: 0; }
 .phone-strip .phone-line { border-width: 2px; border-radius: 24px; padding-block: 10px; }
@@ -1235,12 +1299,22 @@ a { color: inherit; }
 /* Outline laptop, same line style as .phone-line (founder, 16 Nov 2026) */
 .laptop { width: min(640px, 100%); margin: 48px auto 0; }
 .laptop__screen { padding: 10px; border: 3px solid var(--text); border-radius: 16px 16px 4px 4px; background: #FFFFFF; }
+.laptop__screen video { display: block; width: 100%; height: auto; border-radius: 4px; }
 .laptop__screen img { display: block; width: 100%; height: auto; border-radius: 4px; }
 .laptop__base { height: 14px; margin: 0 -7%; border: 3px solid var(--text); border-radius: 2px 2px 14px 14px; background: #FFFFFF; }
+.laptop--wide { width: min(880px, 100%); }
 .laptop figcaption { margin-top: 12px; font-size: 13px; font-weight: 500; line-height: 1.4; color: var(--text-2); text-align: center; }
 /* Phone on the left, cards on the right, like the hero row */
 .cs-split { display: flex; justify-content: center; align-items: center; gap: 24px; margin-top: 32px; }
 .cs-split__mock { display: flex; flex-direction: column; align-items: center; gap: 12px; margin: 0; }
+.cs-media--phone { margin: 0; }
+/* Final mockups: app and web side by side (founder, 16 Nov 2026) */
+.final-row { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 48px; align-items: end; margin-top: var(--cs-visual); }
+.final-row .phone-line--hero { width: 220px; }
+.final-row .laptop { width: 100%; margin: 0; padding-inline: 7%; }
+@media (max-width: 960px) {
+  .final-row { grid-template-columns: 1fr; justify-items: center; }
+}
 .cs-split__mock figcaption { font-size: 13px; font-weight: 500; line-height: 1.4; color: var(--text-2); text-align: center; }
 .cs__content .cs-split .cs-split__cards { flex: 0 1 660px; margin: 0; }
 @media (max-width: 960px) {

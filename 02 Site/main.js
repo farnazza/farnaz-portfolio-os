@@ -142,10 +142,51 @@ if (steps.length && "IntersectionObserver" in window) {
       list.style.setProperty("--fill", p.toFixed(3));
     });
     steps.forEach((s) => s.classList.toggle("is-on", s.getBoundingClientRect().top < mid));
+    // Sticky steps: show the visual of the last step that has reached the middle
+    document.querySelectorAll(".steps-sticky").forEach((wrap) => {
+      const on = wrap.querySelectorAll(".step.is-on").length;
+      wrap.querySelectorAll(".steps-stage > *").forEach((m, i) => m.classList.toggle("is-active", i === Math.max(on - 1, 0)));
+    });
   };
   window.addEventListener("scroll", fill, { passive: true });
   window.addEventListener("resize", fill);
   fill();
+}
+
+// Swipe: dots follow the scroll position and scroll to their image
+document.querySelectorAll(".swipe").forEach((sw) => {
+  const track = sw.querySelector(".swipe__track");
+  const dots = [...sw.querySelectorAll(".swipe__dots button")];
+  const current = () => Math.round(track.scrollLeft / (track.clientWidth || 1));
+  const slides = [...track.children];
+  const mark = () => {
+    dots.forEach((d, i) => d.setAttribute("aria-current", i === current() ? "true" : "false"));
+    // The swipe is as tall as the image in view, so the dots sit right under it
+    const h = slides[current()]?.offsetHeight;
+    if (h) track.style.height = h + "px";
+  };
+  window.addEventListener("resize", mark);
+  sw.querySelectorAll("img").forEach((im) => im.addEventListener("load", mark));
+  mark();
+  dots.forEach((d, i) => d.addEventListener("click", () => {
+    track.scrollTo({ left: i * track.clientWidth, behavior: reduceMotion.matches ? "auto" : "smooth" });
+  }));
+  track.addEventListener("scroll", mark, { passive: true });
+});
+
+// Annotated screens: each label reveals as you scroll down to it, and stays (like the About me experience string)
+const annotLabels = document.querySelectorAll(".annot__label");
+if (annotLabels.length) {
+  const revealAnnot = () => {
+    const line = window.innerHeight * 0.6;
+    annotLabels.forEach((l) => {
+      const r = l.getBoundingClientRect();
+      if (reduceMotion.matches || r.top + r.height / 2 < line) l.classList.add("is-in");
+    });
+  };
+  window.addEventListener("scroll", revealAnnot, { passive: true });
+  window.addEventListener("resize", revealAnnot);
+  revealAnnot();
 }
 
 // Hero card stack: the front card slides away and goes to the back every 3 s.
