@@ -740,7 +740,7 @@ a { color: inherit; }
 .steps-stage > * { grid-area: 1 / 1; margin: 0; opacity: 0; visibility: hidden; transition: opacity .4s var(--ease), visibility .4s; }
 .steps-stage > .is-active { opacity: 1; visibility: visible; }
 /* Two or more images for one step: swipe, or use the dots */
-.swipe__track { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.swipe__track { display: flex; gap: 16px; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scrollbar-width: none; }
 .swipe__track::-webkit-scrollbar { display: none; }
 .swipe__track:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .swipe__slide { flex: 0 0 100%; margin: 0; scroll-snap-align: start; }
@@ -1239,7 +1239,7 @@ a { color: inherit; }
 .hcap__nav { justify-content: center; }
 @keyframes hero-up { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 @media (max-width: 720px) {
-  .hero { overflow-x: clip; } /* the card fan is wider than a phone; clip it so the page doesn't scroll sideways */
+  /* the hero no longer clips sideways; main { overflow-x: clip } (tools marquee) keeps the page from scrolling sideways */
   .hero .hstack { justify-self: start; translate: none; }
   .hcap { text-align: left; }
   .hcap__nav { justify-content: flex-start; }
@@ -1327,3 +1327,195 @@ a { color: inherit; }
 /* Same gap between info cards and the visuals around them */
 .cs--sumup .phone-strip + .fgrid, .cs--sumup .cs-media + .fgrid, .cs--sumup .laptop + .fgrid { margin-top: var(--cs-visual); }
 .cs--sumup .fgrid + .laptop, .cs--sumup .fgrid + .cs-media { margin-top: var(--cs-visual); }
+/* Data viz outcome: the animated mobile widget next to the widget set (founder, 17 Nov 2026) */
+.final-row .widget-loop { width: 300px; }
+.widget-loop video { display: block; width: 100%; height: auto; border-radius: 32px; }
+.final-row--pair { display: flex; justify-content: center; align-items: flex-end; gap: 32px; }
+.final-row--pair .widget-loop { flex: 1 1 0; width: auto; max-width: 320px; }
+.final-row--pair .home-loop .phone-line--hero { width: 270px; }
+.phone-line video { display: block; width: 100%; height: auto; }
+@media (max-width: 700px) { .final-row--pair { flex-direction: column; align-items: center; gap: 40px; } }
+/* Data viz principles board (founder, 17 Nov 2026): rebuilt from the "Start Here" board, black with white text; only the white outlines draw, with a dot riding the tip, when the board scrolls into view */
+.pboard { background: #000; color: #fff; border-radius: 24px; padding: clamp(32px, 5vw, 64px); }
+.pboard__grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-areas: "a b" "a c" "d e"; gap: 72px 56px; }
+.pboard__box { position: relative; padding: 0 28px 36px 36px; }
+.pboard__box--1 { grid-area: a; } .pboard__box--2 { grid-area: b; } .pboard__box--3 { grid-area: c; } .pboard__box--4 { grid-area: d; } .pboard__box--5 { grid-area: e; }
+.pboard__num { display: inline-block; margin: -16px 0 0 56px; font-size: 28px; font-weight: 600; line-height: 32px; }
+.cs__section .pboard__title, .pboard__title { margin: 20px 0 24px -24px; font-size: 32px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; color: #fff; }
+.pboard__box p { margin: 0 0 20px 64px; max-width: 34ch; font-size: 15px; line-height: 1.5; color: #fff; }
+.pboard__box p:last-child { margin-bottom: 0; }
+.pboard__line { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.pboard__line path, .pboard__line circle.end { fill: none; stroke: #fff; stroke-width: 1; }
+.pboard__line circle.tip { fill: #fff; }
+@media (max-width: 700px) {
+  .pboard__grid { grid-template-columns: 1fr; grid-template-areas: "a" "b" "c" "d" "e"; gap: 56px; }
+  .pboard__box p { margin-left: 40px; }
+}
+/* Home: bento grid of case studies (founder, 17 Nov 2026), replaces the card stack.
+   3 masonry columns from 1024 px (each card's column is set in the HTML), 2 from 640 px, 1 below, in reading order.
+   Each card has its own background; Data viz #B459FF (founder). Media scales to 1.03 on hover; the title gets an arrow. */
+.bento { --bento-gap: 26px; display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 72px; scroll-margin-top: 32px; }
+.bento__col { display: flex; flex-direction: column; gap: var(--bento-gap); min-width: 0; }
+.bento__item { display: block; color: var(--text); text-decoration: none; border-radius: 20px; }
+.bento__item:focus-visible { outline: 2px solid var(--text); outline-offset: 4px; }
+.bento__box { position: relative; aspect-ratio: var(--ratio, 4 / 5); border-radius: 20px; overflow: hidden; background: var(--card-bg, var(--surface, #F7F7F4)); display: grid; place-items: center; }
+.bento__box > * { transition: transform .6s cubic-bezier(.22, 1, .36, 1); }
+.bento__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.bento__phone { width: 54%; border-radius: 30px; }
+.bento__vid { display: block; width: 52%; height: auto; } /* video with its own phone frame on a dark card */
+.bento__cap { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin: 12px 2px 0; font-size: 12px; line-height: 1.35; }
+.bento__title { font-weight: 400; }
+.bento__meta { flex: none; color: var(--text-2); }
+.bento__arrow { display: inline-block; margin-left: 6px; opacity: 0; transform: translateX(-4px); transition: opacity .3s, transform .3s; }
+@media (hover: hover) and (pointer: fine) {
+  .bento__item:hover .bento__box > * { transform: scale(1.03); }
+  .bento__item:hover .bento__arrow, .bento__item:focus-visible .bento__arrow { opacity: 1; transform: none; }
+}
+.js .bento__item { opacity: 0; transform: translateY(24px); transition: opacity .7s cubic-bezier(.22, 1, .36, 1), transform .7s cubic-bezier(.22, 1, .36, 1); }
+.js .bento__item.is-in { opacity: 1; transform: none; }
+@media (min-width: 640px) { .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--bento-gap); align-items: start; } }
+@media (min-width: 1024px) { .bento { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 639px) { .bento { --bento-gap: 20px; } .bento__cap { flex-direction: column; gap: 2px; } }
+@media (prefers-reduced-motion: reduce) {
+  .js .bento__item { opacity: 1; transform: none; transition: none; }
+  .bento__box > *, .bento__arrow { transition: none; }
+  .bento__item:hover .bento__box > * { transform: none; }
+}
+
+/* "My AI OS" tools marquee (founder, 18 Nov 2026): replaces the pills. Two rows drift sideways (founder, 18 Nov 2026: two, not four) in alternating directions, full width.
+   White tiles; icon colors are darker shades of the prompt's hues, each at least 3:1 on white. */
+main { overflow-x: clip; } /* the full-width rows never make the page scroll sideways */
+.hero__label + .tools { margin-top: 16px; }
+.hero__intro + .bento { margin-top: 120px; } /* founder, 19 Nov 2026: generous room between intro and cards (was 72px) */
+.tools { position: relative; width: 100vw; margin-left: calc(50% - 50vw); }
+.tools__sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+.tools__rows { display: grid; gap: 12px; overflow: hidden; }
+.tools__track { display: flex; gap: 24px; width: max-content; padding-right: 24px; } /* the trailing gap makes the track exactly 3 sets wide */
+.tools__chip { display: inline-flex; align-items: center; gap: 10px; flex: none; color: var(--text); font-size: 17px; font-weight: 500; white-space: nowrap; }
+.tools__tile { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: var(--pill); }
+.tools__tile svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.tools__tile img { display: block; width: 24px; height: 24px; filter: brightness(0) invert(.055); } /* logo in text primary #0E0E0E */
+.tools__pause { display: grid; place-items: center; width: 44px; height: 44px; margin: 16px auto 0; padding: 0; border: 0; border-radius: 50%; background: var(--pill); color: var(--text); cursor: pointer; }
+.tools__pause svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.tools__pause:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.tools__icon-play, .tools.is-paused .tools__icon-pause { display: none; }
+.tools.is-paused .tools__icon-play { display: inline; }
+/* Drift: JS clones each set twice and sets --dur from the set width; one loop moves the track by one set */
+.tools.is-live .tools__track { animation: tools-left var(--dur, 48s) linear var(--delay, 0s) infinite; }
+.tools.is-live [data-dir="right"] .tools__track { animation-name: tools-right; }
+.tools.is-paused .tools__track, .tools__rows:hover .tools__track { animation-play-state: paused; }
+@keyframes tools-left { from { transform: translateX(0); } to { transform: translateX(-33.3333%); } }
+@keyframes tools-right { from { transform: translateX(-33.3333%); } to { transform: translateX(0); } }
+/* Entrance: each row slides in from the side it drifts away from, 150 ms apart */
+.js .tools.is-in .tools__row { animation: tools-in-left 1s cubic-bezier(0, 0, .2, 1) both; animation-delay: calc(300ms + var(--i, 0) * 150ms); }
+.js .tools.is-in .tools__row[data-dir="right"] { animation-name: tools-in-right; }
+@media (prefers-reduced-motion: no-preference) { .js .tools:not(.is-in) .tools__row { opacity: 0; } } /* rows wait until the section scrolls into view */
+.tools__row:nth-child(2) { --i: 1; }
+@keyframes tools-in-left { from { transform: translateX(40vw); opacity: 0; } 67% { opacity: 1; } to { transform: none; } }
+@keyframes tools-in-right { from { transform: translateX(-40vw); opacity: 0; } 67% { opacity: 1; } to { transform: none; } }
+@media (max-width: 720px) {
+  .tools__chip { font-size: 15px; }
+  .tools__tile { width: 40px; height: 40px; border-radius: 11px; }
+  .tools__tile svg, .tools__tile img { width: 22px; height: 22px; }
+}
+/* Reduced motion: no drift and no entrance; one row of the nine tools, wrapped and centred */
+@media (prefers-reduced-motion: reduce) {
+  .tools { width: auto; margin-left: 0; }
+  .js .tools.is-in .tools__row { animation: none; }
+  .tools__row:not(:first-child), .tools__chip.is-clone, .tools__pause { display: none; }
+  .tools.is-live .tools__track { animation: none; }
+  .tools__track { flex-wrap: wrap; justify-content: center; width: auto; padding-right: 0; gap: 12px 24px; }
+}
+
+/* Intro layout (founder, 18 Nov 2026, from a reference screenshot): name on the left in the first grid column, the intro and the AI workflow line in columns 2 and 3; left aligned.
+   The lead phrase is text primary, the rest text secondary (#666666, 4.8:1 on #ECECEC). */
+.hero__intro { text-align: left; }
+.hero__lead { width: auto; margin-inline: 0; }
+.hero__lead .hero__title { white-space: normal; font-size: 28px; line-height: 1.25; letter-spacing: -0.02em; font-weight: 500; }
+.hero__lead .hero__text { margin: 16px 0 0; max-width: 30ch; font-size: 28px; line-height: 1.25; letter-spacing: -0.02em; color: var(--text-2); }
+.hero__strong { display: block; margin-bottom: 10px; color: var(--text); font-weight: 600; } /* founder, 19 Nov 2026: the first sentence on its own line, 10px above the rest */
+.hero__intro .hero__text.hero__thesis { margin-inline: 0; }
+@media (min-width: 1024px) {
+  .hero__intro { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 26px; } /* same columns and gap as the case study grid */
+  .hero__lead { display: contents; }
+  .hero__lead .hero__title { grid-column: 1; grid-row: 1 / span 2; align-self: start; padding-top: 1px; } /* first line sits on the intro's first line */
+  .hero__lead .hero__text { grid-column: 2 / 4; grid-row: 1; margin: 0 0 0 -16px; max-width: none; font-size: 30px; } /* founder, 19 Nov 2026: 16px closer to the name, so it starts 16px left of the second card column */
+}
+
+/* Workflow section (founder, 19 Nov 2026): below the case study grid, the AI workflow line at 30px above the tools marquee; the contact form follows in the footer.
+   Generous spacing: about 160px between the cards, this section and the form. */
+.workflow { padding-block: 64px; }
+.workflow__title { margin: 0; max-width: none; text-wrap: pretty; /* no single word on the last line */ /* runs to the grid's right edge, like the intro (founder, 19 Nov 2026) */ font-size: 30px; font-weight: 600; /* "Tools" headline, semibold black like the intro's first line (founder, 19 Nov 2026) */ line-height: 1.25; letter-spacing: -0.02em; color: var(--text); }
+.workflow__title + .tools { margin-top: 96px; } /* founder, 19 Nov 2026: more room (was 56px) */
+@media (min-width: 1024px) {
+  /* full grid width, from the first card column to the last (founder, 19 Nov 2026) */
+}
+@media (max-width: 720px) {
+  .workflow { padding-block: 40px; }
+  .workflow__title { font-size: 24px; }
+  .workflow__title + .tools { margin-top: 64px; }
+}
+
+/* Top navigation centred on every page (founder, 19 Nov 2026): the links sit in the middle of the bar, the logo stays on the left */
+.nav { position: relative; }
+.nav__links { position: absolute; left: 50%; transform: translateX(-50%); flex-wrap: nowrap; width: max-content; margin: 0; }
+@media (max-width: 479px) { .nav__links { position: static; transform: none; margin: 0 -12px; } } /* narrow phones: no room to centre beside the logo, so the links stay on the right */
+
+/* Contact form, minimal (founder, 19 Nov 2026, from a reference screenshot), in the home footer and on the contact page:
+   heading on the left, the form on the right; fields are a single underline, labels small caps-style, a text button with an arrow.
+   Replaces the white pill fields (6 Nov 2026). The underline (#0E0E0E) is about 16:1 on the page, so fields are visible at rest. */
+.cform-wrap { display: grid; gap: 48px; }
+.cform-wrap .footer__label, .cform-wrap .cform__title, .cform-wrap .cform__done { text-align: left; margin-inline: 0; }
+.cform-wrap .footer__label--hello { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+.cform-wrap .cform__title { margin-bottom: 0; }
+.cform-wrap .cform, .cform-wrap .cform__done { max-width: none; margin-inline: 0; }
+.cform-wrap .cform { gap: 40px; margin-bottom: 0; }
+.cform-wrap .cform__field label { margin-bottom: 4px; font-size: 13px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--text-2); }
+.cform-wrap .cform input, .cform-wrap .cform textarea { min-height: 48px; padding: 8px 0; border: 0; border-bottom: 1.5px solid var(--text); border-radius: 0; background: transparent; box-shadow: none; }
+.cform-wrap .cform textarea { min-height: 140px; }
+.cform-wrap .cform input:focus, .cform-wrap .cform textarea:focus { outline: none; box-shadow: 0 1.5px 0 var(--text); } /* focus: the underline doubles to 3px */
+.cform-wrap .cform .is-error, .cform-wrap .cform .is-error:focus { border-bottom-color: var(--error); box-shadow: 0 1.5px 0 var(--error); }
+.cform-wrap .cform__actions { justify-items: start; }
+.cform__send { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0; background: none; color: var(--text); font-size: 15px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.cform__arrow { transition: transform .25s var(--ease); }
+.cform__send:hover .cform__arrow { transform: translateX(4px); }
+.cform__send:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+@media (min-width: 900px) {
+  .cform-wrap { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: 96px; align-items: start; }
+}
+.footer.cform-wrap .footer__label { text-align: left; }
+
+/* About me, refined (founder, 19 Nov 2026, from a reference screenshot): text on the left, portrait on the right; left aligned.
+   "A little about me" label in text primary (not accent), the first paragraph as a large lead, the rest as body text. Replaces the centred layout of 6 Nov 2026. */
+.aboutme { display: grid; gap: 48px; text-align: left; }
+.aboutme__label { margin: 0; font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--text); }
+.aboutme__lead { margin: 24px 0 0; font-size: 32px; font-weight: 500; line-height: 1.25; letter-spacing: -0.02em; color: var(--text); text-wrap: pretty; }
+.aboutme__body { margin-top: 48px; max-width: 60ch; }
+.aboutme__body p { margin: 0; font-size: 18px; /* founder, 19 Nov 2026 (was 17px) */ line-height: 1.6; color: var(--text-2); }
+.aboutme__body p + p { margin-top: 20px; }
+.aboutme .aboutme__action { margin-top: 40px; text-align: left; }
+.aboutme .aboutme__photo { width: 100%; max-width: 480px; margin: 0; }
+@media (min-width: 900px) {
+  .aboutme { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); column-gap: 96px; align-items: start; }
+  .aboutme .aboutme__photo { justify-self: end; }
+}
+@media (max-width: 720px) {
+  .aboutme__lead { font-size: 24px; }
+  .aboutme .aboutme__photo { max-width: 360px; }
+}
+
+/* Closing strip on every page (founder, 19 Nov 2026): other ways to reach me besides the form. Name and year, email, LinkedIn. */
+.site-footer:has(.endbar) { padding-bottom: 32px; }
+.site-footer--slim { padding-top: 0; }
+.endbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 32px; margin-top: 120px; font-size: 15px; color: var(--text-2); }
+.endbar__name { margin: 0; }
+.endbar__links { display: flex; flex-wrap: wrap; gap: 0 24px; margin: 0; padding: 0; list-style: none; }
+.endbar__links a { display: inline-flex; align-items: center; gap: 4px; min-height: 44px; color: var(--text); text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 4px; transition: text-decoration-color .2s var(--ease); }
+.endbar__links a:hover, .endbar__links a:focus-visible { text-decoration-color: currentColor; }
+.endbar__links a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (max-width: 720px) { .endbar { margin-top: 80px; flex-direction: column-reverse; align-items: flex-start; } }
+.hero__line { display: block; } /* founder, 19 Nov 2026: each sentence of the intro on its own line */
+.nowrap { white-space: nowrap; }
+.hero__lead .hero__text { text-wrap: pretty; } /* no single word on a last line */
+/* LinkedIn button under the contact heading (founder, 19 Nov 2026): a second, visible way to reach out besides the form */
+.cform__linkedin { gap: 6px; margin-top: 32px; }

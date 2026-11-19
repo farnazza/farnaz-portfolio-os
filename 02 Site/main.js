@@ -84,7 +84,7 @@ if (csVideos.length && "IntersectionObserver" in window) {
       if (e.isIntersecting && !reduceMotion.matches) e.target.play().catch(() => {});
       else e.target.pause();
     });
-  });
+  }, { threshold: 0.4 });
   csVideos.forEach((v) => watchCs.observe(v));
   reduceMotion.addEventListener?.("change", () => {
     if (reduceMotion.matches) csVideos.forEach((v) => v.pause());
@@ -453,3 +453,106 @@ if (pills.length) {
   document.addEventListener("click", (e) => { if (!e.target.closest(".stack__pill")) close(); });
 }
 
+
+// Principles board (Data viz): each box outline draws once, in order, when the board scrolls into view; a dot rides the tip like the line chart in the color strategy loop
+document.querySelectorAll(".pboard").forEach((board) => {
+  const NSV = "http://www.w3.org/2000/svg";
+  const boxes = [...board.querySelectorAll(".pboard__box")].map((box) => {
+    const svg = document.createElementNS(NSV, "svg"); svg.setAttribute("class", "pboard__line"); svg.setAttribute("aria-hidden", "true");
+    const path = document.createElementNS(NSV, "path"), end = document.createElementNS(NSV, "circle"), tip = document.createElementNS(NSV, "circle");
+    end.setAttribute("class", "end"); end.setAttribute("r", 5); tip.setAttribute("class", "tip"); tip.setAttribute("r", 3.5);
+    svg.append(path, end, tip); box.prepend(svg);
+    return { box, path, end, tip, len: 0 };
+  });
+  // Outline: from the number along the top, down the right, along the bottom, up the left to a small circle
+  const shape = () => boxes.forEach((b) => {
+    const w = b.box.offsetWidth, h = b.box.offsetHeight, num = b.box.querySelector(".pboard__num");
+    const x0 = num.offsetLeft + num.offsetWidth + 16, cy = h * 0.7;
+    b.path.setAttribute("d", `M${x0},0.5H${w - 0.5}V${h - 0.5}H0.5V${cy + 5}`);
+    b.end.setAttribute("cx", 0.5); b.end.setAttribute("cy", cy);
+    b.len = b.path.getTotalLength(); b.path.style.strokeDasharray = b.len;
+  });
+  const ease = (x) => x < .5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
+  const set = (b, k) => {
+    b.path.style.strokeDashoffset = b.len * (1 - k);
+    const p = b.path.getPointAtLength(b.len * k);
+    b.tip.setAttribute("cx", p.x); b.tip.setAttribute("cy", p.y);
+    b.tip.style.opacity = k > 0 && k < 1 ? 1 : 0;
+    b.end.style.opacity = k >= 1 ? 1 : 0;
+  };
+  shape();
+  let started = false;
+  if (reduceMotion.matches) { boxes.forEach((b) => set(b, 1)); started = true; }
+  else boxes.forEach((b) => set(b, 0));
+  window.addEventListener("resize", () => { shape(); if (started) boxes.forEach((b) => set(b, 1)); });
+  const io = new IntersectionObserver((entries) => {
+    if (started || !entries.some((e) => e.isIntersecting)) return;
+    started = true; io.disconnect();
+    const t0 = performance.now(), D = 1600, STAG = 250;
+    const run = (now) => {
+      let done = true;
+      boxes.forEach((b, i) => { const k = Math.min(1, Math.max(0, (now - t0 - i * STAG) / D)); set(b, ease(k)); if (k < 1) done = false; });
+      if (!done) requestAnimationFrame(run);
+    };
+    requestAnimationFrame(run);
+  }, { threshold: 0.35 });
+  if (!started) io.observe(board);
+});
+
+// Home bento: cards go into 3 columns (as set in data-col), 2 columns (alternating, in order) or 1, depending on width.
+// Cards rise and fade in once, 70 ms apart, as they come into view.
+const bento = document.querySelector(".bento");
+if (bento) {
+  const items = [...bento.querySelectorAll(".bento__item")];
+  let cols = 0;
+  const layout = () => {
+    const n = innerWidth >= 1024 ? 3 : innerWidth >= 640 ? 2 : 1;
+    if (n === cols) return;
+    cols = n;
+    bento.querySelectorAll(".bento__col").forEach((c) => c.remove());
+    const columns = [...Array(n)].map(() => { const c = document.createElement("div"); c.className = "bento__col"; bento.appendChild(c); return c; });
+    items.forEach((it, i) => columns[n === 3 ? (+it.dataset.col || 1) - 1 : i % n].appendChild(it));
+  };
+  layout();
+  addEventListener("resize", layout);
+  if (reduceMotion.matches || !("IntersectionObserver" in window)) items.forEach((it) => it.classList.add("is-in"));
+  else {
+    let queue = 0;
+    const seen = new IntersectionObserver((entries) => {
+      entries.filter((e) => e.isIntersecting).forEach((e) => {
+        const it = e.target, delay = 70 * queue++;
+        it.style.transitionDelay = delay + "ms";
+        it.classList.add("is-in");
+        setTimeout(() => { it.style.transitionDelay = ""; queue = Math.max(0, queue - 1); }, delay + 50);
+        seen.unobserve(it);
+      });
+    }, { threshold: 0.15 });
+    items.forEach((it) => seen.observe(it));
+  }
+}
+
+// "My AI OS" tools marquee (founder, 18 Nov 2026): each row repeats its set 3 times and drifts one set per loop at 36 px/s; the button pauses it (WCAG 2.2.2)
+const tools = document.querySelector(".tools");
+if (tools && !reduceMotion.matches) {
+  const tracks = [...tools.querySelectorAll(".tools__track")];
+  tracks.forEach((track) => {
+    const set = [...track.children];
+    for (let k = 0; k < 2; k++) set.forEach((chip) => { const c = chip.cloneNode(true); c.classList.add("is-clone"); track.appendChild(c); });
+  });
+  document.fonts.ready.then(() => {
+    tracks.forEach((track, i) => {
+      const dur = track.scrollWidth / 3 / 36;
+      track.style.setProperty("--dur", `${dur}s`);
+      track.style.setProperty("--delay", `${-(i * 89) / 36}s`); // each row starts at a different point
+    });
+    tools.classList.add("is-live");
+  });
+  // Rows slide in when the section scrolls into view
+  const seen = new IntersectionObserver(([e]) => { if (e.isIntersecting) { tools.classList.add("is-in"); seen.disconnect(); } }, { threshold: 0.3 });
+  seen.observe(tools);
+  const btn = tools.querySelector(".tools__pause");
+  btn.addEventListener("click", () => {
+    const paused = tools.classList.toggle("is-paused");
+    btn.setAttribute("aria-label", paused ? "Play the tools animation" : "Pause the tools animation");
+  });
+}

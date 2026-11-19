@@ -13,5 +13,9 @@ I’m open to freelance projects across industries, ambitious startups. Have an 
 
 
 # Home intro line
-Hi, I’m Farnaz,
-a Berlin-based product designer with 7+ years in digital products. My mixed bag of crafts shapes how I think and design.
+Farnaz Zamanian
+Product designer. Research roots. Fintech and travel.
+I help build products that don’t just look right. They make sense.
+I turn messy research into clear decisions, and use AI to get there faster.
+
+(Founder, 19 Nov 2026. Earlier the same day: "Products that make sense, not just look good. Product designer with 7+ years in fintech and travel, turning messy research into clear decisions, with AI in the workflow." Before that: "Hi, I’m Farnaz, a Berlin-based product designer with 7+ years in digital products. My mixed bag of crafts shapes how I think and design.")

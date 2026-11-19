@@ -11,7 +11,7 @@ Surface (light cards, panels): #F7F7F4 (sampled, Tomas "Pagent" card)
 Buttons / pills: #FFFFFF (sampled, Tomas pill buttons)
 Hero card stack: no outline, surface #F7F7F4 behind each card's image, 380px wide on desktop (founder, 5 Nov 2026).
 Laptop frame (founder, 16 Nov 2026): outline laptop in the same line style as the phone frames: 3px #0E0E0E outline, #FFFFFF screen bezel, rounded screen, a thin base slightly wider than the screen. No shadow, no tilt. Max 640px wide, centered. First used for the web dashboard in SumUp FTU, 03 Key decisions.
-AI stack pills: surface #F7F7F4 fill, no outline, text primary labels (founder, 5 Nov 2026). Since 6 Nov 2026 (founder): "My AI OS" pills, 44px tall, each shows a one-line tooltip (#0E0E0E fill, white 13px text) on hover, focus or tap.
+AI stack pills: surface #F7F7F4 fill, no outline, text primary labels (founder, 5 Nov 2026). Since 6 Nov 2026 (founder): "My AI OS" pills, 44px tall, each shows a one-line tooltip (#0E0E0E fill, white 13px text) on hover, focus or tap. Replaced on 18 Nov 2026 (founder) by the "My AI OS" tools marquee: two full-width rows of tool chips (four at first; founder chose two, 18 Nov 2026) drifting in alternating directions, white #FFFFFF tiles 44px (radius 12) with a 24px line icon, name in text primary 17px 500. Icon colors (founder chose "darker shades of the same hues", Claude computed each to at least 3:1 on white): sky #0094F7, yellow #B18A00, orange #D87453, violet and lilac #8C80FA, mint #1EA366, pink #FF449A. Only inside the tool tiles, never for UI or text. ChatGPT shows its official logo in #0E0E0E (file supplied by founder).
 Outline button (founder, 6 Nov 2026): the CTA pill with a transparent fill and a 1.5px #0E0E0E outline, for secondary actions such as "See my work".
 Dark button: the hero CTA "Let's work together" uses text primary #0E0E0E as its fill with a #FFFFFF label (founder, 5 Nov 2026; contrast about 19:1). The email icon stays accent #6E64FD (about 4.5:1 on #0E0E0E).
 Text primary: #0E0E0E (sampled, Jay Brown screenshot)
@@ -34,6 +34,7 @@ Accent usage rules:
 - #4F43FD is a shade of the one accent, not a second accent. Use it only for small text. Use #6E64FD everywhere else.
 - Marker highlight: #6E64FD at 18% opacity (shows as about #D5D4EF on #ECECEC), behind a highlighted quote, like a marker (chosen by me, 5 Nov 2026; Claude proposed the exact value). A tint of the one accent, not a new color. Text on it: text secondary #666666 at 19px, 600 (large text): 3.96:1, passes 3:1. At 17px it would fail 4.5:1.
 Do not introduce any other colors. Project images and mockups carry their own color; UI does not. The one exception is the mockup background #D4D5DA above.
+Home card backgrounds (founder, 17 Nov 2026): vivid, one per project, for contrast and playfulness. Data viz: #B459FF (founder). Profile & Settings: #F3F3F3, light gray (founder, 18 Nov 2026). First-Time Experience: #000, black (founder, 18 Nov 2026). Zizoo: #E3EEFF, light blue (founder, 18 Nov 2026; #EAEAEA blended into the page). Fee Summary Box: #F3DAFF, light lilac (founder, 18 Nov 2026; replaced #D4D8CC). ⚠️ [Her Body, Her Mind: to decide together.] Only behind card media, never for UI or text.
 
 ## Typography
 
@@ -51,7 +52,7 @@ Fallback stack: `"Manrope", system-ui, sans-serif`
 
 Max content width: 1272px (measured from tomasnozina.com screenshots, Retina, 2026-11-03). Side margin 120px at a 1512px window; minimum 16px.
 Base spacing unit: 8px (proposal, not measured).
-Home featured cards: mosaic of two 624px squares side by side, then one full-width card (1272 x 624), repeating. Gap 24px (measured). One column on mobile.
+Home case studies (founder, 17 Nov 2026, replaces the hero card stack and the earlier mosaic): a bento grid, 3 masonry columns from 1024px (each card's column set in the HTML), 2 from 640px, 1 below in reading order. Gap 26px (20px on mobile). Cards 20px radius, each with its own aspect ratio (5:6, 3:5, 4:5, 16:9) and background; caption below: title left (16px, 500), meta right (16px, text secondary). Hover: media scales to 1.03, a ↗ fades in after the title. Cards rise 24px and fade in once, 70ms apart. Loops play only in view and never with reduced motion.
 Playground tiles: three columns of smaller squares (two on tablet, one on mobile), gap 24px.
 Card corner radius: 40px (measured from tomasnozina.com screenshots).
 Buttons: fully rounded pills, white on the gray background, minimum height 44px (WCAG 2.2 touch target).

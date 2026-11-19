@@ -59,6 +59,8 @@
 - Scroll: case study cards slide in vertically as they enter the viewport (reference: lofi-folio).
 - Scroll: sticky process steps in case studies (founder, 16 Nov 2026): in "What I did", the numbered steps scroll on the left and the visual on the right stays in place and swaps to the step that reaches the middle of the screen. Each step shows What, How and Outcome (Her Body, Her Mind step style). Phones: each visual sits under its step. Reduced motion: the visual swaps without fading.
 - Scroll: annotated screens in case studies (founder, 16 Nov 2026): labels on the left with a bracket pointing at each part of the screen slide in one after another when the screen comes into view; first used for the contextual drop-down menu in Profile and settings, 03 Key decisions. Phones: the labels sit as a list under the screen. Reduced motion: labels show at once.
+- Scroll: principles board in case studies (founder, 17 Nov 2026): in Data viz 03 Key decisions, the black principles board (rebuilt in HTML from the "Start Here" board) draws each box's white outline once, in order, with a dot riding the tip, when the board scrolls into view; the text stays still. With reduced motion the outlines show at once.
+- Video: looping case study animations (founder, 17 Nov 2026): play only while in view, never with reduced motion, and show a still poster before they start (Data viz hero, color strategy and the three widgets).
 - Scroll: featured cards slide up and settle from a slight tilt (left card tilted left, right card tilted right) as they enter the screen. ⚠️ Interpretation of the tomasnozina.com behavior from a screenshot; confirm.
 - Hover on cards: image blurs, project title appears (reference: lofi-folio).
 - Card media: animated device mockups (reference: tomasnozina.com).
@@ -160,3 +162,49 @@
 - Home footer label now reads "Say hello" at 17px, 600, accent text (founder, 6 Nov 2026). The Her Body, Her Mind stack card image was rebuilt: no flat black phone frame, the screen on white with rounded corners and a soft shadow, like the other stack cards (old version kept in the scratchpad).
 - About page: the "About me" headline is now 40px (28px on phones), the size of the contact heading, set below the portrait instead of overlapping it (founder, 6 Nov 2026).
 - About page intro now matches the home hero's first paragraph (20px, line height 1.5, #666), and the second paragraph has the same style in the same centred 420px column, 48px below (founder, 6 Nov 2026; replaces the 28px intro and the off-centre second paragraph). "Say hello" centred under them.
+
+## "My AI OS" tools marquee (founder, 18 Nov 2026)
+- Replaces the five "My AI OS" pills and their tooltips in the home hero (option A). Live HTML, not video. Nine tools: VS Code, Claude Code, Claude Design, Notion, FigJam, Figma Make, Figma Design, ChatGPT, Skills.
+- Two rows (founder, 18 Nov 2026; first built with four), 36 px/s, entrance from the side, pauses on hover and with a pause button (WCAG 2.2.2, Claude's addition). Screen readers get one plain list. Reduced motion: one static wrapped row.
+- The pill tooltips (what each tool is for) are gone. ⚠️ [Bring them back somewhere? There is no copy for VS Code, Notion, Figma Make, Figma Design or Skills.]
+- Hidden for now (founder, 18 Nov 2026): the "My AI OS" label and both hero buttons ("See my work", "Let's work together"). Kept as HTML comments in `02 Site/index.html` (the "--" in the button classes is written as "&#45;&#45;" inside the comment; change it back when restoring). The hero now ends with the tools marquee, then the case study grid. Screen readers still hear the tool list as "My AI OS".
+
+## Intro layout (founder, 18 Nov 2026)
+- From a reference screenshot (a name on the left, a large statement on the right). Desktop (1024px and up): "Hi, I'm Farnaz," 24px 500 in the first grid column; the intro 30px (founder, 19 Nov 2026; was 40px) in columns 2 and 3, with "a Berlin-based product designer" in text primary and the rest in text secondary; the AI workflow line below it, marker kept. Left aligned. Below 1024px everything stacks, intro 28px. Same words as `bio.md` "Home intro line".
+- ⚠️ [The reference has a small line under the name ("©2008 — 2026"). Nothing added; ask what, if anything, goes there.]
+- Changes (founder, 19 Nov 2026): name "Farnaz Zamanian" at 28px replaces "Hi, I'm Farnaz,"; the purple marker on the AI workflow line is removed; on desktop the intro and AI line start 16px left of the second grid column, closer to the name; more space around the marquee (intro to marquee 80px, was 48px; marquee to cards 104px, was 72px).
+
+## Home page order and nav (founder, 19 Nov 2026)
+- Order: intro (name, intro text), case study grid, workflow section (the AI workflow line at 30px, 24px on phones, then the tools marquee), contact form in the footer. About 160px between the cards, the workflow section and the form; 120px between the intro and the cards.
+- The workflow line is the section heading (h2). The marquee rows slide in when the section scrolls into view.
+- Top navigation on every page: links centred in the bar, logo on the left. Below 480px wide the links stay on the right (Claude's choice: centred they hit the logo).
+- Workflow line regular 400 in text secondary #666666 (founder, 19 Nov 2026; tried bold 700 and semibold 600 first).
+
+## Contact form, minimal (founder, 19 Nov 2026)
+- From a reference screenshot. Home footer and contact page: heading (existing copy, unchanged) on the left (the portrait was tried and removed, founder, 19 Nov 2026); the form on the right (stacked on phones). Fields are a single #0E0E0E underline (replaces the white pill fields of 6 Nov 2026); uppercase 13px labels in text secondary; a text button "Send message →". The purple "Say hello" label above the heading is removed (founder, 19 Nov 2026).
+- Not taken from the reference: its heading "Let's talk.", its intro line, its privacy note and its serif font. ⚠️ [Add a short line under the heading or a privacy note? No copy yet.]
+- Fixed: on contact.html, Playground was also marked as the current page.
+- Intro text replaced (founder, 19 Nov 2026), see `bio.md` "Home intro line". The first sentence, "Products that make sense, not just look good.", is in text primary; the rest in text secondary (Claude's choice, same pattern as before).
+- The first sentence sits on its own line, 10px above the rest (founder, 19 Nov 2026).
+- The first sentence is semibold, 600 (founder, 19 Nov 2026).
+
+## About page, refined (founder, 19 Nov 2026)
+- From a reference screenshot. Text on the left, portrait on the right (portrait below the text on phones); left aligned.
+- "A little about me" label: 13px, 600, uppercase, text primary (not accent). It is the page's h1.
+- Copy (founder, 19 Nov 2026, used as written): the first paragraph is the large lead (32px, 500); the other four paragraphs are body text (18px, text secondary; 17px until founder changed it, 19 Nov 2026). Replaces the "About me" title, the intro and the second paragraph of 6 Nov 2026.
+- Kept from before: the "Say hello" button (below the text) and the experience timeline.
+- ⚠️ [The copy names Design OS and neue fische; the Design OS rule above says no mention outside Her Body, Her Mind. Founder's copy, so the rule needs updating if it stays.]
+- ⚠️ ["travellers" is British spelling; the site uses American English ("travelers").]
+- Workflow line spans the full grid width, first card column to the last (founder, 19 Nov 2026).
+- Space between the workflow line and the marquee: 96px desktop, 64px phones (founder, 19 Nov 2026; was 56 and 40).
+
+## Closing strip on every page (founder, 19 Nov 2026)
+- Other ways to reach me besides the form. At the bottom of every page: "© 2026 Farnaz Zamanian" on the left (Claude's addition), the email farnaz.za@icloud.com (mailto) and LinkedIn https://www.linkedin.com/in/farnaz-zamanian-37882090/ (new tab) on the right. 15px; on phones the links come first, the name below.
+- About and Contact pages now have this strip as their only footer. Supersedes "no footer" on those pages (6 Nov 2026) and the email-only footer notes earlier in this file.
+- ⚠️ [The email address is now public on the site and in the repository; spam bots can collect it.]
+- Intro replaced again (founder, 19 Nov 2026), see `bio.md`. First line semibold text primary, then two lines in text secondary, each on its own line.
+- Workflow line removed (founder, 19 Nov 2026: too repetitive with the intro). The marquee stays on its own between the cards and the form; screen readers hear the section as "My AI OS".
+- LinkedIn button (outline, "LinkedIn ↗", new tab) under the contact heading on the home page and the contact page (founder, 19 Nov 2026), for more visibility than the strip at the bottom.
+- Intro first line shortened to "Product designer. B2B fintech, travel marketplaces." (founder, 19 Nov 2026). The marquee section has the headline "Tools" (h2, 30px semibold, text primary), 96px above the rows.
+- Intro first line: "Product designer with a research background. B2B fintech, travel marketplaces." (founder, 19 Nov 2026).
+- Intro first line: "Product designer. Research roots. Fintech and travel." (founder, 19 Nov 2026; replaces the line above).
